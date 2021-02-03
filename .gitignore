@@ -1,6 +1,7 @@
 # ide 
 .idea
 /cmake-build-debug
+/unit-commitment/cmake-build-debug
 
 # Prerequisites
 *.d
