@@ -8,6 +8,10 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Unit Commitment works!" << std::endl;
+    std::cout << "Testing Parser!" << std::endl;
+
+    matrix M = Parser::loadData("./data/data.csv");
+    Parser::displayData(M);
+
     return 0;
 }
