@@ -2,12 +2,22 @@
 #define UNIT_COMMITMENT_PARSER_H
 
 #include <string>
+#include <vector>
+#include <sstream>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+using vec = vector<double>;
+using matrix = vector<vec>;
 
 class Parser {
 private:
 public:
     Parser() {};
-    void loadData(std::string);
+    static matrix loadData(string);
+    static void displayData(const matrix &M);
 };
 
 #endif //UNIT_COMMITMENT_PARSER_H
