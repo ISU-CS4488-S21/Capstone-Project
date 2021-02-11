@@ -1,4 +1,4 @@
 #ifndef UNIT_COMMITMENT_GENERATOR_H
 #define UNIT_COMMITMENT_GENERATOR_H
-
+double sum(int x, int y);
 #endif //UNIT_COMMITMENT_GENERATOR_H
