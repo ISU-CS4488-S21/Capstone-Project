@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="unit_commitment"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unit_commitment">
+				<Option output="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/unit_commitment" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_commitment"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unit_commitment/fast">
+				<Option output="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/unit_commitment" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_commitment/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/generator.cpp">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/generator.h">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/main.cpp">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/matrix.cpp">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/matrix.h">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/parser.cpp">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/parser.h">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/ranking.cpp">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/ranking.h">
+			<Option target="unit_commitment"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project-develop/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
