@@ -1,24 +1,11 @@
-# Capstone-Project
+# Unit Testing a code on CLion using GoogleTest
 
-Generator Unit Commitment using the Lagrange Relaxation and Dynamic Programming Methods
+## Load CMakeLists
+Load the CMakeLists.txt that is inside the test folder
 
-Objective: develop the core engine for solving the unit commitment problem in networks with up to 15 generators.
+<img width="1303" alt="Load CmakeLIsts" src="https://user-images.githubusercontent.com/31423979/107606116-61ae4280-6bf2-11eb-85fc-1537529774ef.png">
 
-Constraints:
-Code is delivered in C++ 2011.
-Minimize the use of classes. Build a dynamic programming class.
+## Run the tests
+Click on the Run 'All in the test_classname.cpp' to run the tests
 
-Specifications:
-Run a time sequence of 24 hours ahead of the current generator operating state vector given the short-term load forecast. Load forecast data comes in 15 minute increments.
-Generators have specified starting costs, operating cost (as a second-order polynomial, banking costs, minimum up time, minimum down time.
-System has a specified spinning reserve requirement and a 24 hour load forecast.
-The UC engine must present a solution every 15 minutes for the grid operators.
-
-Assumptions
-A load forecasting application provides an updated 24-hr ahead forecast every 15 minutes.
-The cost of fuel is constant.
-There is sufficient labor to operate each generation plant. No labor modeling is needed.
-Power losses in the transmission network are negligible.
-
-Resources
-Review chapter 5 of Power Generation, Operation and Control
+<img width="1394" alt="testing a code" src="https://user-images.githubusercontent.com/31423979/107606294-e8631f80-6bf2-11eb-9ba8-48c26117d44d.png">
