@@ -13,8 +13,10 @@ private:
     int getNumCols();
 public:
     explicit Parser(std::string path) : filepath(std::move(path)), row(getNumRows()), col(getNumCols()) {}
-    Matrix<std::string> loadStringData();
-    Matrix<double> loadNumericData();
+    void loadStringData(Matrix<std::string> &);
+    void loadNumericData(Matrix<double> &);
+    int getRow() const;
+    int getCol() const;
 };
 
 #endif //UNIT_COMMITMENT_PARSER_H

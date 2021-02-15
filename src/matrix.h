@@ -16,7 +16,7 @@ public:
     int rows() const { return row; }
     int cols() const { return col; }
 
-    double getValue(int row_index, int col_index) {
+    T getValue(int row_index, int col_index) {
         if(row_index < rows() && col_index < cols()) {
             return data[row_index * col + col_index];
         } else {
@@ -24,7 +24,7 @@ public:
         }
     };
 
-    void setValue(int row_index, int col_index, double element) {
+    void setValue(int row_index, int col_index, T element) {
         if(row_index < rows() && col_index < cols()) {
             data.at(row_index * col + col_index) = element;
         } else {
