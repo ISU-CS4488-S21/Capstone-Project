@@ -1,48 +1,81 @@
+#include <fstream>
+#include <sstream>
+#include <iterator>
+#include <algorithm>
 #include "parser.h"
 
-
-// Just an example for how to implement class member functions
-// The definition exists under parser.h
-
 /**
- * Loads in text from a csv file
+ * Reads csv data into a Matrix of strings.
  *
- * @param filepath: the path of the CSV file
- * @return a matrix containing the comma separate values of each line of the file in each row
+ * @param &m: A reference to a stack allocated Matrix object.
  */
-matrix Parser::loadData(string filepath) {
-    ifstream inFile(filepath);
-    string line;
-    matrix M;
+void Parser::loadStringData(Matrix<std::string> &m) {
+    std::ifstream file(filepath);
+    std::string line;
 
-    while (getline(inFile, line)) {     // read whole line of the file
-        stringstream ss(line);
-        vec row;
-        string data;
+    for(int i = 0; i < row; ++i) {
+        std::getline(file, line);
+        line.pop_back();
+        std::istringstream ss(line);
+        std::string token;
 
-        while (getline(ss, data, ',')) {    // read string until a comma is hit
-            row.push_back(stod(data));
-        }
-        if (!row.empty()) {
-            M.push_back(row);
+        for(int j = 0; j < col; ++j) {
+            std::getline(ss, token, ',');
+            m.setValue(i, j, token);
         }
     }
-    return M;
 }
 
 /**
- * Writes out contents of matrix created from loadData()
+ * Reads csv data into a Matrix of doubles.
  *
- * @param M
+ * @param &m: A reference to a stack allocated Matrix object.
  */
-void Parser::displayData(const matrix &M) {
-    const int width = 12;
+void Parser::loadNumericData(Matrix<double> &m) {
+    std::ifstream file(filepath);
+    std::string line;
 
-    for (const auto& row : M) {
-        for ( auto entry : row) {
-            cout << setw(width) << entry << ' ';
-            cout << '\n';
+    for(int i = 0; i < row; ++i) {
+        std::getline(file, line);
+        line.pop_back();
+        std::istringstream ss(line);
+        std::string token;
+
+        for(int j = 0; j < col; ++j) {
+            std::getline(ss, token, ',');
+            m.setValue(i, j, std::stod(token));
         }
     }
+}
+
+/**
+ * Calculates the number of rows in a .csv file.
+ *
+ * @return The number of lines contained in the file at filepath.
+ */
+int Parser::getNumRows() {
+    std::ifstream file(filepath);
+    file.unsetf(std::ios_base::skipws);
+    return std::count(std::istream_iterator<char>(file), std::istream_iterator<char>(), '\n') + 1;
+}
+
+/**
+ * Calculates the number of columns in a .csv file.
+ *
+ * @return The number of commas contained in the first line of the file at filepath.
+ */
+int Parser::getNumCols() {
+    std::ifstream file(filepath);
+    std::string line;
+    std::getline(file, line);
+    return std::count(line.begin(), line.end(), ',') + 1;
+}
+
+int Parser::getRow() const {
+    return row;
+}
+
+int Parser::getCol() const {
+    return col;
 }
 
