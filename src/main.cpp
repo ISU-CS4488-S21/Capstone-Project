@@ -8,8 +8,9 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Reading system_load_mw.csv" << std::endl;
-    Matrix system_load = Parser::loadData("./data/system_load_mw.csv");
+    //std::cout << "Reading system_load_mw.csv" << std::endl;
+    Parser parser = Parser("system_load_mw.csv");
+    Matrix system_load = parser.loadData();
     system_load.print();
     return 0;
 }

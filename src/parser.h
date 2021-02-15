@@ -1,22 +1,20 @@
 #ifndef UNIT_COMMITMENT_PARSER_H
 #define UNIT_COMMITMENT_PARSER_H
 
-#include <string>
-#include <vector>
-#include <sstream>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include "matrix.h"
 
-using namespace std;
+#include <string>
+#include "matrix.h"
 
 class Parser {
 private:
-    const string filepath;
+    const std::string filepath;
+    int row;
+    int col;
+    int getNumRows();
+    int getNumCols();
 public:
-    Parser() = default;
-    static Matrix loadData(const string&);
+    explicit Parser(std::string path) : filepath(std::move(path)), row(getNumRows()), col(getNumCols()) {}
+    Matrix loadData();
 };
 
 #endif //UNIT_COMMITMENT_PARSER_H
