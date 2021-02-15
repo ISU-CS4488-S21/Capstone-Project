@@ -11,25 +11,30 @@
  * @param filepath: the path of the CSV file
  * @return a matrix containing the comma separate values of each line of the file in each row
  */
-Matrix Parser::loadData() {
-    /*
-    std::ifstream inFile(filepath);
+Matrix<std::string> Parser::loadStringData() {
+    Matrix<std::string> m = Matrix<std::string>(row, col);
+    std::ifstream file(filepath);
     std::string line;
 
-    while (getline(inFile, line)) {     // read whole line of the file
-        std::stringstream ss(line);
+    while(std::getline(file, line)) {
+        std::istringstream ss(line);
 
-        while (getline(ss, data, ',')) {    // read string until a comma is hit
-            //row.push_back(stod(data));
-        }
-        //if (!row.empty()) {
-        //    M.push_back(row);
-        //}
     }
-     */
-    std::cout << row << std::endl;
-    std::cout << col << std::endl;
-    return Matrix(2, 2);
+
+    return m;
+}
+
+Matrix<double> Parser::loadNumericData() {
+    Matrix<double> m = Matrix<double>(row, col);
+    std::ifstream file(filepath);
+    std::string line;
+
+    while(std::getline(file, line)) {
+        std::istringstream ss(line);
+
+    }
+
+    return m;
 }
 
 int Parser::getNumRows() {
@@ -44,3 +49,4 @@ int Parser::getNumCols() {
     std::getline(file, line);
     return std::count(line.begin(), line.end(), ',') + 1;
 }
+

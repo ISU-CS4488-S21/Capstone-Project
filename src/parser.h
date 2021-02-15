@@ -1,7 +1,6 @@
 #ifndef UNIT_COMMITMENT_PARSER_H
 #define UNIT_COMMITMENT_PARSER_H
 
-
 #include <string>
 #include "matrix.h"
 
@@ -14,7 +13,8 @@ private:
     int getNumCols();
 public:
     explicit Parser(std::string path) : filepath(std::move(path)), row(getNumRows()), col(getNumCols()) {}
-    Matrix loadData();
+    Matrix<std::string> loadStringData();
+    Matrix<double> loadNumericData();
 };
 
 #endif //UNIT_COMMITMENT_PARSER_H
