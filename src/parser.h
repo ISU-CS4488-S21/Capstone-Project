@@ -16,7 +16,7 @@ class Parser {
 private:
 public:
     Parser() {};
-    static matrix loadData(string);
+    static matrix loadData(const string&);
     static void displayData(const matrix &M);
 };
 

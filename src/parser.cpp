@@ -10,7 +10,7 @@
  * @param filepath: the path of the CSV file
  * @return a matrix containing the comma separate values of each line of the file in each row
  */
-matrix Parser::loadData(string filepath) {
+matrix Parser::loadData(const string& filepath) {
     ifstream inFile(filepath);
     string line;
     matrix M;
