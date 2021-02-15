@@ -7,17 +7,16 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include "matrix.h"
 
 using namespace std;
-using vec = vector<double>;
-using matrix = vector<vec>;
 
 class Parser {
 private:
+    const string filepath;
 public:
-    Parser() {};
-    static matrix loadData(const string&);
-    static void displayData(const matrix &M);
+    Parser() = default;
+    static Matrix loadData(const string&);
 };
 
 #endif //UNIT_COMMITMENT_PARSER_H
