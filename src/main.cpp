@@ -1,9 +1,9 @@
 // Driver Code
 
-#include "src/generator.h"
-#include "src/matrix.h"
-#include "src/parser.h"
-#include "src/ranking.h"
+#include "generator.h"
+#include "matrix.h"
+#include "parser.h"
+#include "ranking.h"
 
 #include <iostream>
 
