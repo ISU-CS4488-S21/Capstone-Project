@@ -2,22 +2,21 @@
 #define UNIT_COMMITMENT_PARSER_H
 
 #include <string>
-#include <vector>
-#include <sstream>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-
-using namespace std;
-using vec = vector<double>;
-using matrix = vector<vec>;
+#include "matrix.h"
 
 class Parser {
 private:
+    const std::string filepath;
+    int row;
+    int col;
+    int getNumRows();
+    int getNumCols();
 public:
-    Parser() {};
-    static matrix loadData(string);
-    static void displayData(const matrix &M);
+    explicit Parser(std::string path) : filepath(std::move(path)), row(getNumRows()), col(getNumCols()) {}
+    void loadStringData(Matrix<std::string> &);
+    void loadNumericData(Matrix<double> &);
+    int getRow() const;
+    int getCol() const;
 };
 
 #endif //UNIT_COMMITMENT_PARSER_H

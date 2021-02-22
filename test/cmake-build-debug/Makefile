@@ -268,32 +268,140 @@ Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s
 .PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s
 
-testParser.o: testParser.cpp.o
+Users/deepsonkhadka/Documents/Capstone-Project/src/parser.o: Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o
 
-.PHONY : testParser.o
+.PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/parser.o
 
 # target to build an object file
-testParser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/testParser.cpp.o
-.PHONY : testParser.cpp.o
+Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o
+.PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o
 
-testParser.i: testParser.cpp.i
+Users/deepsonkhadka/Documents/Capstone-Project/src/parser.i: Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i
 
-.PHONY : testParser.i
+.PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/parser.i
 
 # target to preprocess a source file
-testParser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/testParser.cpp.i
-.PHONY : testParser.cpp.i
+Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i
+.PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i
 
-testParser.s: testParser.cpp.s
+Users/deepsonkhadka/Documents/Capstone-Project/src/parser.s: Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s
 
-.PHONY : testParser.s
+.PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/parser.s
 
 # target to generate assembly for a file
-testParser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/testParser.cpp.s
-.PHONY : testParser.cpp.s
+Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s
+.PHONY : Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s
+
+test_Parser.o: test_Parser.cpp.o
+
+.PHONY : test_Parser.o
+
+# target to build an object file
+test_Parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o
+.PHONY : test_Parser.cpp.o
+
+test_Parser.i: test_Parser.cpp.i
+
+.PHONY : test_Parser.i
+
+# target to preprocess a source file
+test_Parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Parser.cpp.i
+.PHONY : test_Parser.cpp.i
+
+test_Parser.s: test_Parser.cpp.s
+
+.PHONY : test_Parser.s
+
+# target to generate assembly for a file
+test_Parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Parser.cpp.s
+.PHONY : test_Parser.cpp.s
+
+test_generator.o: test_generator.cpp.o
+
+.PHONY : test_generator.o
+
+# target to build an object file
+test_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_generator.cpp.o
+.PHONY : test_generator.cpp.o
+
+test_generator.i: test_generator.cpp.i
+
+.PHONY : test_generator.i
+
+# target to preprocess a source file
+test_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_generator.cpp.i
+.PHONY : test_generator.cpp.i
+
+test_generator.s: test_generator.cpp.s
+
+.PHONY : test_generator.s
+
+# target to generate assembly for a file
+test_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_generator.cpp.s
+.PHONY : test_generator.cpp.s
+
+test_matrix.o: test_matrix.cpp.o
+
+.PHONY : test_matrix.o
+
+# target to build an object file
+test_matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o
+.PHONY : test_matrix.cpp.o
+
+test_matrix.i: test_matrix.cpp.i
+
+.PHONY : test_matrix.i
+
+# target to preprocess a source file
+test_matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_matrix.cpp.i
+.PHONY : test_matrix.cpp.i
+
+test_matrix.s: test_matrix.cpp.s
+
+.PHONY : test_matrix.s
+
+# target to generate assembly for a file
+test_matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_matrix.cpp.s
+.PHONY : test_matrix.cpp.s
+
+test_ranking.o: test_ranking.cpp.o
+
+.PHONY : test_ranking.o
+
+# target to build an object file
+test_ranking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o
+.PHONY : test_ranking.cpp.o
+
+test_ranking.i: test_ranking.cpp.i
+
+.PHONY : test_ranking.i
+
+# target to preprocess a source file
+test_ranking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_ranking.cpp.i
+.PHONY : test_ranking.cpp.i
+
+test_ranking.s: test_ranking.cpp.s
+
+.PHONY : test_ranking.s
+
+# target to generate assembly for a file
+test_ranking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_ranking.cpp.s
+.PHONY : test_ranking.cpp.s
 
 # Help Target
 help:
@@ -315,9 +423,21 @@ help:
 	@echo "... Users/deepsonkhadka/Documents/Capstone-Project/src/generator.o"
 	@echo "... Users/deepsonkhadka/Documents/Capstone-Project/src/generator.i"
 	@echo "... Users/deepsonkhadka/Documents/Capstone-Project/src/generator.s"
-	@echo "... testParser.o"
-	@echo "... testParser.i"
-	@echo "... testParser.s"
+	@echo "... Users/deepsonkhadka/Documents/Capstone-Project/src/parser.o"
+	@echo "... Users/deepsonkhadka/Documents/Capstone-Project/src/parser.i"
+	@echo "... Users/deepsonkhadka/Documents/Capstone-Project/src/parser.s"
+	@echo "... test_Parser.o"
+	@echo "... test_Parser.i"
+	@echo "... test_Parser.s"
+	@echo "... test_generator.o"
+	@echo "... test_generator.i"
+	@echo "... test_generator.s"
+	@echo "... test_matrix.o"
+	@echo "... test_matrix.i"
+	@echo "... test_matrix.s"
+	@echo "... test_ranking.o"
+	@echo "... test_ranking.i"
+	@echo "... test_ranking.s"
 .PHONY : help
 
 

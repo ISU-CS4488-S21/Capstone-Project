@@ -86,9 +86,9 @@
 				<Compiler>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -108,9 +108,9 @@
 				<Compiler>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -132,9 +132,9 @@
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googlemock"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -156,9 +156,9 @@
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googlemock"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -180,9 +180,9 @@
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googlemock"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -204,9 +204,9 @@
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googlemock"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -226,9 +226,9 @@
 				<Compiler>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -248,9 +248,9 @@
 				<Compiler>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -270,9 +270,9 @@
 				<Compiler>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -292,9 +292,9 @@
 				<Compiler>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/include"/>
 					<Add directory="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -312,6 +312,12 @@
 		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.h">
 			<Option target="Capstone-Project"/>
 		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp">
+			<Option target="Capstone-Project"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.h">
+			<Option target="Capstone-Project"/>
+		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
@@ -324,7 +330,16 @@
 		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/testParser.cpp">
+		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/test_Parser.cpp">
+			<Option target="Capstone-Project"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/test_generator.cpp">
+			<Option target="Capstone-Project"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/test_matrix.cpp">
+			<Option target="Capstone-Project"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/test_ranking.cpp">
 			<Option target="Capstone-Project"/>
 		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Documents/Capstone-Project/test/CMakeLists.txt">

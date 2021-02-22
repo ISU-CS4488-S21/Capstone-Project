@@ -77,48 +77,108 @@ include CMakeFiles/Capstone-Project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Capstone-Project.dir/flags.make
 
-CMakeFiles/Capstone-Project.dir/testParser.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
-CMakeFiles/Capstone-Project.dir/testParser.cpp.o: ../testParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Capstone-Project.dir/testParser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/testParser.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/test/testParser.cpp
+CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o: /Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp
 
-CMakeFiles/Capstone-Project.dir/testParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/testParser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/test/testParser.cpp > CMakeFiles/Capstone-Project.dir/testParser.cpp.i
+CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp > CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.i
 
-CMakeFiles/Capstone-Project.dir/testParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/testParser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/test/testParser.cpp -o CMakeFiles/Capstone-Project.dir/testParser.cpp.s
+CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.s
+
+CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o: ../test_Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/test/test_Parser.cpp
+
+CMakeFiles/Capstone-Project.dir/test_Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_Parser.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/test/test_Parser.cpp > CMakeFiles/Capstone-Project.dir/test_Parser.cpp.i
+
+CMakeFiles/Capstone-Project.dir/test_Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_Parser.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/test/test_Parser.cpp -o CMakeFiles/Capstone-Project.dir/test_Parser.cpp.s
 
 CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
 CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o: /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp
 
 CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp > CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp > CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.i
 
 CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.s
+
+CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o: ../test_matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/test/test_matrix.cpp
+
+CMakeFiles/Capstone-Project.dir/test_matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_matrix.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/test/test_matrix.cpp > CMakeFiles/Capstone-Project.dir/test_matrix.cpp.i
+
+CMakeFiles/Capstone-Project.dir/test_matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_matrix.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/test/test_matrix.cpp -o CMakeFiles/Capstone-Project.dir/test_matrix.cpp.s
+
+CMakeFiles/Capstone-Project.dir/test_generator.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/test_generator.cpp.o: ../test_generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Capstone-Project.dir/test_generator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_generator.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/test/test_generator.cpp
+
+CMakeFiles/Capstone-Project.dir/test_generator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_generator.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/test/test_generator.cpp > CMakeFiles/Capstone-Project.dir/test_generator.cpp.i
+
+CMakeFiles/Capstone-Project.dir/test_generator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_generator.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/test/test_generator.cpp -o CMakeFiles/Capstone-Project.dir/test_generator.cpp.s
+
+CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o: ../test_ranking.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o -c /Users/deepsonkhadka/Documents/Capstone-Project/test/test_ranking.cpp
+
+CMakeFiles/Capstone-Project.dir/test_ranking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_ranking.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Documents/Capstone-Project/test/test_ranking.cpp > CMakeFiles/Capstone-Project.dir/test_ranking.cpp.i
+
+CMakeFiles/Capstone-Project.dir/test_ranking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_ranking.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Documents/Capstone-Project/test/test_ranking.cpp -o CMakeFiles/Capstone-Project.dir/test_ranking.cpp.s
 
 # Object files for target Capstone-Project
 Capstone__Project_OBJECTS = \
-"CMakeFiles/Capstone-Project.dir/testParser.cpp.o" \
-"CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o"
+"CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/test_generator.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o"
 
 # External object files for target Capstone-Project
 Capstone__Project_EXTERNAL_OBJECTS =
 
-Capstone-Project: CMakeFiles/Capstone-Project.dir/testParser.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/parser.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/test_Parser.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Documents/Capstone-Project/src/generator.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/test_generator.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/test_ranking.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/build.make
 Capstone-Project: lib/libgtestd.a
 Capstone-Project: lib/libgtest_maind.a
 Capstone-Project: lib/libgtestd.a
 Capstone-Project: CMakeFiles/Capstone-Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Capstone-Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Capstone-Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Capstone-Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
