@@ -72,15 +72,15 @@ double Generator::getShutDownCost() {
     return shutDownCost;
 }
 
-double Generator::getBurnRate() {
-    return burnRate;
+int Generator::getMinPowerOut() {
+    return minPowerOut;
 }
 
-int Generator::getPowerOut() {
-    return powerOut;
+int Generator::getMaxPowerOut() {
+    return maxPowerOut;
 }
 
-bool Generator::getIsOn() {
+int Generator::getIsOn() {
     return isOn;
 }
 
