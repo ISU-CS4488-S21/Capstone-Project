@@ -3,34 +3,34 @@
 
 class Generator {
 
-    private:
-        double fuelCost, startUpCost, shutDownCost, burnRate;
-        int powerOut;
-        bool isOn;
-        enum GeneratorType {
-            Coal,
-            Nuclear,
-            Hydro,
-            Wind,
-            Solar,
-        };
+private:
+    double fuelCost, startUpCost, shutDownCost, economicDispatchCost, A, B, C;
+    int maxPowerOut, minPowerOut;
+    int isOn;
+    enum GeneratorType {
+        CoalFiredSteam,
+        OilFiredSteam,
+        SmallSub,
+        LargeSub,
+        OtherSteam,
+    };
 
-        GeneratorType type;
+    GeneratorType type;
 
 
-    public:
-        double sum(int x, int y);
-        Generator(GeneratorType gt, double fCost, double stCost, double shCost, double bRate, int pOut);
+public:
+    double sum(int x, int y);
+    Generator(GeneratorType gt);
 
-        double getFuelCost();
-        double getStartUpCost();
-        double getShutDownCost();
-        double getBurnRate();
-        int getPowerOut();
-        bool getIsOn();
-        void turnOn();
-        void turnOff();
-        GeneratorType getGeneratorType();
+    double getFuelCost();
+    double getStartUpCost();
+    double getShutDownCost();
+    double getBurnRate();
+    int getPowerOut();
+    int getIsOn();
+    void turnOn();
+    void turnOff();
+    GeneratorType getGeneratorType();
 
 };
 #endif //UNIT_COMMITMENT_GENERATOR_H
