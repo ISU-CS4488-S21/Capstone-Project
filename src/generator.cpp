@@ -10,7 +10,7 @@ Generator::Generator(GeneratorType gt, int powerState) {
     if (gt == CoalFiredSteam) {
         fuelCost = 1;
         startUpCost = 64;
-        shutDownCost = 0;
+        shutDownCost = 25;
         maxPowerOut = 600;
         minPowerOut = 150;
         A = 510;
@@ -20,7 +20,7 @@ Generator::Generator(GeneratorType gt, int powerState) {
     } else if (gt == OilFiredSteam){
         fuelCost = 1;
         startUpCost = 46;
-        shutDownCost = 0;
+        shutDownCost = 15;
         maxPowerOut = 400;
         minPowerOut = 100;
         A = 310;
@@ -30,7 +30,7 @@ Generator::Generator(GeneratorType gt, int powerState) {
     } else if (gt == SmallSub) {
         fuelCost = 1;
         startUpCost = 112;
-        shutDownCost = 0;
+        shutDownCost = 5;
         maxPowerOut = 100;
         minPowerOut = 20;
         A = 80;
@@ -40,7 +40,7 @@ Generator::Generator(GeneratorType gt, int powerState) {
     } else if (gt == LargeSub) {
         fuelCost = 1;
         startUpCost = 78;
-        shutDownCost = 0;
+        shutDownCost = 10;
         maxPowerOut = 350;
         minPowerOut = 45;
         A = 225;
@@ -50,7 +50,7 @@ Generator::Generator(GeneratorType gt, int powerState) {
     } else if (gt == OtherSteam) {
         fuelCost = 1;
         startUpCost = 48;
-        shutDownCost = 0;
+        shutDownCost = 20;
         maxPowerOut = 200;
         minPowerOut = 20;
         A = 400;
