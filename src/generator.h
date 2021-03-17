@@ -26,6 +26,8 @@ public:
     double getStartUpCost();
     double getShutDownCost();
     double getBurnRate();
+    double getB();
+    double getC();
     int getMaxPowerOut();
     int getMinPowerOut();
     int getIsOn();
