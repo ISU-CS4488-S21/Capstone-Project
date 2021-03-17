@@ -1,39 +1,70 @@
 // Driver Code
-
 #include "generator.h"
-#include "matrix.h"
 #include "parser.h"
-#include "ranking.h"
 
+#include <cmath>
 #include <iostream>
+#include <random>
+
 
 int main() {
-    // I'm using extra comments here to help illustrate how to use Parser + Matrix:
-    // First we instantiate a new Parser object for a given .csv we wish to read in.
-    Parser load_parser = Parser("system_load_mw.csv");
+    // Parse load MW data
+    Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
+    std::vector<double> predictedLoad= loadParser.loadData();
 
-    // Parser automatically figures out how many rows and columns are in our .csv file. This is nice, because then we
-    // can allocate our Matrix on the stack since we will know the row/col values before instantiation.
-    std::cout << "Rows: " << load_parser.getRow() << "  Cols: " << load_parser.getCol() << std::endl;
+    // Set up the RNG for picking random generators
+    const int size = 5;
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    std::uniform_int_distribution<int> dist(0, 4);
+    std::vector<GeneratorType> typeList {GeneratorType::CoalFiredSteam,
+                                         GeneratorType::OilFiredSteam,
+                                         GeneratorType::SmallSub,
+                                         GeneratorType::LargeSub,
+                                         GeneratorType::OtherSteam};
 
-    // Next we instantiate an empty Matrix of the type we need. In this case, system_load_mw.csv has a mix of string
-    // and numeric data so we need a Matrix of strings (we can parse the load values from string -> double as needed).
-    Matrix<std::string> system_load = Matrix<std::string>(load_parser.getRow(), load_parser.getCol());
+    // Create two identical vectors of generators, one with off generators and one with on generators
+    std::vector<Generator> offList;
+    std::vector<Generator> onList;
+    offList.reserve(size);
+    onList.reserve(size);
+    for(int i = 0; i < size; ++i) {
+        GeneratorType type = typeList.at(dist(mt));
+        offList.emplace_back(Generator(type, false));
+        onList.emplace_back(Generator(type, true));
+    }
 
-    // Finally, we pass our instantiated matrix as a reference to our parser which loads the .csv data into the matrix.
-    // Unfortunately it's not possible to return a stack allocated Matrix from Parser, so going this route allows us to
-    // avoid heap allocation and thus avoid potential memory leaks. In theory it should make accessing data faster too.
-    load_parser.loadStringData(system_load);
+    int rows = std::pow(2, size);
 
-    // I removed the print function from Parser and made it a Matrix member function.
-    // I'll print out the system_load data to show that our data was read in correctly.
-    system_load.print();
+    int bitCombos[rows][size];
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < size; j++) {
+            int val = rows * j + i;
+            int ret = (1 & (val >> j));
+            bitCombos[i][j] = ret != 0;
+        }
+    }
 
-    // Finally, values at specific indices can be set and retrieved.
-    system_load.setValue(0, 0, "This is a test.");
+    // Use the bitCombos to generate vectors of generator combinations
+    std::vector<std::vector<Generator>> genCombos;
+    for(int i = 0; i < rows; i++) {
+        genCombos.emplace_back(std::vector<Generator>{});
+        for(int j = 0; j < size; j++) {
+            if(bitCombos[i][j] == 0) {
+                genCombos.at(i).push_back(offList.at(j));
+            } else {
+                genCombos.at(i).push_back(onList.at(j));
+            }
+        }
+    }
 
-    // Verify that our change was made correctly.
-    std::cout << "Value at index 0, 0: " << system_load.getValue(0, 0) << std::endl;
+    // Verify that genCombos contains sub-vectors containing each possible off/on combination
+    for(const auto& combo : genCombos) {
+        for(auto gen : combo) {
+            std::cout << "gt: " << gen.getGeneratorType() << " on: " << gen.getIsOn() << '\t';
+        }
+        std::cout << std::endl;
+    }
 
     return 0;
 }
