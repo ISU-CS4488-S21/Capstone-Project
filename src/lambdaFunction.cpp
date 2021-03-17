@@ -7,10 +7,10 @@
 #include <generator.h>
 // A function to find the minimized cost between a set of generators at
 // every possible load.
-double lambdaFunc(int load,std::vector<Generator> generators,int index){
-    std::vector<std::pair<double,double> gen;
+double lambdaFunc(int load, std::vector<Generator> generators, int index){
+    std::vector<std::pair<double,double>> gen;
     for(int i = 0; i < generators.size(); i++){
-        gen.push_back(std::make_pair<generators[i].getB(),generators[i].getA()>);
+        gen.push_back(std::make_pair<double, double>(generators[i].getB(),generators[i].getC()));
     }
     int maxLoad = load;
     double temp;
@@ -35,7 +35,7 @@ double lambdaFunc(int load,std::vector<Generator> generators,int index){
         // at a specific load comparison.
         while(load > 0){
             g1 = gen[index].first + gen[index].second*load*2;
-            g2 = lambdaFunc(maxLoad - load,gen,index-1);
+            g2 = lambdaFunc(maxLoad - load,generators,index-1);
             temp = g1 + g2;
             if(min > temp){
                 min = g1 + g2;
