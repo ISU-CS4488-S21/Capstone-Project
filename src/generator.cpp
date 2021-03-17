@@ -72,6 +72,13 @@ double Generator::getShutDownCost() {
     return shutDownCost;
 }
 
+double Generator::getB(){
+    return B;
+}
+
+double Generator::getC(){
+    return C;
+}
 int Generator::getMinPowerOut() {
     return minPowerOut;
 }
