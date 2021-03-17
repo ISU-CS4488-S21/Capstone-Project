@@ -1,16 +1,18 @@
 // Working for hard coded generators, need to implement with generator class.
 // Also needs to be optimized for more generators. Takes too long after 7.
-#include <iostream>
+#include <generator.h>
+
+#include <limits>
 #include <utility>
 #include <vector>
-#include <limits>
-#include <generator.h>
+
 // A function to find the minimized cost between a set of generators at
 // every possible load.
-double lambdaFunc(int load, std::vector<Generator> generators, int index){
+double lambdaFunc(int load, const std::vector<Generator>& generators, int index){
     std::vector<std::pair<double,double>> gen;
-    for(int i = 0; i < generators.size(); i++){
-        gen.push_back(std::make_pair<double, double>(generators[i].getB(),generators[i].getC()));
+    gen.reserve(generators.size());
+    for(auto elem : generators){
+        gen.push_back(std::make_pair<double, double>(elem.getB(), elem.getC()));
     }
     int maxLoad = load;
     double temp;

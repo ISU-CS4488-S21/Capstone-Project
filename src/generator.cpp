@@ -61,34 +61,34 @@ Generator::Generator(GeneratorType gt, bool powerState) {
 
 }
 
-double Generator::getFuelCost() {
+double Generator::getFuelCost() const {
     return fuelCost;
 }
 
-double Generator::getStartUpCost() {
+double Generator::getStartUpCost() const {
     return startUpCost;
 }
 
-double Generator::getShutDownCost() {
+double Generator::getShutDownCost() const {
     return shutDownCost;
 }
 
-double Generator::getB(){
+double Generator::getB() const{
     return B;
 }
 
-double Generator::getC(){
+double Generator::getC() const{
     return C;
 }
-int Generator::getMinPowerOut() {
+int Generator::getMinPowerOut() const {
     return minPowerOut;
 }
 
-int Generator::getMaxPowerOut() {
+int Generator::getMaxPowerOut() const {
     return maxPowerOut;
 }
 
-bool Generator::getIsOn() {
+bool Generator::getIsOn() const {
     return isOn;
 }
 
@@ -106,4 +106,8 @@ GeneratorType Generator::getGeneratorType() {
 
 double Generator::sum(int x, int y){
     return x+y;
+}
+
+double Generator::getBurnRate() {
+    return 0;
 }

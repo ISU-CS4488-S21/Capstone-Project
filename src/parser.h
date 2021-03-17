@@ -8,8 +8,6 @@
 #include <string>
 #include <vector>
 
-#include <iostream>
-
 template <class T>
 class Parser {
 private:
@@ -52,7 +50,6 @@ public:
             }
         } else {
             // TODO: Fix Parser so that it can generate 2D vectors
-            std::cout << "Rows: " << row << " Cols: " << col << std::endl;
             /*
             for(int i = 0; i < row; ++i) {
                 std::getline(file, line);

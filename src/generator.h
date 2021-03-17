@@ -19,15 +19,15 @@ private:
 public:
     double sum(int x, int y);
     Generator(GeneratorType gt, bool powerState);
-    double getFuelCost();
-    double getStartUpCost();
-    double getShutDownCost();
+    double getFuelCost() const;
+    double getStartUpCost() const;
+    double getShutDownCost() const;
     double getBurnRate();
-    double getB();
-    double getC();
-    int getMaxPowerOut();
-    int getMinPowerOut();
-    bool getIsOn();
+    double getB() const;
+    double getC() const;
+    int getMaxPowerOut() const;
+    int getMinPowerOut() const;
+    bool getIsOn() const;
     void turnOn();
     void turnOff();
     GeneratorType getGeneratorType();
