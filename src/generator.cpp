@@ -1,7 +1,7 @@
 #include "generator.h"
 #include <cmath>
 
-Generator::Generator(GeneratorType gt, int powerState) {
+Generator::Generator(GeneratorType gt, bool powerState) {
     type = gt;
     isOn = powerState;
 
@@ -88,7 +88,7 @@ int Generator::getMaxPowerOut() {
     return maxPowerOut;
 }
 
-int Generator::getIsOn() {
+bool Generator::getIsOn() {
     return isOn;
 }
 
@@ -100,7 +100,7 @@ void Generator::turnOff() {
     isOn = false;
 }
 
-Generator::GeneratorType Generator::getGeneratorType() {
+GeneratorType Generator::getGeneratorType() {
     return type;
 }
 
