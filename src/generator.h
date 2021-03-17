@@ -1,6 +1,10 @@
 #ifndef UNIT_COMMITMENT_GENERATOR_H
 #define UNIT_COMMITMENT_GENERATOR_H
 
+
+/**
+ * @author Marcus Goeckner
+ */
 enum GeneratorType {
     CoalFiredSteam,
     OilFiredSteam,
