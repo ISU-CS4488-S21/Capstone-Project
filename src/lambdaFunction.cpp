@@ -1,9 +1,9 @@
 // Working for hard coded generators, need to implement with generator class.
 // Also needs to be optimized for more generators. Takes too long after 7.
-#include <iostream.h>
-#include <utility.h>
-#include <vector.h>
-#include <limits.h>
+#include <iostream>
+#include <utility>
+#include <vector>
+#include <limits>
 // A function to find the minimized cost between a set of generators at
 // every possible load.
 float lambdaFunc(int load,std::vector<std::pair<float,float>> gen,int index){
