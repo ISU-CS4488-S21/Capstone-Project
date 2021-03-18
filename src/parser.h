@@ -1,3 +1,4 @@
+// Author: Andres Sewell
 #ifndef UNIT_COMMITMENT_PARSER_H
 #define UNIT_COMMITMENT_PARSER_H
 
