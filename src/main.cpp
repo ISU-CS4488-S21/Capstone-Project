@@ -6,8 +6,34 @@
 #include <iostream>
 #include <random>
 
+/*
+Pseudocode main function
+Kirill Brainard
+
+parse file into predictedLoad = [1000MW, 1200MW, 1650MW, etc]
+make one of each generator
+make combinations of each generator
+calculate the cost for each combination at predictedLoad[0]
+this includes lambda
+[500$, 600$, 750$, 450$, 550$] @ predictedLoad[0]
+make unitCommitMatrix = []
+for load in predictedLoad:
+calculate [500$, 600$, 750$, 450$, 550$]
+append [500$, 600$, 750$, 450$, 550$] to unitCommitMatrix
+
+{
+[500$, 600$, 750$, 450$, 550$]
+[500$, 600$, 750$, 450$, 550$]
+[500$, 600$, 750$, 450$, 550$]
+[500$, 600$, 750$, 450$, 550$]
+}
+
+calculate transitional
+pass unitCommitMatrix into djikstras along with transitional costs
+*/
 
 int main() {
+    // Author: Andres Sewell, up until genCombo verification
     // Parse load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
     std::vector<double> predictedLoad= loadParser.loadData();
@@ -57,32 +83,6 @@ int main() {
             }
         }
     }
-    //Pseudocode main function
-    //Kirill Brainard
-
-    //parse file into predictedLoad = [1000MW, 1200MW, 1650MW, etc]
-    //make one of each generator
-    //make combinations of each generator
-    //calculate the cost for each combination at predictedLoad[0]
-    // this includes lambda
-    //[500$, 600$, 750$, 450$, 550$] @ predictedLoad[0]
-    //make unitCommitMatrix = []
-    //for load in predictedLoad:
-    //calculate [500$, 600$, 750$, 450$, 550$]
-    //append [500$, 600$, 750$, 450$, 550$] to unitCommitMatrix
-
-    //{
-    //[500$, 600$, 750$, 450$, 550$]
-    //[500$, 600$, 750$, 450$, 550$]
-    //[500$, 600$, 750$, 450$, 550$]
-    //[500$, 600$, 750$, 450$, 550$]
-    //}
-
-    //calculate transitional
-
-    //pass unitCommitMatrix into djikstras along with transitional costs
-    //
-
 
     // Verify that genCombos contains sub-vectors containing each possible off/on combination
     for(const auto& combo : genCombos) {
