@@ -1,3 +1,4 @@
+// Authors: Andres Sewell, Nate Shubert
 // Driver Code
 #include "generator.h"
 #include "parser.h"
@@ -34,7 +35,6 @@ pass unitCommitMatrix into djikstras along with transitional costs
 */
 
 int main() {
-    // Author: Andres Sewell, up until genCombo verification
     // Parse load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
     std::vector<double> predictedLoad= loadParser.loadData();
