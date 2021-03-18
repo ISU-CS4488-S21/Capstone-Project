@@ -44,7 +44,10 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
     double min = std::numeric_limits<int>::max();
     double g2;
     double g1;
-    if(index <= 1){
+    if(index == 1){
+        return gen[0].first + gen[0].second*load*2;
+    }
+    if(index < 1){
         //The final branch of the generator tree to return optimized cost.
         while(load > 0){
             g1 = gen[0].first + gen[0].second*load*2;
