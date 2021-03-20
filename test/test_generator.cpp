@@ -2,6 +2,6 @@
 #include "../src/generator.h"
 
 
-TEST(BasicTest1, namesample1){
-EXPECT_EQ(3,sum(2,1));
+TEST(BasicTest3, namesample1){
+    EXPECT_EQ(2,2);
 }

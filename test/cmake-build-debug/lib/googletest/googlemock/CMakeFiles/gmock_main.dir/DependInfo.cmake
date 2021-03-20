@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest/googlemock/src/gmock_main.cc" "/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+  "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googlemock/src/gmock_main.cc" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -18,8 +18,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

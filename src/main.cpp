@@ -92,8 +92,8 @@ int main() {
         }
         std::cout << std::endl;
     }
-    
-    
+
+
     // Narrow down to only on generators
     std::vector<std::vector<Generator>> onGenCombos;
     std::vector<Generator> onGens;
@@ -108,16 +108,16 @@ int main() {
         }
         onGens.clear();
     }
-    
-    
+
+
     // Get Node Costs
     std::cout << "Load @ 1500" << std::endl;
     for(const auto& combo : onGenCombos){
         //for(auto load : predictedLoad){
-            //Economic_Dispatch().lambdaFunction(load,combo,combo.size());
+        //Economic_Dispatch().lambdaFunction(load,combo,combo.size());
         //}
         std::cout << " Lambda Cost: " << Economic_Dispatch().lambdaFunction(1500,combo,combo.size()) << std::endl;
     }
-    
+
     return 0;
 }

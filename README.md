@@ -1,7 +1,3 @@
-
-## Compiler info 
-<img width="537" src="https://github.com/ISU-CS4488-S21/Capstone-Project/blob/develop/documents/compiler.png">
-
 # Unit Testing a code on CLion using GoogleTest
 
 ## Load CMakeLists

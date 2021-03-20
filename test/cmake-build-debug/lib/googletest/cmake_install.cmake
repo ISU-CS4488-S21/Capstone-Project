@@ -1,4 +1,4 @@
-# Install script for directory: /Users/deepsonkhadka/Documents/Capstone-Project/test/lib/googletest
+# Install script for directory: /Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/deepsonkhadka/Documents/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock/cmake_install.cmake")
+  include("/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock/cmake_install.cmake")
 
 endif()
 
