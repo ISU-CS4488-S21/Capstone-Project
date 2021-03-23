@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test"
+CMAKE_SOURCE_DIR = /Users/deepsonkhadka/Desktop/Capstone-Project/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -146,9 +146,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -241,32 +241,140 @@ gtest/fast:
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.o: Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.o
+Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.o: Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o
 
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.o
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.o
 
 # target to build an object file
-Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.o
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.o
+Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o
 
-Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.i: Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.i
+Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.i: Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.i
 
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.i
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.i
 
 # target to preprocess a source file
-Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.i
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.i
+Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.i
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.i
 
-Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.s: Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.s
+Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.s: Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s
 
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.s
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.s
 
 # target to generate assembly for a file
-Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.s
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.cpp.s
+Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s
+
+Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.o: Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
+
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.o
+
+# target to build an object file
+Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
+
+Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.i: Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
+
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.i
+
+# target to preprocess a source file
+Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
+
+Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.s: Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
+
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.s
+
+# target to generate assembly for a file
+Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
+
+Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.o: Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
+
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.o
+
+# target to build an object file
+Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
+
+Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.i: Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
+
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.i
+
+# target to preprocess a source file
+Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
+
+Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.s: Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
+
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.s
+
+# target to generate assembly for a file
+Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
+.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
+
+test_Dijkstra.o: test_Dijkstra.cpp.o
+
+.PHONY : test_Dijkstra.o
+
+# target to build an object file
+test_Dijkstra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o
+.PHONY : test_Dijkstra.cpp.o
+
+test_Dijkstra.i: test_Dijkstra.cpp.i
+
+.PHONY : test_Dijkstra.i
+
+# target to preprocess a source file
+test_Dijkstra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.i
+.PHONY : test_Dijkstra.cpp.i
+
+test_Dijkstra.s: test_Dijkstra.cpp.s
+
+.PHONY : test_Dijkstra.s
+
+# target to generate assembly for a file
+test_Dijkstra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.s
+.PHONY : test_Dijkstra.cpp.s
+
+test_Economic_Dispatch.o: test_Economic_Dispatch.cpp.o
+
+.PHONY : test_Economic_Dispatch.o
+
+# target to build an object file
+test_Economic_Dispatch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o
+.PHONY : test_Economic_Dispatch.cpp.o
+
+test_Economic_Dispatch.i: test_Economic_Dispatch.cpp.i
+
+.PHONY : test_Economic_Dispatch.i
+
+# target to preprocess a source file
+test_Economic_Dispatch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.i
+.PHONY : test_Economic_Dispatch.cpp.i
+
+test_Economic_Dispatch.s: test_Economic_Dispatch.cpp.s
+
+.PHONY : test_Economic_Dispatch.s
+
+# target to generate assembly for a file
+test_Economic_Dispatch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.s
+.PHONY : test_Economic_Dispatch.cpp.s
 
 test_generator.o: test_generator.cpp.o
 
@@ -295,32 +403,32 @@ test_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_generator.cpp.s
 .PHONY : test_generator.cpp.s
 
-test_matrix.o: test_matrix.cpp.o
+test_parser.o: test_parser.cpp.o
 
-.PHONY : test_matrix.o
+.PHONY : test_parser.o
 
 # target to build an object file
-test_matrix.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_matrix.cpp.o
-.PHONY : test_matrix.cpp.o
+test_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_parser.cpp.o
+.PHONY : test_parser.cpp.o
 
-test_matrix.i: test_matrix.cpp.i
+test_parser.i: test_parser.cpp.i
 
-.PHONY : test_matrix.i
+.PHONY : test_parser.i
 
 # target to preprocess a source file
-test_matrix.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_matrix.cpp.i
-.PHONY : test_matrix.cpp.i
+test_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_parser.cpp.i
+.PHONY : test_parser.cpp.i
 
-test_matrix.s: test_matrix.cpp.s
+test_parser.s: test_parser.cpp.s
 
-.PHONY : test_matrix.s
+.PHONY : test_parser.s
 
 # target to generate assembly for a file
-test_matrix.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_matrix.cpp.s
-.PHONY : test_matrix.cpp.s
+test_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_parser.cpp.s
+.PHONY : test_parser.cpp.s
 
 # Help Target
 help:
@@ -339,15 +447,27 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.o"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.i"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project_10.54.19_PM/src/generator.s"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.o"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.i"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.s"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.o"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.i"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.s"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.o"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.i"
+	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.s"
+	@echo "... test_Dijkstra.o"
+	@echo "... test_Dijkstra.i"
+	@echo "... test_Dijkstra.s"
+	@echo "... test_Economic_Dispatch.o"
+	@echo "... test_Economic_Dispatch.i"
+	@echo "... test_Economic_Dispatch.s"
 	@echo "... test_generator.o"
 	@echo "... test_generator.i"
 	@echo "... test_generator.s"
-	@echo "... test_matrix.o"
-	@echo "... test_matrix.i"
-	@echo "... test_matrix.s"
+	@echo "... test_parser.o"
+	@echo "... test_parser.i"
+	@echo "... test_parser.s"
 .PHONY : help
 
 

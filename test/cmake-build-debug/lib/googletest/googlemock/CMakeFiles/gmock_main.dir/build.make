@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test"
+CMAKE_SOURCE_DIR = /Users/deepsonkhadka/Desktop/Capstone-Project/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend.make
@@ -79,16 +79,16 @@ include lib/googletest/googlemock/CMakeFiles/gmock_main.dir/flags.make
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/flags.make
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: ../lib/googletest/googlemock/src/gmock_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googlemock/src/gmock_main.cc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googlemock/src/gmock_main.cc
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock_main.dir/src/gmock_main.cc.i"
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googlemock/src/gmock_main.cc" > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock_main.dir/src/gmock_main.cc.s"
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googlemock/src/gmock_main.cc" -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
 
 # Object files for target gmock_main
 gmock_main_OBJECTS = \
@@ -100,9 +100,9 @@ gmock_main_EXTERNAL_OBJECTS =
 lib/libgmock_maind.a: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 lib/libgmock_maind.a: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make
 lib/libgmock_maind.a: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../libgmock_maind.a"
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../libgmock_maind.a"
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build: lib/libgmock_maind.a
@@ -110,10 +110,10 @@ lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build: lib/libgmock_maind.a
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
 
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend:
-	cd "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googlemock" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock" "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/deepsonkhadka/Desktop/Capstone-Project/test /Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googlemock /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 

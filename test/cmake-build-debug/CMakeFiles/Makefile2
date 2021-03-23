@@ -64,10 +64,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test"
+CMAKE_SOURCE_DIR = /Users/deepsonkhadka/Desktop/Capstone-Project/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -157,14 +157,14 @@ CMakeFiles/Capstone-Project.dir/all: lib/googletest/googletest/CMakeFiles/gtest_
 CMakeFiles/Capstone-Project.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4 "Built target Capstone-Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Capstone-Project"
 .PHONY : CMakeFiles/Capstone-Project.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Capstone-Project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Capstone-Project.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Capstone-Project.dir/rule
 
 # Convenience name for target.
@@ -184,14 +184,14 @@ CMakeFiles/Capstone-Project.dir/clean:
 lib/googletest/googlemock/CMakeFiles/gmock.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=5,6 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gmock"
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -212,14 +212,14 @@ lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/googlemo
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=7,8 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target gmock_main"
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -239,14 +239,14 @@ lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
 lib/googletest/googletest/CMakeFiles/gtest_main.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=11,12 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target gtest_main"
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -266,14 +266,14 @@ lib/googletest/googletest/CMakeFiles/gtest_main.dir/clean:
 lib/googletest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" --progress-num=9,10 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target gtest"
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 lib/googletest/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles 0
 .PHONY : lib/googletest/googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.

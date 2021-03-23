@@ -1,4 +1,4 @@
-#include "generator.h"
+#include "Generator.h"
 #include <cmath>
 
 /**
@@ -13,6 +13,8 @@
  * @param gt: the type of generator (see enum GeneratorType in generator.h)
  * @param powerState: indicate if generator should be on or off when created
  */
+
+Generator::Generator(){}
 Generator::Generator(GeneratorType gt, bool powerState) {
     type = gt;
     isOn = powerState;
@@ -74,6 +76,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
 }
 
 // getters and setters
+
 double Generator::getFuelCost() const {
     return fuelCost;
 }
@@ -116,6 +119,7 @@ void Generator::turnOff() {
 GeneratorType Generator::getGeneratorType() {
     return type;
 }
+
 
 double Generator::sum(int x, int y){
     return x+y;

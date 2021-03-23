@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googletest/include" -I"/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/lib/googletest/googletest" 
+CXX_INCLUDES = -I/Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googletest/include -I/Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googletest 
 

@@ -7,4 +7,4 @@ file(COPY ${DATAFILES} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 include_directories("${PROJECT_SOURCE_DIR}/src/")
 file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
-add_executable(unit_commitment "src/main.cpp" ${SOURCES} src/dijkstra.cpp src/economic_dispatch.cpp src/economic_dispatch.h src/lambdaFunction.cpp)
+add_executable(unit_commitment "main.cpp" ${SOURCES} src/dijkstra.cpp src/economic_dispatch.cpp src/economic_dispatch.h src/lambdaFunction.cpp)

@@ -21,8 +21,10 @@ private:
     GeneratorType type;
 
 public:
-    double sum(int x, int y);
+
     Generator(GeneratorType gt, bool powerState);
+    Generator();
+    double sum(int x, int y);
     double getFuelCost() const;
     double getStartUpCost() const;
     double getShutDownCost() const;

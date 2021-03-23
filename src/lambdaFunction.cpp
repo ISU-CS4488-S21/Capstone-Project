@@ -1,6 +1,6 @@
 // Working for hard coded generators, need to implement with generator class.
 // Also needs to be optimized for more generators. Takes too long after 7.
-#include <generator.h>
+#include <Generator.h>
 
 #include <limits>
 #include <utility>

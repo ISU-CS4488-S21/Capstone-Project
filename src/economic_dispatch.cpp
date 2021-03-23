@@ -1,19 +1,17 @@
-//
 // Created by Nate Shubert on 3/17/21.
 //
 #include "economic_dispatch.h"
-#include <generator.h>
+#include "Generator.h"
 #include <limits>
 #include <utility>
 #include <vector>
-#include <cmath>
 
 Economic_Dispatch::Economic_Dispatch(){
 
 }
 
+/// Narrow down to only on generators
 std::vector<std::vector<Generator>> & Economic_Dispatch::onGenerators(std::vector<std::vector<Generator>> &generators) {
-    // Narrow down to only on generators
     std::vector<std::vector<Generator>> onGenCombos;
     std::vector<Generator> onGens;
     for(const auto& combo : generators){

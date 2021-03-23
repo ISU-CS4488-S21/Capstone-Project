@@ -3,7 +3,7 @@
 //
 #include <string>
 #include <vector>
-#include <generator.h>
+#include "Generator.h"
 
 #ifndef UNIT_COMMITMENT_ECONOMIC_DISPATCH_H
 #define UNIT_COMMITMENT_ECONOMIC_DISPATCH_H

@@ -330,11 +330,23 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/src/generator.h
+/Users/deepsonkhadka/Desktop/Capstone-Project/src/parser.h
+algorithm
+-
+fstream
+-
+iterator
+-
+sstream
+-
+string
+-
+vector
+-
 
-/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/test/test_generator.cpp
+/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_parser.cpp
 gtest/gtest.h
 -
-../src/generator.h
-/Users/deepsonkhadka/Desktop/Capstone-Project 10.54.19 PM/src/generator.h
+../src/parser.h
+/Users/deepsonkhadka/Desktop/Capstone-Project/src/parser.h
 

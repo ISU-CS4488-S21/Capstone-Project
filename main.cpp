@@ -1,6 +1,6 @@
 // Authors: Andres Sewell, Nate Shubert
 // Driver Code
-#include "generator.h"
+#include "Generator.h"
 #include "parser.h"
 #include "economic_dispatch.h"
 
@@ -31,13 +31,13 @@ append [500$, 600$, 750$, 450$, 550$] to unitCommitMatrix
 }
 
 calculate transitional
-pass unitCommitMatrix into djikstras along with transitional costs
+pass unitCommitMatrix into djikstra along with transitional costs
 */
 
 int main() {
     // Parse load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
-    std::vector<double> predictedLoad= loadParser.loadData();
+    std::vector<double> predictedLoad = loadParser.loadData();
 
     // Set up the RNG for picking random generators
     const int size = 5;
@@ -93,7 +93,6 @@ int main() {
         std::cout << std::endl;
     }
 
-
     // Narrow down to only on generators
     std::vector<std::vector<Generator>> onGenCombos;
     std::vector<Generator> onGens;
@@ -109,7 +108,6 @@ int main() {
         onGens.clear();
     }
 
-
     // Get Node Costs
     std::cout << "Load @ 1500" << std::endl;
     for(const auto& combo : onGenCombos){
@@ -118,6 +116,5 @@ int main() {
         //}
         std::cout << " Lambda Cost: " << Economic_Dispatch().lambdaFunction(1500,combo,combo.size()) << std::endl;
     }
-
     return 0;
 }
