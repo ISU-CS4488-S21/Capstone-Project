@@ -7,6 +7,8 @@
 #include <cmath>
 #include <iostream>
 #include <random>
+#include <stdlib.h>
+#include <time.h>
 
 /*
 Pseudocode main function
@@ -35,6 +37,10 @@ pass unitCommitMatrix into djikstras along with transitional costs
 */
 
 int main() {
+
+    // set seed for random number generation to use system clock
+    srand((int)time(nullptr));
+
     // Parse load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
     std::vector<double> predictedLoad= loadParser.loadData();
