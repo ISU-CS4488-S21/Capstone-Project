@@ -116,7 +116,12 @@ int main() {
         //for(auto load : predictedLoad){
             //Economic_Dispatch().lambdaFunction(load,combo,combo.size());
         //}
-        std::cout << " Lambda Cost: " << Economic_Dispatch().lambdaFunction(1500,combo,combo.size()) << std::endl;
+        std::cout << "On Generators: ";
+        for(auto gen : combo){
+            std::cout << gen.getGeneratorType() << ",";
+        }
+        std::cout << std::endl;
+        std::cout << " Lambda Cost: " << Economic_Dispatch().divide(1500,combo) << std::endl;
     }
     
     return 0;
