@@ -58,7 +58,7 @@ double Economic_Dispatch::divide(double load, const std::vector<Generator> &gene
             if (split < out){
                 out = split;
             }
-            load -= 50;
+            load -= 100;
         }
     }
     return out;
@@ -75,20 +75,18 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
     int maxLoad = load;
     double temp;
     double min = std::numeric_limits<int>::max();
-    double g2;
-    double g1;
+    double g2,g1;
     if(index == 1){
         return gen[0].first*load + gen[0].second*pow(load,2);
     }
     if(index < 1){
         //The final branch of the generator tree to return optimized cost.
         while(load > 0){
-            g1 = gen[0].first + gen[0].second*load*2;
-            g2 = gen[1].first + gen[1].second*(maxLoad-load)*2;
+            g1 = gen[0].first*load + gen[0].second*pow(load,2);
+            g2 = gen[1].first*load + gen[1].second*pow((maxLoad-load),2);
             temp = (g1) + (g2);
             if(min > temp){
                 min = (g1) + (g2);
-                out = (gen[0].first*load + gen[0].second*pow(load,2)) + (gen[1].first*(maxLoad -load) + gen[1].second*pow(maxLoad -load,2));
             }
             load -= 1;
         }
@@ -98,15 +96,14 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
         // Recursively call the function to branch off every cost possibility
         // at a specific load comparison.
         while(load > 0){
-            g1 = gen[index-1].first + gen[index-1].second*load*2;
+            g1 = gen[index-1].first*load + gen[index-1].second*pow(load,2);
             g2 = lambdaFunction(maxLoad - load,generators,index-2);
             temp = g1 + g2;
             if(min > temp){
                 min = g1 + g2;
-                out = (gen[index-1].first*load + gen[index-1].second*pow(load,2)) + g2;
             }
-            load -= 50;
+            load -= 100;
         }
     }
-    return out;
+    return min;
 }
