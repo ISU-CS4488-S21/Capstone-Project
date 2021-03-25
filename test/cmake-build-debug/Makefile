@@ -268,114 +268,6 @@ Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s
 .PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s
 
-Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.o: Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
-
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.o
-
-# target to build an object file
-Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
-
-Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.i: Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
-
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.i
-
-# target to preprocess a source file
-Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
-
-Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.s: Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
-
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.s
-
-# target to generate assembly for a file
-Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
-
-Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.o: Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
-
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.o
-
-# target to build an object file
-Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
-
-Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.i: Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
-
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.i
-
-# target to preprocess a source file
-Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
-
-Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.s: Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
-
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.s
-
-# target to generate assembly for a file
-Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
-.PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
-
-test_Dijkstra.o: test_Dijkstra.cpp.o
-
-.PHONY : test_Dijkstra.o
-
-# target to build an object file
-test_Dijkstra.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o
-.PHONY : test_Dijkstra.cpp.o
-
-test_Dijkstra.i: test_Dijkstra.cpp.i
-
-.PHONY : test_Dijkstra.i
-
-# target to preprocess a source file
-test_Dijkstra.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.i
-.PHONY : test_Dijkstra.cpp.i
-
-test_Dijkstra.s: test_Dijkstra.cpp.s
-
-.PHONY : test_Dijkstra.s
-
-# target to generate assembly for a file
-test_Dijkstra.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.s
-.PHONY : test_Dijkstra.cpp.s
-
-test_Economic_Dispatch.o: test_Economic_Dispatch.cpp.o
-
-.PHONY : test_Economic_Dispatch.o
-
-# target to build an object file
-test_Economic_Dispatch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o
-.PHONY : test_Economic_Dispatch.cpp.o
-
-test_Economic_Dispatch.i: test_Economic_Dispatch.cpp.i
-
-.PHONY : test_Economic_Dispatch.i
-
-# target to preprocess a source file
-test_Economic_Dispatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.i
-.PHONY : test_Economic_Dispatch.cpp.i
-
-test_Economic_Dispatch.s: test_Economic_Dispatch.cpp.s
-
-.PHONY : test_Economic_Dispatch.s
-
-# target to generate assembly for a file
-test_Economic_Dispatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.s
-.PHONY : test_Economic_Dispatch.cpp.s
-
 test_generator.o: test_generator.cpp.o
 
 .PHONY : test_generator.o
@@ -450,18 +342,6 @@ help:
 	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.o"
 	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.i"
 	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.s"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.o"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.i"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.s"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.o"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.i"
-	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.s"
-	@echo "... test_Dijkstra.o"
-	@echo "... test_Dijkstra.i"
-	@echo "... test_Dijkstra.s"
-	@echo "... test_Economic_Dispatch.o"
-	@echo "... test_Economic_Dispatch.i"
-	@echo "... test_Economic_Dispatch.s"
 	@echo "... test_generator.o"
 	@echo "... test_generator.i"
 	@echo "... test_generator.s"

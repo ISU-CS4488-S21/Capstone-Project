@@ -5,10 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o"
-  "/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o"
-  "/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o"
-  "/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Dijkstra.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o"
-  "/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Economic_Dispatch.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o"
   "/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_generator.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/test_generator.cpp.o"
   "/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_parser.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles/Capstone-Project.dir/test_parser.cpp.o"
   )

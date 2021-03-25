@@ -322,15 +322,6 @@
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.h">
 			<Option target="Capstone-Project"/>
 		</Unit>
-		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp">
-			<Option target="Capstone-Project"/>
-		</Unit>
-		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp">
-			<Option target="Capstone-Project"/>
-		</Unit>
-		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.h">
-			<Option target="Capstone-Project"/>
-		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
@@ -342,12 +333,6 @@
 		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
-		</Unit>
-		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Dijkstra.cpp">
-			<Option target="Capstone-Project"/>
-		</Unit>
-		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Economic_Dispatch.cpp">
-			<Option target="Capstone-Project"/>
 		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_generator.cpp">
 			<Option target="Capstone-Project"/>

@@ -90,35 +90,9 @@ CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.s
 
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o: /Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp
-
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp > CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.i
-
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.s
-
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o: /Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp
-
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp > CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.i
-
-CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp -o CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.s
-
 CMakeFiles/Capstone-Project.dir/test_generator.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
 CMakeFiles/Capstone-Project.dir/test_generator.cpp.o: ../test_generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Capstone-Project.dir/test_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Capstone-Project.dir/test_generator.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_generator.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_generator.cpp
 
 CMakeFiles/Capstone-Project.dir/test_generator.cpp.i: cmake_force
@@ -129,35 +103,9 @@ CMakeFiles/Capstone-Project.dir/test_generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_generator.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_generator.cpp -o CMakeFiles/Capstone-Project.dir/test_generator.cpp.s
 
-CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
-CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o: ../test_Economic_Dispatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Economic_Dispatch.cpp
-
-CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Economic_Dispatch.cpp > CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.i
-
-CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Economic_Dispatch.cpp -o CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.s
-
-CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
-CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o: ../test_Dijkstra.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Dijkstra.cpp
-
-CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Dijkstra.cpp > CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.i
-
-CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Dijkstra.cpp -o CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.s
-
 CMakeFiles/Capstone-Project.dir/test_parser.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
 CMakeFiles/Capstone-Project.dir/test_parser.cpp.o: ../test_parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Capstone-Project.dir/test_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Capstone-Project.dir/test_parser.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_parser.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_parser.cpp
 
 CMakeFiles/Capstone-Project.dir/test_parser.cpp.i: cmake_force
@@ -171,29 +119,21 @@ CMakeFiles/Capstone-Project.dir/test_parser.cpp.s: cmake_force
 # Object files for target Capstone-Project
 Capstone__Project_OBJECTS = \
 "CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o" \
-"CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o" \
-"CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o" \
 "CMakeFiles/Capstone-Project.dir/test_generator.cpp.o" \
-"CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o" \
-"CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o" \
 "CMakeFiles/Capstone-Project.dir/test_parser.cpp.o"
 
 # External object files for target Capstone-Project
 Capstone__Project_EXTERNAL_OBJECTS =
 
 Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/Generator.cpp.o
-Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
-Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/dijkstra.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/test_generator.cpp.o
-Capstone-Project: CMakeFiles/Capstone-Project.dir/test_Economic_Dispatch.cpp.o
-Capstone-Project: CMakeFiles/Capstone-Project.dir/test_Dijkstra.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/test_parser.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/build.make
 Capstone-Project: lib/libgtestd.a
 Capstone-Project: lib/libgtest_maind.a
 Capstone-Project: lib/libgtestd.a
 Capstone-Project: CMakeFiles/Capstone-Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Capstone-Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Capstone-Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Capstone-Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
