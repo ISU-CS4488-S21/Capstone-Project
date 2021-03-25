@@ -7,8 +7,6 @@
 #include <cmath>
 #include <iostream>
 #include <random>
-#include <stdlib.h>
-#include <time.h>
 
 /*
 Pseudocode main function
@@ -37,10 +35,6 @@ pass unitCommitMatrix into djikstras along with transitional costs
 */
 
 int main() {
-
-    // set seed for random number generation to use system clock
-    srand((int)time(nullptr));
-
     // Parse load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
     std::vector<double> predictedLoad= loadParser.loadData();
@@ -91,16 +85,7 @@ int main() {
         }
     }
 
-    // Verify that genCombos contains sub-vectors containing each possible off/on combination
-    for(const auto& combo : genCombos) {
-        for(auto gen : combo) {
-            std::cout << "gt: " << gen.getGeneratorType() << " on: " << gen.getIsOn() << '\t';
-        }
-        std::cout << std::endl;
-    }
-    
-    
-    // Narrow down to only on generators
+    // Narrow down to only on generators -- Is this needed?
     std::vector<std::vector<Generator>> onGenCombos;
     std::vector<Generator> onGens;
     for(const auto& combo : genCombos){
@@ -109,25 +94,30 @@ int main() {
                 onGens.push_back(gen);
             }
         }
-        if(onGens.size() > 0){
+        if(!onGens.empty()){
             onGenCombos.push_back(onGens);
         }
         onGens.clear();
     }
-    
-    
-    // Get Node Costs
-    std::cout << "Load @ 1500" << std::endl;
-    for(const auto& combo : onGenCombos){
-        //for(auto load : predictedLoad){
-            //Economic_Dispatch().lambdaFunction(load,combo,combo.size());
-        //}
-        std::cout << "On Generators: ";
-        for(auto gen : combo){
-            std::cout << gen.getGeneratorType() << ",";
+
+    // Feed this to the pathfinding algorithm
+    Economic_Dispatch dispatch;
+    std::vector<std::vector<double>> lambdas;
+    for(auto &genCombo : onGenCombos) {
+        std::vector<double> temp;
+        temp.reserve(predictedLoad.size());
+        for(auto load : predictedLoad) {
+            temp.push_back(dispatch.lambdaFunction(load, genCombo, 0));
+        }
+        lambdas.emplace_back(temp);
+    }
+
+    // Print out the result of running the lambda function for each combo list. Something seems off with the numbers.
+    for(const auto& lambda : lambdas) {
+        for(auto cost : lambda) {
+            std::cout << cost << '\t';
         }
         std::cout << std::endl;
-        std::cout << " Lambda Cost: " << Economic_Dispatch().divide(1500,combo) << std::endl;
     }
     
     return 0;
