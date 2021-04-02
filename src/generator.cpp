@@ -1,6 +1,5 @@
 #include "generator.h"
 #include <cmath>
-#include <ctime>
 #include <stdlib.h>
 
 /**
@@ -26,8 +25,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
     // +- 20 for generating costs above 50, below 50 is +- 5
     if (gt == CoalFiredSteam) {
         fuelCost = 1;
-        startUpCost =  randNum(44, 84); //base: 64
-        shutDownCost = randNum(20, 30); //base: 25
+        startUpCost =  randNum(4, 9) * randNum(44, 84); //base: 64
+        shutDownCost = randNum(2, 9) * randNum(20, 30); //base: 25
         maxPowerOut = randNum(550, 650); //base: 600
         minPowerOut = randNum(100, 200); //base: 150
         A = 510;
@@ -36,8 +35,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = A + B*maxPowerOut + C*pow(maxPowerOut, 2);
     } else if (gt == OilFiredSteam){
         fuelCost = 1;
-        startUpCost = randNum(41, 51); //base: 46;
-        shutDownCost = randNum(10, 20); //base: 15
+        startUpCost = randNum(2, 4) * randNum(41, 51); //base: 46;
+        shutDownCost = randNum(1, 4) * randNum(10, 20); //base: 15
         maxPowerOut = randNum(350, 450); //base: 400;
         minPowerOut = randNum(50, 150); //base: 100;
         A = 310;
@@ -46,8 +45,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = A + B*maxPowerOut + C*pow(maxPowerOut, 2);
     } else if (gt == SmallSub) {
         fuelCost = 1;
-        startUpCost = randNum(92, 132); //base: 112
-        shutDownCost = randNum(1, 11); //base: 6
+        startUpCost = randNum(2, 6) * randNum(92, 132); //base: 112
+        shutDownCost = randNum(1, 5) * randNum(1, 11); //base: 6
         maxPowerOut = randNum(50, 150);//base: 100
         minPowerOut = randNum(15, 25); //base: 20
         A = 80;
@@ -56,8 +55,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = 0;
     } else if (gt == LargeSub) {
         fuelCost = 1;
-        startUpCost = randNum(58, 98); //base: 78
-        shutDownCost = randNum(5, 15); //base: 10
+        startUpCost = randNum(4, 9) * randNum(58, 98); //base: 78
+        shutDownCost = randNum(2, 9) * randNum(5, 15); //base: 10
         maxPowerOut = randNum(300, 400); //base: 350
         minPowerOut = randNum(40, 50); //base: 45
         A = 225;
@@ -66,8 +65,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = A + B*maxPowerOut + C*pow(maxPowerOut, 2);
     } else if (gt == OtherSteam) {
         fuelCost = 1;
-        startUpCost = randNum(43, 53); //base: 48
-        shutDownCost = randNum(25, 35); //base: 20
+        startUpCost = randNum(2, 5) * randNum(43, 53); //base: 48
+        shutDownCost = randNum(1, 4) * randNum(25, 35); //base: 20
         maxPowerOut = randNum(150, 250); //base: 200
         minPowerOut = randNum(15, 25); //base: 20
         A = 400;
@@ -134,7 +133,7 @@ double Generator::getBurnRate() {
  * generates a random number in the range [min, max]
  * @param min: lower bound for the range
  * @param max: upper bound for the range
- * @return a random number between min and max (inclusive)
+ * @return: a random number between min and max (inclusive)
  */
 int Generator::randNum(int min, int max) {
     return min + (rand() % static_cast<int>(max - min + 1));
