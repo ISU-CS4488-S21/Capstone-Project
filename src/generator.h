@@ -34,6 +34,7 @@ public:
     bool getIsOn() const;
     void turnOn();
     void turnOff();
+    int randNum(int min, int max);
     GeneratorType getGeneratorType();
 };
 #endif //UNIT_COMMITMENT_GENERATOR_H

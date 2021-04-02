@@ -41,6 +41,8 @@ int main() {
 
     // Set up the RNG for picking random generators
     const int size = 5;
+    // Seed srand with current time to generate random generator statistics
+    srand(time(0));
     std::random_device rd;
     std::mt19937 mt(rd());
     std::uniform_int_distribution<int> dist(0, 4);
