@@ -7,7 +7,7 @@
 #include <cmath>
 #include <iostream>
 #include <random>
-
+#include "unknown.cpp"
 /*
 Pseudocode main function
 Kirill Brainard
@@ -35,7 +35,7 @@ pass unitCommitMatrix into djikstras along with transitional costs
 */
 
 int main() {
-    // Parse load MW data
+/*   // Parse load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
     std::vector<double> predictedLoad= loadParser.loadData();
 
@@ -120,7 +120,35 @@ int main() {
             std::cout << cost << '\t';
         }
         std::cout << std::endl;
-    }
-    
+    }*/
+//Sample Tests
+unknown unk;
+    std::vector<std::vector<int>> cities1 = {{0,  20, 42, 35},
+                                             {20, 0,  30, 34},
+                                             {42, 30, 0,  12},
+                                             {35, 34, 12, 0}
+    };
+
+    std::vector<std::vector<int>> cities = { { 0, 20, 42, 35 },
+                                             { 20, 0, 30, 34 },
+                                             { 42, 30, 0, 12 },
+                                             { 35, 34, 12, 0 }
+    };
+
+    std::vector<std::vector<int>> cities3 = { { 1, 0, 0, 1 },
+                                             { 0, 1, 0, 1 },
+                                             { 1, 1, 0, 0 },
+                                             { 1, 0, 1, 0 }
+    };
+
+    unk.DisplayShitArrays(cities,cities1,cities3);
+
+
+/*
+    for (int i = 0; i <citiesLength ; ++i) {
+        for (int j = 0; j <citiesLength ; ++j) {
+            std::cout<<"Test:"<<unk.SourcePlusEdge2D(cities)[i][j]<<std::endl;
+        }
+    }*/
     return 0;
 }

@@ -29,6 +29,7 @@ std::vector<std::vector<Generator>> & Economic_Dispatch::onGenerators(std::vecto
     }
     return onGenCombos;
 }
+
 double Economic_Dispatch::divide(double load, const std::vector<Generator> &generators) {
     double mLoad = load;
     int out = std::numeric_limits<int>::max();
@@ -93,7 +94,7 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
     }
     else{
         // Determine the cost at every possible load value.
-        // Recursively call the function to branch off every cost possibility
+        // Recursively cal the function to branch off every cost possibility
         // at a specific load comparison.
         while(load > 0){
             g1 = gen[index-1].first*load + gen[index-1].second*pow(load,2);
