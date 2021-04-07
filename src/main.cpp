@@ -11,7 +11,7 @@
 int main() {
     // Parse and load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
-    std::vector<double> predictedLoad= loadParser.loadData();
+    std::vector<double> predictedLoad = loadParser.loadData();
 
     // Set up the PRNG for picking random generators. Setting a seed of 0 ensures one of each generator type.
     const long unsigned int seed = 0;
@@ -50,7 +50,7 @@ int main() {
         }
     }
 
-    // Use the bitstrings to generate vectors of generator combinations
+    // Use the bitstrings to generate a vector of ComboPairs.
     Economic_Dispatch dispatch;
     std::vector<ComboPair> combinations;
     double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
