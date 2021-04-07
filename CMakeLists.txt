@@ -7,4 +7,4 @@ file(COPY ${DATAFILES} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 include_directories("${PROJECT_SOURCE_DIR}/src/")
 file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
-add_executable(unit_commitment "${PROJECT_SOURCE_DIR}/src/main.cpp" ${SOURCES})
+add_executable(unit_commitment "${PROJECT_SOURCE_DIR}/src/main.cpp" ${SOURCES} src/combination.h)

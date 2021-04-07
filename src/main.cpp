@@ -1,5 +1,6 @@
 // Authors: Andres Sewell, Nate Shubert
 // Driver Code
+#include "combination.h"
 #include "generator.h"
 #include "parser.h"
 #include "economic_dispatch.h"
@@ -50,47 +51,44 @@ int main() {
     }
 
     // Use the bitstrings to generate vectors of generator combinations
-    double highMW = *std::max_element(predictedLoad.begin(), predictedLoad.end());
-    int highSumMW = 0;
-    std::vector<std::vector<Generator>> genCombos;
+    Economic_Dispatch dispatch;
+    std::vector<ComboPair> combinations;
+    double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
+    int minSumMW = 0;
     for(int i = 0; i < rows; i++) {
-        highSumMW = 0;
-        std::vector<Generator> temp;
-        temp.reserve(size);
+        std::vector<Generator> combo;
+        combo.reserve(size);
+        minSumMW = 0;
         for(int j = 0; j < size; j++) {
             if(bitCombos[i][j] == 0) {
-                temp.push_back(offList.at(j));
+                combo.push_back(offList.at(j));
             } else {
-                highSumMW += onList.at(j).getMaxPowerOut();
-                temp.push_back(onList.at(j));
+                minSumMW += onList.at(j).getMaxPowerOut();
+                combo.push_back(onList.at(j));
             }
         }
-        if(highMW < highSumMW) {
-            genCombos.push_back(temp);
+        if(minSumMW > minMW) {
+            std::vector<double> lambda;
+            lambda.reserve(predictedLoad.size());
+            for(double load : predictedLoad) {
+                lambda.push_back(dispatch.lambdaFunction(load, combo, 0));
+            }
+            combinations.push_back(ComboPair(combo, lambda));
         }
     }
 
-    // This generates what we need to pass to the pathfinding algorithm.
-    Economic_Dispatch dispatch;
-    std::vector<std::vector<double>> lambdas;
-    for(auto &genCombo : genCombos) {
-        std::vector<double> temp;
-        temp.reserve(predictedLoad.size());
-        for(auto load : predictedLoad) {
-            temp.push_back(dispatch.lambdaFunction(load, genCombo, 0));
-        }
-        lambdas.emplace_back(temp);
-    }
-
-    // Print out the result of running the lambda function for each combo list. Looks like generator isOn status is not
-    // taken into account when calculating economic dispatch? This results in every row in lambdas being identical,
-    // which is not what we want.
+    // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
     int count = 1;
-    for(const auto& lambda : lambdas) {
-        std::cout << "Combo-" << count << '\t';
-        for(auto cost : lambda) {
-            std::cout << cost << '\t';
+    for(ComboPair pair : combinations) {
+        std::cout << "Combo #" << count << ":\t";
+        for(Generator generator : pair.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
         }
+        std::cout << "\nLambda:\t\t";
+        for(double cost : pair.getLambda()) {
+            std::cout << cost << "\t";
+        }
+        std::cout << std::endl;
         std::cout << std::endl;
         ++count;
     }
