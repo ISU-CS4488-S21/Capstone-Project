@@ -87,7 +87,7 @@ std::pair <std::vector<Generator>,int> cheapestForNode(std::vector<std::vector<G
     int edge,sourceCost;
     std::pair <std::vector<Generator>,int> out (pCombos[0],std::numeric_limits<int>::max());
     Economic_Dispatch dispatch;
-    sourceCost = source.getLambda()[0];
+    sourceCost = source.getLambda()[0]; //TODO: this line will have to change later after comboPairs is modified
     for(int i = 0; i < pCombos.size(); i++){
         edge = getEdgeCost(pCombos[i],source.getCombo());
         if(sourceCost + edge < out.second) {
