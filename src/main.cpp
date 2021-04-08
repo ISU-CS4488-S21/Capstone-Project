@@ -1,56 +1,33 @@
 // Authors: Andres Sewell, Nate Shubert
 // Driver Code
+#include "combination.h"
 #include "generator.h"
 #include "parser.h"
 #include "economic_dispatch.h"
-
 #include <cmath>
 #include <iostream>
 #include <random>
-#include "unknown.cpp"
-/*
-Pseudocode main function
-Kirill Brainard
-
-parse file into predictedLoad = [1000MW, 1200MW, 1650MW, etc]
-make one of each generator
-make combinations of each generator
-calculate the cost for each combination at predictedLoad[0]
-this includes lambda
-[500$, 600$, 750$, 450$, 550$] @ predictedLoad[0]
-make unitCommitMatrix = []
-for load in predictedLoad:
-calculate [500$, 600$, 750$, 450$, 550$]
-append [500$, 600$, 750$, 450$, 550$] to unitCommitMatrix
-
-{
-[500$, 600$, 750$, 450$, 550$]
-[500$, 600$, 750$, 450$, 550$]
-[500$, 600$, 750$, 450$, 550$]
-[500$, 600$, 750$, 450$, 550$]
-}
-
-calculate transitional
-pass unitCommitMatrix into djikstras along with transitional costs
-*/
 
 int main() {
-/*   // Parse load MW data
+    // Parse and load MW data
     Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
-    std::vector<double> predictedLoad= loadParser.loadData();
+    std::vector<double> predictedLoad = loadParser.loadData();
 
-    // Set up the RNG for picking random generators
-    const int size = 5;
-    // Seed srand with current time to generate random generator statistics
-    srand(time(0));
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_int_distribution<int> dist(0, 4);
+    // Set up the PRNG for picking random generators. Setting a seed of 0 ensures one of each generator type.
+    const long unsigned int seed = 0;
+    std::default_random_engine engine{seed};
+    std::uniform_int_distribution<int> dist(0, 100);
     std::vector<GeneratorType> typeList {GeneratorType::CoalFiredSteam,
                                          GeneratorType::OilFiredSteam,
                                          GeneratorType::SmallSub,
                                          GeneratorType::LargeSub,
                                          GeneratorType::OtherSteam};
+
+    // Setting size too low will result in combos that can't satisfy the max load MW, and thus an empty genCombos
+    // vector. Setting size larger than 16 will cause a segfault, presumably because the built in array can't handle
+    // > 2^16 rows * size columns (1,048,576 elements) without heap allocation.
+    const int size = 6;
+    int rows = std::pow(2, size);
 
     // Create two identical vectors of generators, one with off generators and one with on generators
     std::vector<Generator> offList;
@@ -58,13 +35,12 @@ int main() {
     offList.reserve(size);
     onList.reserve(size);
     for(int i = 0; i < size; ++i) {
-        GeneratorType type = typeList.at(dist(mt));
+        GeneratorType type = typeList.at(dist(engine) % 5);
         offList.emplace_back(Generator(type, false));
         onList.emplace_back(Generator(type, true));
     }
 
-    int rows = std::pow(2, size);
-
+    // Generate an array containing every "size"-bit bitstring
     int bitCombos[rows][size];
     for(int i = 0; i < rows; i++) {
         for(int j = 0; j < size; j++) {
@@ -74,81 +50,48 @@ int main() {
         }
     }
 
-    // Use the bitCombos to generate vectors of generator combinations
-    std::vector<std::vector<Generator>> genCombos;
+    // Use the bitstrings to generate a vector of ComboPairs.
+    Economic_Dispatch dispatch;
+    std::vector<ComboPair> combinations;
+    double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
+    int minSumMW = 0;
     for(int i = 0; i < rows; i++) {
-        genCombos.emplace_back(std::vector<Generator>{});
+        std::vector<Generator> combo;
+        combo.reserve(size);
+        minSumMW = 0;
         for(int j = 0; j < size; j++) {
             if(bitCombos[i][j] == 0) {
-                genCombos.at(i).push_back(offList.at(j));
+                combo.push_back(offList.at(j));
             } else {
-                genCombos.at(i).push_back(onList.at(j));
+                minSumMW += onList.at(j).getMaxPowerOut();
+                combo.push_back(onList.at(j));
             }
         }
-    }
-
-    // Narrow down to only on generators -- Is this needed?
-    std::vector<std::vector<Generator>> onGenCombos;
-    std::vector<Generator> onGens;
-    for(const auto& combo : genCombos){
-        for(auto gen : combo){
-            if(gen.getIsOn()){
-                onGens.push_back(gen);
+        if(minSumMW > minMW) {
+            std::vector<double> lambda;
+            lambda.reserve(predictedLoad.size());
+            for(double load : predictedLoad) {
+                lambda.push_back(dispatch.lambdaFunction(load, combo, 0));
             }
+            combinations.push_back(ComboPair(combo, lambda));
         }
-        if(!onGens.empty()){
-            onGenCombos.push_back(onGens);
-        }
-        onGens.clear();
     }
 
-    // Feed this to the pathfinding algorithm
-    Economic_Dispatch dispatch;
-    std::vector<std::vector<double>> lambdas;
-    for(auto &genCombo : onGenCombos) {
-        std::vector<double> temp;
-        temp.reserve(predictedLoad.size());
-        for(auto load : predictedLoad) {
-            temp.push_back(dispatch.lambdaFunction(load, genCombo, 0));
+    // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
+    int count = 1;
+    for(ComboPair pair : combinations) {
+        std::cout << "Combo #" << count << ":\t";
+        for(Generator generator : pair.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
         }
-        lambdas.emplace_back(temp);
-    }
-
-    // Print out the result of running the lambda function for each combo list. Something seems off with the numbers.
-    for(const auto& lambda : lambdas) {
-        for(auto cost : lambda) {
-            std::cout << cost << '\t';
+        std::cout << "\nLambda:\t\t";
+        for(double cost : pair.getLambda()) {
+            std::cout << cost << "\t";
         }
         std::cout << std::endl;
-    }*/
-//Sample Tests
-unknown unk;
-    std::vector<std::vector<int>> cities1 = {{0,  20, 42, 35},
-                                             {20, 0,  30, 34},
-                                             {42, 30, 0,  12},
-                                             {35, 34, 12, 0}
-    };
+        std::cout << std::endl;
+        ++count;
+    }
 
-    std::vector<std::vector<int>> cities = { { 0, 20, 42, 35 },
-                                             { 20, 0, 30, 34 },
-                                             { 42, 30, 0, 12 },
-                                             { 35, 34, 12, 0 }
-    };
-
-    std::vector<std::vector<int>> cities3 = { { 1, 0, 0, 1 },
-                                             { 0, 1, 0, 1 },
-                                             { 1, 1, 0, 0 },
-                                             { 1, 0, 1, 0 }
-    };
-
-    unk.DisplayShitArrays(cities,cities1,cities3);
-
-
-/*
-    for (int i = 0; i <citiesLength ; ++i) {
-        for (int j = 0; j <citiesLength ; ++j) {
-            std::cout<<"Test:"<<unk.SourcePlusEdge2D(cities)[i][j]<<std::endl;
-        }
-    }*/
     return 0;
 }
