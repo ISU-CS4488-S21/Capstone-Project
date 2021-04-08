@@ -3,6 +3,9 @@
 //
 #include <vector>
 #include <iostream>
+#include "economic_dispatch.h"
+#include "generator.h"
+#include "combination.h"
 //Dynamic Programming
 class DynamicProgrammingAlgo{
 
