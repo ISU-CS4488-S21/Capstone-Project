@@ -84,10 +84,11 @@ public:
 
 // Gets the cheapest path to any generator combo from a given source node.
 std::pair <std::vector<Generator>,int> cheapestForNode(std::vector<std::vector<Generator>> pCombos, ComboPair source){
-    int edge,sourceCost;
+    int edge;
+    double sourceCost;
     std::pair <std::vector<Generator>,int> out (pCombos[0],std::numeric_limits<int>::max());
     Economic_Dispatch dispatch;
-    sourceCost = source.getLambda()[0]; //TODO: this line will have to change later after comboPairs is modified
+    sourceCost = source.getLambda();
     for(int i = 0; i < pCombos.size(); i++){
         edge = getEdgeCost(pCombos[i],source.getCombo());
         if(sourceCost + edge < out.second) {
