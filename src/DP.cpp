@@ -55,12 +55,12 @@ public:
     }
 
     ///SImply display function for testing
-    void DisplaySPlusE(std::vector<std::vector<double>> shitPut1, std::vector<std::vector<double>> shitput2, std::vector<std::vector<int>> shitput3){
-        int citiesLength=shitPut1.size();
+    void DisplaySPlusE(std::vector<std::vector<double>> input1, std::vector<std::vector<double>> input2, std::vector<std::vector<int>> input3){
+        int citiesLength=input1.size();
         for (int i = 0; i <citiesLength ; ++i) {
             std::cout<<std::endl;
             for (int j = 0; j <citiesLength ; ++j) {
-                std::cout << SourcePlusEdge2D(shitPut1, shitput2, shitput3)[i][j] << ", ";
+                std::cout << SourcePlusEdge2D(input1, input2, input3)[i][j] << ", ";
             }
             std::cout<<std::endl;
         }
@@ -106,6 +106,8 @@ std::vector<std::pair <std::vector<Generator>,int>> cheapestRoutes(std::vector<C
     }
     return out;
 }
+
+std::vector
 
 };
 
