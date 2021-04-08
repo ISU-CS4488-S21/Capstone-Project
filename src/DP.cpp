@@ -7,18 +7,9 @@
 #include "economic_dispatch.h"
 #include "generator.h"
 #include "combination.h"
+
 //Dynamic Programming
 class DynamicProgrammingAlgo{
-
-
-
-
-
-};
-
-
-class unknown{
-    DynamicProgrammingAlgo dynamicProg;
 
 public:
     ///Adds cheapest S+E to determine with current state
@@ -65,7 +56,7 @@ public:
             std::cout<<std::endl;
         }
     }
-    
+
     // Function to get the edge cost between generator combos
     int getEdgeCost(std::vector<Generator> g1, std::vector<Generator> g2){
         int eCost = 0;
@@ -123,6 +114,6 @@ public:
         }
         return newStates;
     }
-
 };
+
 
