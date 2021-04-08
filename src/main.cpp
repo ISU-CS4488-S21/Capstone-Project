@@ -68,12 +68,7 @@ int main() {
             }
         }
         if(minSumMW > minMW) {
-            std::vector<double> lambda;
-            lambda.reserve(predictedLoad.size());
-            for(double load : predictedLoad) {
-                lambda.push_back(dispatch.lambdaFunction(load, combo, 0));
-            }
-            combinations.push_back(ComboPair(combo, lambda));
+            combinations.emplace_back(combo, dispatch.lambdaFunction(predictedLoad.at(0), combo, 0));
         }
     }
 
@@ -84,11 +79,7 @@ int main() {
         for(Generator generator : pair.getCombo()) {
             std::cout << generator.getIsOn() << " ";
         }
-        std::cout << "\nLambda:\t\t";
-        for(double cost : pair.getLambda()) {
-            std::cout << cost << "\t";
-        }
-        std::cout << std::endl;
+        std::cout << "\nLambda:\t\t" << pair.getLambda() << std::endl;
         std::cout << std::endl;
         ++count;
     }
