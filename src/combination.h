@@ -6,11 +6,12 @@
 class ComboPair {
 private:
     std::vector<Generator> combo;
-    std::vector<double> lambda;
+    double lambda;
 public:
-    ComboPair(std::vector<Generator> combo, std::vector<double> lambda) : combo(combo), lambda(lambda) {}
+    ComboPair(std::vector<Generator> list, double cost) : combo(std::move(list)), lambda(cost) {}
     std::vector<Generator> getCombo() { return combo; }
-    std::vector<double> getLambda() { return lambda; }
+    double getLambda() const { return lambda; }
+    void setLambda(double cost) { lambda = cost; }
 };
 
 #endif //UNIT_COMMITMENT_COMBINATION_H
