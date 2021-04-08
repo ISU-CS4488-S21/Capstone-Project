@@ -69,10 +69,12 @@ double Economic_Dispatch::divide(double load, const std::vector<Generator> &gene
 double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generator>& generators, int index) {
     std::vector<std::pair<double,double>> gen;
     double out;
-    gen.reserve(generators.size());
     for(auto elem : generators){
-        gen.push_back(std::make_pair<double, double>(elem.getB(), elem.getC()));
+        if(elem.getIsOn()){
+            gen.push_back(std::make_pair<double, double>(elem.getB(), elem.getC()));
+        }
     }
+    index = gen.size();
     int maxLoad = load;
     double temp;
     double min = std::numeric_limits<int>::max();
@@ -103,7 +105,7 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
             if(min > temp){
                 min = g1 + g2;
             }
-            load -= 100;
+            load -= 50;
         }
     }
     return min;
