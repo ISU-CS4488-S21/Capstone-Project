@@ -3,6 +3,7 @@
 //
 #include <vector>
 #include <iostream>
+#include <limits>
 #include "economic_dispatch.h"
 #include "generator.h"
 #include "combination.h"
@@ -86,7 +87,7 @@ std::pair <std::vector<Generator>,int> cheapestForNode(std::vector<std::vector<G
     int edge,sourceCost;
     std::pair <std::vector<Generator>,int> out (pCombos[0],std::numeric_limits<int>::max());
     Economic_Dispatch dispatch;
-    sourceCost = source.getLambda();
+    sourceCost = source.getLambda()[0];
     for(int i = 0; i < pCombos.size(); i++){
         edge = getEdgeCost(pCombos[i],source.getCombo());
         if(sourceCost + edge < out.second) {
