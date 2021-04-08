@@ -83,6 +83,6 @@ int main() {
         std::cout << std::endl;
         ++count;
     }
-    
+
     return 0;
 }
