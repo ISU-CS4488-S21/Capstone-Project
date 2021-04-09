@@ -6,12 +6,12 @@
 class ComboPair {
 private:
     std::vector<Generator> combo;
-    double lambda;
+    double economicDispatch;
 public:
-    ComboPair(std::vector<Generator> list, double cost) : combo(std::move(list)), lambda(cost) {}
+    ComboPair(std::vector<Generator> list, double cost) : combo(std::move(list)), economicDispatch(cost) {}
     std::vector<Generator> getCombo() { return combo; }
-    double getLambda() const { return lambda; }
-    void setLambda(double cost) { lambda = cost; }
+    double getEconomicDispatch() const { return economicDispatch; }
+    void setEconomicDispatch(double cost) { economicDispatch = cost; }
 };
 
 #endif //UNIT_COMMITMENT_COMBINATION_H

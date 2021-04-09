@@ -1,6 +1,7 @@
 // Authors: Andres Sewell, Nate Shubert
 // Driver Code
 #include "combination.h"
+#include "DP.h"
 #include "generator.h"
 #include "parser.h"
 #include "economic_dispatch.h"
@@ -73,15 +74,10 @@ int main() {
     }
 
     // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
+    DynamicProgrammingAlgo dp;
     int count = 1;
     for(ComboPair pair : combinations) {
-        std::cout << "Combo #" << count << ":\t";
-        for(Generator generator : pair.getCombo()) {
-            std::cout << generator.getIsOn() << " ";
-        }
-        std::cout << "\nLambda:\t\t" << pair.getLambda() << std::endl;
-        std::cout << std::endl;
-        ++count;
+        //dp.cheapestRoutes(combinations, pair.getCombo());
     }
 
     return 0;
