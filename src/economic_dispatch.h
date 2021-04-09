@@ -14,7 +14,7 @@ private:
 public:
     Economic_Dispatch();
     double lambdaFunction(double load, const std::vector<Generator>& generators, int index);
-    double divide(double load, const std::vector<Generator>& generators);
+    double divide(double load, std::vector<Generator>& generators);
     std::vector<std::vector<Generator>>& onGenerators(std::vector<std::vector<Generator>>& generators);
 };
 
