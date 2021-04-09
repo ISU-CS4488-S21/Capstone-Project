@@ -1,4 +1,4 @@
-// Authors: Andres Sewell, Nate Shubert
+// Authors: Andres Sewell, Nate Shubert, Marcus Goeckner
 // Driver Code
 #include "combination.h"
 #include "DP.h"
@@ -80,9 +80,36 @@ int main() {
         next.push_back(temp);
     }
 
-    DynamicProgrammingAlgo dp;
+    // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
+    int count = 1;
     for(ComboPair pair : combinations) {
-        dp.cheapestRoutes(combinations, next);
+        std::cout << "Combo #" << count << ":\t";
+        for(Generator generator : pair.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
+        }
+        std::cout << "\nEconomic Dispatch:\t" << pair.getEconomicDispatch() << std::endl;
+        std::cout << std::endl;
+        ++count;
+    }
+
+    std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for the next time step...\n\n\n";
+
+    DynamicProgrammingAlgo dp;
+    std::vector<std::pair <std::vector<Generator>,double>> sources = dp.cheapestRoutes(combinations, next);
+    // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
+    // this arbitrary S+E cost should be the cheapest one from the previous time step
+    std::vector<std::pair <std::vector<Generator>,double>> newStates = dp.addCheapestSE(sources, 5000);
+
+    // show that cheapest routes and addCheapestSE function work together
+    count = 1;
+    for(std::pair<std::vector<Generator>,double> pair : newStates) {
+        std::cout << "Combo #" << count << ":\t";
+        for(Generator generator : pair.first) {
+            std::cout << generator.getIsOn() << " ";
+        }
+        std::cout << "\nNew total Economic Dispatch (added 5000):\t" << pair.second << std::endl;
+        std::cout << std::endl;
+        ++count;
     }
 
     return 0;
