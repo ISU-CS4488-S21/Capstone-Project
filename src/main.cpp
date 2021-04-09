@@ -68,7 +68,7 @@ int main() {
             }
         }
         if(minSumMW > minMW) {
-            combinations.emplace_back(combo, dispatch.lambdaFunction(predictedLoad.at(0), combo, 0));
+            combinations.emplace_back(combo, dispatch.divide(predictedLoad.at(0), combo));
         }
     }
 
