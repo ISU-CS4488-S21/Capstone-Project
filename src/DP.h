@@ -79,7 +79,7 @@ public:
         double sourceCost;
         std::pair <std::vector<Generator>,int> out (pCombos[0],std::numeric_limits<int>::max());
         Economic_Dispatch dispatch;
-        sourceCost = source.getLambda();
+        sourceCost = source.getEconomicDispatch();
         for(int i = 0; i < pCombos.size(); i++){
             edge = getEdgeCost(pCombos[i],source.getCombo());
             if(sourceCost + edge < out.second) {

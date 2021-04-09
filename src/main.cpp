@@ -73,11 +73,16 @@ int main() {
         }
     }
 
-    // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
-    DynamicProgrammingAlgo dp;
-    int count = 1;
+    std::vector<std::vector<Generator>> next;
+    next.reserve(combinations.size());
     for(ComboPair pair : combinations) {
-        //dp.cheapestRoutes(combinations, pair.getCombo());
+        std::vector<Generator> temp = pair.getCombo();
+        next.push_back(temp);
+    }
+
+    DynamicProgrammingAlgo dp;
+    for(ComboPair pair : combinations) {
+        dp.cheapestRoutes(combinations, next);
     }
 
     return 0;
