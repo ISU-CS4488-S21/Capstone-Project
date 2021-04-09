@@ -30,26 +30,32 @@ std::vector<std::vector<Generator>> & Economic_Dispatch::onGenerators(std::vecto
     return onGenCombos;
 }
 
-double Economic_Dispatch::divide(double load, const std::vector<Generator> &generators) {
+double Economic_Dispatch::divide(double load, std::vector<Generator> &generators) {
+    std::vector<Generator> onGens;
+    for(const auto& combo : generators){
+        if(combo.getIsOn()){
+            onGens.push_back(combo);
+        }
+    }
     double mLoad = load;
     int out = std::numeric_limits<int>::max();
-    if(generators.size() == 0){
+    if(onGens.size() == 0){
         return 0;
     }
-    else if (generators.size() == 1){
-        return generators[0].getB()*load + generators[0].getC()*pow(load,2);
+    else if (onGens.size() == 1){
+        return onGens[0].getB()*load + onGens[0].getC()*pow(load,2);
     }
     else{
-        int half = trunc(generators.size()/2);
+        int half = trunc(onGens.size()/2);
         std::vector<Generator> firstHalf;
         std::vector<Generator> secondHalf;
         // split generators
-        for(int i = 0; i<generators.size(); i++){
+        for(int i = 0; i<onGens.size(); i++){
             if(i < half){
-                firstHalf.push_back(generators[i]);
+                firstHalf.push_back(onGens[i]);
             }
             else{
-                secondHalf.push_back(generators[i]);
+                secondHalf.push_back(onGens[i]);
             }
         }
         while(load > 0){
@@ -59,7 +65,7 @@ double Economic_Dispatch::divide(double load, const std::vector<Generator> &gene
             if (split < out){
                 out = split;
             }
-            load -= 100;
+            load -= 50;
         }
     }
     return out;
@@ -70,11 +76,8 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
     std::vector<std::pair<double,double>> gen;
     double out;
     for(auto elem : generators){
-        if(elem.getIsOn()){
             gen.push_back(std::make_pair<double, double>(elem.getB(), elem.getC()));
-        }
     }
-    index = gen.size();
     int maxLoad = load;
     double temp;
     double min = std::numeric_limits<int>::max();
