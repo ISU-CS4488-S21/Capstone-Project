@@ -116,15 +116,5 @@ int main() {
         }
     }
 
-    // show that cheapest routes and addCheapestSE function work together
-    count = 1;
-    for(const std::pair<std::vector<Generator>, double>& pair : newStates) {
-        std::cout << "Combo #" << count << ":\t";
-        for(Generator generator : pair.first) {
-            std::cout << generator.getIsOn() << " ";
-        }
-        sources = newStates;
-    }
-
     return 0;
 }
