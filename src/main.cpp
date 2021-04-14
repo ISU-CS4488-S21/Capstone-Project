@@ -56,6 +56,8 @@ int main() {
     std::vector<ComboPair> combinations;
     double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
     int minSumMW = 0;
+    int cheapestIndex = 0;
+    double cheapestCost = std::numeric_limits<double>::max();
     for(int i = 0; i < rows; i++) {
         std::vector<Generator> combo;
         combo.reserve(size);
@@ -69,7 +71,12 @@ int main() {
             }
         }
         if(minSumMW > minMW) {
-            combinations.emplace_back(combo, dispatch.divide(predictedLoad.at(0), combo));
+            double currentCost = dispatch.divide(predictedLoad.at(0), combo);
+            combinations.emplace_back(combo, currentCost);
+            if(currentCost < cheapestCost) {
+                cheapestCost = currentCost;
+                cheapestIndex = i;
+            }
         }
     }
 
@@ -95,14 +102,23 @@ int main() {
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for the next time step...\n\n\n";
 
     DynamicProgrammingAlgo dp;
-    std::vector<std::pair <std::vector<Generator>,double>> sources = dp.cheapestRoutes(combinations, next);
-    // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
-    // this arbitrary S+E cost should be the cheapest one from the previous time step
-    std::vector<std::pair <std::vector<Generator>,double>> newStates = dp.addCheapestSE(sources, 5000);
+    std::vector<std::pair<std::vector<Generator>, double>> sources;
+    std::vector<std::pair<std::vector<Generator>, double>> newStates;
+    for(int i = 1; i < predictedLoad.size(); i++) {
+        sources = dp.cheapestRoutes(combinations, next);
+        // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
+        // this arbitrary S+E cost should be the cheapest one from the previous time step
+        newStates = dp.addCheapestSE(sources, cheapestCost);
+        for(auto pair : combinations) {
+            double currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
+            pair.setEconomicDispatch(currentCost);
+            // Do something here to get next cheapest cost?
+        }
+    }
 
     // show that cheapest routes and addCheapestSE function work together
     count = 1;
-    for(std::pair<std::vector<Generator>,double> pair : newStates) {
+    for(const std::pair<std::vector<Generator>, double>& pair : newStates) {
         std::cout << "Combo #" << count << ":\t";
         for(Generator generator : pair.first) {
             std::cout << generator.getIsOn() << " ";
