@@ -92,24 +92,27 @@ int main() {
         ++count;
     }
 
-    std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for the next time step...\n\n\n";
+    std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
 
     DynamicProgrammingAlgo dp;
     std::vector<std::pair <std::vector<Generator>,double>> sources = dp.cheapestRoutes(combinations, next);
-    // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
-    // this arbitrary S+E cost should be the cheapest one from the previous time step
-    std::vector<std::pair <std::vector<Generator>,double>> newStates = dp.addCheapestSE(sources, 5000);
 
-    // show that cheapest routes and addCheapestSE function work together
-    count = 1;
-    for(std::pair<std::vector<Generator>,double> pair : newStates) {
-        std::cout << "Combo #" << count << ":\t";
-        for(Generator generator : pair.first) {
-            std::cout << generator.getIsOn() << " ";
+    for (int i = 1; i < predictedLoad.capacity() - 1; i++) {
+        // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
+        // this arbitrary S+E cost should be the cheapest one from the previous time step
+        std::vector<std::pair <std::vector<Generator>,double>> newStates = dp.addCheapestSE(sources, 5000);
+        count = 1;
+        std::cout << "Time step" << i + 1 << "\n\n";
+        for(std::pair<std::vector<Generator>,double> pair : newStates) {
+            std::cout << "Combo #" << count << ":\t";
+            for(Generator generator : pair.first) {
+                std::cout << generator.getIsOn() << " ";
+            }
+            std::cout << "\nNew total Economic Dispatch (added 5000):\t" << pair.second << std::endl;
+            std::cout << std::endl;
+            ++count;
         }
-        std::cout << "\nNew total Economic Dispatch (added 5000):\t" << pair.second << std::endl;
-        std::cout << std::endl;
-        ++count;
+        sources = newStates;
     }
 
     return 0;
