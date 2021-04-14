@@ -104,11 +104,23 @@ int main() {
     DynamicProgrammingAlgo dp;
     std::vector<std::pair<std::vector<Generator>, double>> sources;
     std::vector<std::pair<std::vector<Generator>, double>> newStates;
+    sources = dp.cheapestRoutes(combinations, next);
     for(int i = 1; i < predictedLoad.size(); i++) {
-        sources = dp.cheapestRoutes(combinations, next);
+        newStates = dp.addCheapestSE(sources, cheapestCost);
         // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
         // this arbitrary S+E cost should be the cheapest one from the previous time step
-        newStates = dp.addCheapestSE(sources, cheapestCost);
+        int count = 1;
+        std::cout << "Time Step " << i + 1 << "\n\n";
+        for(ComboPair pair : combinations) {
+            std::cout << "Combo #" << count << ":\t";
+            for(Generator generator : pair.getCombo()) {
+                std::cout << generator.getIsOn() << " ";
+            }
+            std::cout << "\nEconomic Dispatch:\t" << newStates.at(count - 1).second << std::endl;
+            std::cout << std::endl;
+            ++count;
+        }
+        sources = newStates;
         for(auto pair : combinations) {
             double currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
             pair.setEconomicDispatch(currentCost);
