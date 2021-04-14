@@ -9,7 +9,7 @@ private:
     double economicDispatch;
 public:
     ComboPair(std::vector<Generator> list, double cost) : combo(std::move(list)), economicDispatch(cost) {}
-    std::vector<Generator> getCombo() { return combo; }
+    std::vector<Generator> & getCombo() { return combo; }
     double getEconomicDispatch() const { return economicDispatch; }
     void setEconomicDispatch(double cost) { economicDispatch = cost; }
 };
