@@ -90,6 +90,23 @@ public:
         return out;
     }
 
+    /**
+     * searches for the cheapest viable combination given a load
+     *
+     * @param pairs: vector of generator combinations and their running cost
+     * @param load: the power load in MW for the cheapest combination to satisfy
+     * @return: the cheapest combo
+     */
+    std::pair<ComboPair, unsigned int> getCheapestViableSource(std::vector<std::pair<ComboPair, unsigned int>> pairs, unsigned int load) {
+        std::pair<ComboPair, unsigned int> cheapestPair = std::pair<ComboPair, unsigned int>(pairs.at(0).first, pairs.at(0).second);
+        for (std::pair<ComboPair, unsigned int> pair : pairs) {
+            if (pair.first.getMaxPowerOut() >= load && pair.first.getEconomicDispatch() < cheapestPair.first.getEconomicDispatch()) {
+                cheapestPair = pair;
+            }
+        }
+        return cheapestPair;
+    }
+
     //Output a vector of pairs that consists of the generator combo path and the overall cost.
     std::vector<std::pair<ComboPair,unsigned int>> cheapestRoutes(std::vector<ComboPair> source, std::vector<ComboPair> next){
         std::vector<std::pair<ComboPair,unsigned int>> out;

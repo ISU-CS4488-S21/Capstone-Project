@@ -86,8 +86,38 @@ int main() {
         next.push_back(pair);
     }
 
-    // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
+    DynamicProgrammingAlgo dp;
+    std::vector<std::pair<ComboPair, unsigned int>> sources;
+    std::vector<std::pair<ComboPair, unsigned int>> newStates;
+    sources = dp.cheapestRoutes(combinations, next);
+    for(int i = 1; i < predictedLoad.size(); i++) {
+
+        newStates = dp.addCheapestSE(sources, cheapestCost);
+
+        sources = newStates;
+        for(auto pair : combinations) {
+            unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
+            pair.setEconomicDispatch(currentCost);
+            // Do something here to get next cheapest cost?
+        }
+    }
+
+    // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
+    // this arbitrary S+E cost should be the cheapest one from the previous time step
     /*
+    int count = 1;
+    std::cout << "Time Step " << i + 1 << "\n\n";
+    for(ComboPair pair : combinations) {
+        std::cout << "Combo #" << count << ":\t";
+        for(Generator generator : pair.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
+        }
+        std::cout << "\nEconomic Dispatch:\t" << newStates.at(count - 1).second << std::endl;
+        std::cout << std::endl;
+        ++count;
+    }
+
+    // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
     int count = 1;
     for(ComboPair pair : combinations) {
         std::cout << "Combo #" << count << ":\t";
@@ -101,36 +131,6 @@ int main() {
 
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
     */
-    //TODO: Change to unsigned int
-    //TODO:
-    DynamicProgrammingAlgo dp;
-    std::vector<std::pair<ComboPair, unsigned int>> sources;
-    std::vector<std::pair<ComboPair, unsigned int>> newStates;
-    sources = dp.cheapestRoutes(combinations, next);
-    for(int i = 1; i < predictedLoad.size(); i++) {
-        newStates = dp.addCheapestSE(sources, cheapestCost);
-        // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
-        // this arbitrary S+E cost should be the cheapest one from the previous time step
-        /*
-        int count = 1;
-        std::cout << "Time Step " << i + 1 << "\n\n";
-        for(ComboPair pair : combinations) {
-            std::cout << "Combo #" << count << ":\t";
-            for(Generator generator : pair.getCombo()) {
-                std::cout << generator.getIsOn() << " ";
-            }
-            std::cout << "\nEconomic Dispatch:\t" << newStates.at(count - 1).second << std::endl;
-            std::cout << std::endl;
-            ++count;
-        }
-        */
-        sources = newStates;
-        for(auto pair : combinations) {
-            unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
-            pair.setEconomicDispatch(currentCost);
-            // Do something here to get next cheapest cost?
-        }
-    }
 
     return 0;
 }
