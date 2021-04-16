@@ -87,6 +87,7 @@ int main() {
     }
 
     // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
+    /*
     int count = 1;
     for(ComboPair pair : combinations) {
         std::cout << "Combo #" << count << ":\t";
@@ -99,7 +100,7 @@ int main() {
     }
 
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
-
+    */
     //TODO: Change to unsigned int
     //TODO:
     DynamicProgrammingAlgo dp;
@@ -110,6 +111,7 @@ int main() {
         newStates = dp.addCheapestSE(sources, cheapestCost);
         // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
         // this arbitrary S+E cost should be the cheapest one from the previous time step
+        /*
         int count = 1;
         std::cout << "Time Step " << i + 1 << "\n\n";
         for(ComboPair pair : combinations) {
@@ -121,6 +123,7 @@ int main() {
             std::cout << std::endl;
             ++count;
         }
+        */
         sources = newStates;
         for(auto pair : combinations) {
             double currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
