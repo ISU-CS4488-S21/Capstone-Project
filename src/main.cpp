@@ -80,11 +80,10 @@ int main() {
         }
     }
 
-    std::vector<std::vector<Generator>> next;
+    std::vector<ComboPair> next;
     next.reserve(combinations.size());
     for(ComboPair pair : combinations) {
-        std::vector<Generator> temp = pair.getCombo();
-        next.push_back(temp);
+        next.push_back(pair);
     }
 
     // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
@@ -102,9 +101,10 @@ int main() {
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
 
     //TODO: Change to unsigned int
+    //TODO:
     DynamicProgrammingAlgo dp;
-    std::vector<std::pair<std::vector<Generator>, double>> sources;
-    std::vector<std::pair<std::vector<Generator>, double>> newStates;
+    std::vector<std::pair<ComboPair, double>> sources;
+    std::vector<std::pair<ComboPair, double>> newStates;
     sources = dp.cheapestRoutes(combinations, next);
     for(int i = 1; i < predictedLoad.size(); i++) {
         newStates = dp.addCheapestSE(sources, cheapestCost);

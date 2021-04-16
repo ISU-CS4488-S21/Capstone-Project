@@ -106,9 +106,9 @@ public:
      * @param cheapestSE: the cost of the cheapest previous source + edge
      * @return: a new vector containing the combinations and their updated costs
      */
-    std::vector<std::pair <std::vector<ComboPair>,double>> addCheapestSE(std::vector<std::pair<std::vector<ComboPair>, double>> combinations, double cheapestSE) {
-        std::vector<std::pair <std::vector<ComboPair>,double>> newStates;
-        for (std::pair<std::vector<ComboPair>, double> pair : combinations) {
+    std::vector<std::pair <ComboPair,double>> addCheapestSE(std::vector<std::pair<ComboPair, double>> combinations, double cheapestSE) {
+        std::vector<std::pair<ComboPair,double>> newStates;
+        for (std::pair<ComboPair, double> pair : combinations) {
             pair.second += cheapestSE;
             newStates.push_back(pair);
         }
