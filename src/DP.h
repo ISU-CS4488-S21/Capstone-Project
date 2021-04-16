@@ -14,7 +14,7 @@ class DynamicProgrammingAlgo{
 public:
     ///Adds cheapest S+E to determine with current state
     ///Can be modified baseed on edges and sources data structures
-    std::vector<std::vector<double>> SourcePlusEdge2D(std::vector<std::vector<double>> edges, std::vector<std::vector<double>> sources,std::vector<std::vector<int>> combStatesCosts){
+    std::vector<std::vector<unsigned int>> SourcePlusEdge2D(std::vector<std::vector<unsigned int>> edges, std::vector<std::vector<unsigned int>> sources,std::vector<std::vector<int>> combStatesCosts){
 
         for (int i = 0; i <edges.at(0).size() ; ++i) {
             for (int j = 0; j <edges.at(1).size(); ++j) {
@@ -30,8 +30,8 @@ public:
     ///Compares all possible source and edges
     ///Needs to work on
 
-    std::vector<double> GetCheapestColumn(std::vector<std::vector<double>> addedCosts2D) {
-        std::vector<double> tempCosts;
+    std::vector<unsigned int> GetCheapestColumn(std::vector<std::vector<unsigned int>> addedCosts2D) {
+        std::vector<unsigned int> tempCosts;
         int prevCost=0;
 
         for (int i = 0; i < addedCosts2D.at(0).size() ; ++i) {
@@ -46,7 +46,7 @@ public:
     }
 
     ///SImply display function for testing
-    void DisplaySPlusE(std::vector<std::vector<double>> input1, std::vector<std::vector<double>> input2, std::vector<std::vector<int>> input3){
+    void DisplaySPlusE(std::vector<std::vector<unsigned int>> input1, std::vector<std::vector<unsigned int>> input2, std::vector<std::vector<int>> input3){
         int citiesLength=input1.size();
         for (int i = 0; i <citiesLength ; ++i) {
             std::cout<<std::endl;
@@ -74,10 +74,10 @@ public:
     }
 
     // Gets the cheapest path to any generator combo from a given source node.
-    std::pair <ComboPair,double> cheapestForNode(std::vector<ComboPair> pCombos, ComboPair source){
+    std::pair <ComboPair,unsigned int> cheapestForNode(std::vector<ComboPair> pCombos, ComboPair source){
         int edge;
-        double sourceCost;
-        std::pair <ComboPair,double> out (pCombos[0],std::numeric_limits<int>::max());
+        unsigned int sourceCost;
+        std::pair <ComboPair,unsigned int> out (pCombos[0],std::numeric_limits<int>::max());
         Economic_Dispatch dispatch;
         sourceCost = source.getEconomicDispatch();
         for(int i = 0; i < pCombos.size(); i++){
@@ -91,8 +91,8 @@ public:
     }
 
     //Output a vector of pairs that consists of the generator combo path and the overall cost.
-    std::vector<std::pair<ComboPair,double>> cheapestRoutes(std::vector<ComboPair> source, std::vector<ComboPair> next){
-        std::vector<std::pair<ComboPair,double>> out;
+    std::vector<std::pair<ComboPair,unsigned int>> cheapestRoutes(std::vector<ComboPair> source, std::vector<ComboPair> next){
+        std::vector<std::pair<ComboPair,unsigned int>> out;
         for(int i =0; i < source.size(); i++){
             out.push_back(cheapestForNode(next,source[i]));
         }
@@ -106,9 +106,9 @@ public:
      * @param cheapestSE: the cost of the cheapest previous source + edge
      * @return: a new vector containing the combinations and their updated costs
      */
-    std::vector<std::pair <ComboPair,double>> addCheapestSE(std::vector<std::pair<ComboPair, double>> combinations, double cheapestSE) {
-        std::vector<std::pair<ComboPair,double>> newStates;
-        for (std::pair<ComboPair, double> pair : combinations) {
+    std::vector<std::pair <ComboPair,unsigned int>> addCheapestSE(std::vector<std::pair<ComboPair, unsigned int>> combinations, unsigned int cheapestSE) {
+        std::vector<std::pair<ComboPair,unsigned int>> newStates;
+        for (std::pair<ComboPair, unsigned int> pair : combinations) {
             pair.second += cheapestSE;
             newStates.push_back(pair);
         }
