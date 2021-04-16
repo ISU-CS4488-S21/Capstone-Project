@@ -101,6 +101,7 @@ int main() {
 
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
 
+    //TODO: Change to unsigned int
     DynamicProgrammingAlgo dp;
     std::vector<std::pair<std::vector<Generator>, double>> sources;
     std::vector<std::pair<std::vector<Generator>, double>> newStates;
