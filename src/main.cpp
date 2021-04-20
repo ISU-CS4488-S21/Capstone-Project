@@ -8,6 +8,7 @@
 #include <cmath>
 #include <iostream>
 #include <random>
+#include <bitset>
 
 int main() {
     // Parse and load MW data
@@ -28,7 +29,7 @@ int main() {
     // vector. Setting size larger than 16 will cause a segfault, presumably because the built in array can't handle
     // > 2^16 rows * size columns (1,048,576 elements) without heap allocation.
     const int size = 6;
-    int rows = std::pow(2, size);
+    const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
     std::vector<Generator> offList;
@@ -42,26 +43,29 @@ int main() {
     }
 
     // Generate an array containing every "size"-bit bitstring
-    int bitCombos[rows][size];
+    std::vector<std::vector<int>> bitCombos;
+    bitCombos.reserve(rows);
     for(int i = 0; i < rows; i++) {
+        std::vector<int> temp;
+        temp.reserve(size);
         for(int j = 0; j < size; j++) {
             int val = rows * j + i;
             int ret = (1 & (val >> j));
-            bitCombos[i][j] = ret != 0;
+            temp.push_back(ret != 0);
         }
+        bitCombos.push_back(temp);
     }
 
     // Use the bitstrings to generate a vector of ComboPairs.
     Economic_Dispatch dispatch;
     std::vector<ComboPair> combinations;
     double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
-    int minSumMW = 0;
     for(int i = 0; i < rows; i++) {
         std::vector<Generator> combo;
         combo.reserve(size);
-        minSumMW = 0;
+        int minSumMW = 0;
         for(int j = 0; j < size; j++) {
-            if(bitCombos[i][j] == 0) {
+            if(bitCombos.at(i).at(j) == 0) {
                 combo.push_back(offList.at(j));
             } else {
                 minSumMW += onList.at(j).getMaxPowerOut();
