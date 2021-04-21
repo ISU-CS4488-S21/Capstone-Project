@@ -73,20 +73,23 @@ public:
         return eCost;
     }
 
-    // Gets the cheapest path to any generator combo from a given source node.
-    std::pair <ComboPair,unsigned int> cheapestForNode(std::vector<ComboPair> pCombos, ComboPair source){
+     // Gets the cheapest path to any generator combo from a given source node.
+    std::pair <ComboPair,unsigned int> cheapestForNode(std::vector<ComboPair> pCombos, ComboPair source,double load){
         int edge;
         unsigned int sourceCost;
-        std::pair <ComboPair,unsigned int> out (pCombos[0],std::numeric_limits<int>::max());
+        std::pair<ComboPair, unsigned int> out(pCombos[0], std::numeric_limits<int>::max());
         Economic_Dispatch dispatch;
-        sourceCost = source.getEconomicDispatch();
-        for(int i = 0; i < pCombos.size(); i++){
-            edge = getEdgeCost(pCombos[i].getCombo(),source.getCombo());
-            if(sourceCost + edge < out.second) {
-                out.second = edge + sourceCost;
-                out.first = pCombos[i];
+            sourceCost = source.getEconomicDispatch();
+            for (int i = 0; i < pCombos.size(); i++) {
+                if (pCombos[i].getMaxPowerOut() >= load && pCombos[i].getMinPowerOut() <= load){
+                    edge = getEdgeCost(pCombos[i].getCombo(), source.getCombo());
+                    if (sourceCost + edge < out.second) {
+                        out.second = edge + sourceCost;
+                        out.first = pCombos[i];
+                    }
+                }
             }
-        }
+
         return out;
     }
 
@@ -108,10 +111,10 @@ public:
     }
 
     //Output a vector of pairs that consists of the generator combo path and the overall cost.
-    std::vector<std::pair<ComboPair,unsigned int>> cheapestRoutes(std::vector<ComboPair> source, std::vector<ComboPair> next){
+    std::vector<std::pair<ComboPair,unsigned int>> cheapestRoutes(std::vector<ComboPair> source, std::vector<ComboPair> next,double load){
         std::vector<std::pair<ComboPair,unsigned int>> out;
         for(int i =0; i < source.size(); i++){
-            out.push_back(cheapestForNode(next,source[i]));
+            out.push_back(cheapestForNode(next,source[i],load));
         }
         return out;
     }
