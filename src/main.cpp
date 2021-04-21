@@ -99,8 +99,13 @@ int main() {
     std::vector<std::pair<ComboPair, unsigned int>> sources;
     std::vector<std::pair<ComboPair, unsigned int>> newStates;
     sources = dp.cheapestRoutes(combinations, next);
+
+    // initialize solution vector
+    std::vector<std::pair<ComboPair, unsigned int>> solution;
     for(int i = 1; i < predictedLoad.size(); i++) {
 
+        std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(sources, predictedLoad.at(i));
+        solution.push_back(source_combo);
         newStates = dp.addCheapestSE(sources, cheapestCost);
 
         sources = newStates;
