@@ -59,14 +59,10 @@ int main() {
     // Use the bitstrings to generate a vector of ComboPairs.
     Economic_Dispatch dispatch;
     std::vector<ComboPair> combinations;
-<<<<<<< HEAD
     unsigned int minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
     int minSumMW = 0;
     int cheapestIndex = 0;
     unsigned int cheapestCost = std::numeric_limits<unsigned int>::max();
-=======
-    double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
->>>>>>> develop
     for(int i = 0; i < rows; i++) {
         std::vector<Generator> combo;
         combo.reserve(size);
