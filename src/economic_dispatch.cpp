@@ -9,7 +9,7 @@
 #include <cmath>
 
 Economic_Dispatch::Economic_Dispatch(){
-
+    skippedLoads = 0;
 }
 
 std::vector<std::vector<Generator>> & Economic_Dispatch::onGenerators(std::vector<std::vector<Generator>> &generators) {
@@ -43,7 +43,12 @@ double Economic_Dispatch::divide(double load, std::vector<Generator> &generators
         return 0;
     }
     else if (onGens.size() == 1){
-        return onGens[0].getB()*load + onGens[0].getC()*pow(load,2);
+        //if(onGens[0].getMinPowerOut() <= load && onGens[0].getMaxPowerOut() >= load){
+            return onGens[0].getB()*load + onGens[0].getC()*pow(load,2);
+        //}
+        //else{
+         //   return std::numeric_limits<int>::max();
+       // }
     }
     else{
         int half = trunc(onGens.size()/2);
@@ -58,17 +63,47 @@ double Economic_Dispatch::divide(double load, std::vector<Generator> &generators
                 secondHalf.push_back(onGens[i]);
             }
         }
-        while(load > 0){
-            double one = lambdaFunction(load,firstHalf,firstHalf.size());
-            double two = lambdaFunction(mLoad - load,secondHalf,secondHalf.size());
+        out = merge(load,firstHalf,secondHalf);
+    }
+    return out;
+}
+
+double Economic_Dispatch::merge(double load, std::vector<Generator> &g1, std::vector<Generator> &g2) {
+    double mLoad = load;
+    double out = std::numeric_limits<int>::max();
+    while(load > 0){
+        if (checkBound(load, const_cast<std::vector<Generator> &>(g1)) && checkBound(load, const_cast<std::vector<Generator> &>(g2))){
+            double one = lambdaFunction(load,g1,g1.size());
+            double two = lambdaFunction(mLoad - load,g2,g2.size());
+            //double one = divide(load,firstHalf);
+            //double two = divide(mLoad - load,secondHalf);
             double split =  one + two;
             if (split < out){
                 out = split;
             }
-            load -= 50;
         }
+        load -= 20;
     }
     return out;
+}
+
+// This function was created to limit the load values used in the while loops.
+// It checks to make sure that the load is within the max and min capacity of the generators.
+bool Economic_Dispatch::checkBound(double load, std::vector<Generator> &g1) {
+    double totalMax = 0;
+    double totalMin = 0;
+    for(auto gen: g1){
+        totalMax += gen.getMaxPowerOut();
+        totalMin += gen.getMinPowerOut();
+    }
+    if(load > totalMax || load < totalMin){
+        skippedLoads += 1;
+        return false;
+    }
+    else{
+        testedLoads += 1;
+        return true;
+    }
 }
 // A function to find the minimized cost between a set of generators at
 // every possible load.
@@ -112,4 +147,11 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
         }
     }
     return min;
+}
+
+int Economic_Dispatch::getSkipCounter() const {
+    return skippedLoads;
+}
+int Economic_Dispatch::getTestedCounter() const {
+    return testedLoads;
 }

@@ -5,6 +5,7 @@
 #include "generator.h"
 #include "parser.h"
 #include "economic_dispatch.h"
+#include <chrono>
 #include <cmath>
 #include <iostream>
 #include <random>
@@ -26,7 +27,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 6;
+    const int size = 10;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -41,6 +42,7 @@ int main() {
     }
 
     // Generate an array containing every "size"-bit bitstring
+    auto t0 = std::chrono::high_resolution_clock::now();
     std::vector<std::vector<int>> bitCombos;
     bitCombos.reserve(rows);
     for(int i = 0; i < rows; i++) {
@@ -53,8 +55,11 @@ int main() {
         }
         bitCombos.push_back(temp);
     }
+    auto t1 = std::chrono::high_resolution_clock::now();
+    std::cout << size << "-bit bitstrings generated in " << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " microseconds" << std::endl;
 
     // Use the bitstrings to generate a vector of ComboPairs.
+    auto t2 = std::chrono::high_resolution_clock::now();
     Economic_Dispatch dispatch;
     std::vector<ComboPair> combinations;
     unsigned int minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
@@ -81,6 +86,8 @@ int main() {
             }
         }
     }
+    auto t3 = std::chrono::high_resolution_clock::now();
+    std::cout << "Combinations generated in " << std::chrono::duration_cast<std::chrono::microseconds>(t3 - t2).count() << " microseconds" << std::endl;
 
     std::vector<ComboPair> next;
     next.reserve(combinations.size());
