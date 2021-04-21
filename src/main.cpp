@@ -25,9 +25,7 @@ int main() {
                                          GeneratorType::LargeSub,
                                          GeneratorType::OtherSteam};
 
-    // Setting size too low will result in combos that can't satisfy the max load MW, and thus an empty genCombos
-    // vector. Setting size larger than 16 will cause a segfault, presumably because the built in array can't handle
-    // > 2^16 rows * size columns (1,048,576 elements) without heap allocation.
+    // Number of generators we want to use
     const int size = 6;
     const int rows = static_cast<int>(std::pow(2, size));
 
@@ -60,7 +58,6 @@ int main() {
     Economic_Dispatch dispatch;
     std::vector<ComboPair> combinations;
     unsigned int minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
-    int minSumMW = 0;
     int cheapestIndex = 0;
     unsigned int cheapestCost = std::numeric_limits<unsigned int>::max();
     for(int i = 0; i < rows; i++) {
