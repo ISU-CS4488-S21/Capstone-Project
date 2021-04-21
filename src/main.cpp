@@ -95,10 +95,12 @@ int main() {
 
     // initialize solution vector
     std::vector<std::pair<ComboPair, unsigned int>> solution;
+
+    // initialize the first cheapest viable combo to start loop
+    std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(sources, predictedLoad.at(0));
+    solution.push_back(source_combo);
     for(int i = 1; i < predictedLoad.size(); i++) {
 
-        std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(sources, predictedLoad.at(i));
-        solution.push_back(source_combo);
         newStates = dp.addCheapestSE(sources, cheapestCost);
 
         sources = newStates;
