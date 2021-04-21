@@ -12,8 +12,8 @@
 
 int main() {
     // Parse and load MW data
-    Parser<double> loadParser = Parser<double>("load_mw_no_time.csv");
-    std::vector<double> predictedLoad = loadParser.loadData();
+    Parser<unsigned int> loadParser = Parser<unsigned int>("load_mw_no_time.csv");
+    std::vector<unsigned int> predictedLoad = loadParser.loadData();
 
     // Set up the PRNG for picking random generators. Setting a seed of 0 ensures one of each generator type.
     const long unsigned int seed = 0;
@@ -59,7 +59,14 @@ int main() {
     // Use the bitstrings to generate a vector of ComboPairs.
     Economic_Dispatch dispatch;
     std::vector<ComboPair> combinations;
+<<<<<<< HEAD
+    unsigned int minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
+    int minSumMW = 0;
+    int cheapestIndex = 0;
+    unsigned int cheapestCost = std::numeric_limits<unsigned int>::max();
+=======
     double minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
+>>>>>>> develop
     for(int i = 0; i < rows; i++) {
         std::vector<Generator> combo;
         combo.reserve(size);
@@ -73,15 +80,50 @@ int main() {
             }
         }
         if(minSumMW > minMW) {
-            combinations.emplace_back(combo, dispatch.divide(predictedLoad.at(0), combo));
+            unsigned int currentCost = dispatch.divide(predictedLoad.at(0), combo);
+            combinations.emplace_back(combo, currentCost);
+            if(currentCost < cheapestCost) {
+                cheapestCost = currentCost;
+                cheapestIndex = i;
+            }
         }
     }
 
-    std::vector<std::vector<Generator>> next;
+    std::vector<ComboPair> next;
     next.reserve(combinations.size());
     for(ComboPair pair : combinations) {
-        std::vector<Generator> temp = pair.getCombo();
-        next.push_back(temp);
+        next.push_back(pair);
+    }
+
+    DynamicProgrammingAlgo dp;
+    std::vector<std::pair<ComboPair, unsigned int>> sources;
+    std::vector<std::pair<ComboPair, unsigned int>> newStates;
+    sources = dp.cheapestRoutes(combinations, next);
+    for(int i = 1; i < predictedLoad.size(); i++) {
+
+        newStates = dp.addCheapestSE(sources, cheapestCost);
+
+        sources = newStates;
+        for(auto pair : combinations) {
+            unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
+            pair.setEconomicDispatch(currentCost);
+            // Do something here to get next cheapest cost?
+        }
+    }
+
+    // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
+    // this arbitrary S+E cost should be the cheapest one from the previous time step
+    /*
+    int count = 1;
+    std::cout << "Time Step " << i + 1 << "\n\n";
+    for(ComboPair pair : combinations) {
+        std::cout << "Combo #" << count << ":\t";
+        for(Generator generator : pair.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
+        }
+        std::cout << "\nEconomic Dispatch:\t" << newStates.at(count - 1).second << std::endl;
+        std::cout << std::endl;
+        ++count;
     }
 
     // Validate that the new std::vector<ComboPair> structure contains the contents that we expect it to.
@@ -96,25 +138,8 @@ int main() {
         ++count;
     }
 
-    std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for the next time step...\n\n\n";
-
-    DynamicProgrammingAlgo dp;
-    std::vector<std::pair <std::vector<Generator>,double>> sources = dp.cheapestRoutes(combinations, next);
-    // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
-    // this arbitrary S+E cost should be the cheapest one from the previous time step
-    std::vector<std::pair <std::vector<Generator>,double>> newStates = dp.addCheapestSE(sources, 5000);
-
-    // show that cheapest routes and addCheapestSE function work together
-    count = 1;
-    for(std::pair<std::vector<Generator>,double> pair : newStates) {
-        std::cout << "Combo #" << count << ":\t";
-        for(Generator generator : pair.first) {
-            std::cout << generator.getIsOn() << " ";
-        }
-        std::cout << "\nNew total Economic Dispatch (added 5000):\t" << pair.second << std::endl;
-        std::cout << std::endl;
-        ++count;
-    }
+    std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
+    */
 
     return 0;
 }

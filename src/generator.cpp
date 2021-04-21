@@ -1,6 +1,7 @@
 #include "generator.h"
 #include <cmath>
 #include <stdlib.h>
+#include <random>
 
 /**
  * @author Marcus Goeckner
@@ -136,5 +137,8 @@ double Generator::getBurnRate() {
  * @return: a random number between min and max (inclusive)
  */
 int Generator::randNum(int min, int max) {
-    return min + (rand() % static_cast<int>(max - min + 1));
+    std::random_device rd;  //Will be used to obtain a seed for the random number engine
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> dist(min, max);
+    return dist(gen);
 }
