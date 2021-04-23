@@ -61,7 +61,7 @@ int main() {
     // Use the bitstrings to generate a vector of ComboPairs.
     auto t2 = std::chrono::high_resolution_clock::now();
     Economic_Dispatch dispatch;
-    std::vector<ComboPair> combinations;
+    std::vector<std::pair<ComboPair, unsigned int>> combinations;
     unsigned int minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
     int cheapestIndex = 0;
     unsigned int cheapestCost = std::numeric_limits<unsigned int>::max();
@@ -79,7 +79,8 @@ int main() {
         }
         if(minSumMW > minMW) {
             unsigned int currentCost = dispatch.divide(predictedLoad.at(0), combo);
-            combinations.emplace_back(combo, currentCost);
+            ComboPair comboPair = ComboPair(combo, currentCost);
+            combinations.push_back(std::make_pair(comboPair, currentCost));
             if(currentCost < cheapestCost) {
                 cheapestCost = currentCost;
                 cheapestIndex = i;
@@ -89,31 +90,30 @@ int main() {
     auto t3 = std::chrono::high_resolution_clock::now();
     std::cout << "Combinations generated in " << std::chrono::duration_cast<std::chrono::microseconds>(t3 - t2).count() << " microseconds" << std::endl;
 
+    /*
     std::vector<ComboPair> next;
     next.reserve(combinations.size());
     for(ComboPair pair : combinations) {
         next.push_back(pair);
     }
+    */
 
     DynamicProgrammingAlgo dp;
-    std::vector<std::pair<ComboPair, unsigned int>> sources;
-    std::vector<std::pair<ComboPair, unsigned int>> newStates;
-    sources = dp.cheapestRoutes(combinations, next);
 
     // initialize solution vector
     std::vector<std::pair<ComboPair, unsigned int>> solution;
 
     // initialize the first cheapest viable combo to start loop
-    std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(sources, predictedLoad.at(0));
+    std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(combinations, predictedLoad.at(0));
     solution.push_back(source_combo);
+
+
+
     for(int i = 1; i < predictedLoad.size(); i++) {
 
-        newStates = dp.addCheapestSE(sources, cheapestCost);
-
-        sources = newStates;
         for(auto pair : combinations) {
-            unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.getCombo());
-            pair.setEconomicDispatch(currentCost);
+            unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.first.getCombo());
+            pair.first.setEconomicDispatch(currentCost);
             // Do something here to get next cheapest cost?
         }
     }
