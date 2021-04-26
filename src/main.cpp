@@ -117,7 +117,7 @@ int main() {
 
         combinations = dp.addCheapestSE(combinations, source_combo);
 
-        source_combo = dp.cheapestForNode(combinations, source_combo.first, predictedLoad.at(i));
+        source_combo = dp.cheapestForNode(combinations, source_combo, predictedLoad.at(i));
 
         solution.push_back(source_combo);
 
