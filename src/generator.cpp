@@ -98,11 +98,11 @@ double Generator::getB() const{
 double Generator::getC() const{
     return C;
 }
-int Generator::getMinPowerOut() const {
+double Generator::getMinPowerOut() const {
     return minPowerOut;
 }
 
-int Generator::getMaxPowerOut() const {
+double Generator::getMaxPowerOut() const {
     return maxPowerOut;
 }
 

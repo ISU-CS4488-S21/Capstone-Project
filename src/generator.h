@@ -16,7 +16,7 @@ enum GeneratorType {
 class Generator {
 private:
     double fuelCost, startUpCost, shutDownCost, economicDispatchCost, A, B, C;
-    int maxPowerOut, minPowerOut;
+    double maxPowerOut, minPowerOut;
     bool isOn;
     GeneratorType type;
 
@@ -29,8 +29,8 @@ public:
     double getBurnRate();
     double getB() const;
     double getC() const;
-    int getMaxPowerOut() const;
-    int getMinPowerOut() const;
+    double getMaxPowerOut() const;
+    double getMinPowerOut() const;
     bool getIsOn() const;
     void turnOn();
     void turnOff();

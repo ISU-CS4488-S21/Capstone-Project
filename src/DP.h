@@ -74,18 +74,18 @@ public:
     }
 
      // Gets the cheapest path to any generator combo from a given source node.
-    std::pair <ComboPair,unsigned int> cheapestForNode(std::vector<ComboPair> pCombos, ComboPair source,double load){
+    std::pair <ComboPair,unsigned int> cheapestForNode(std::vector<std::pair<ComboPair, unsigned int>> pCombos, ComboPair source,double load){
         int edge;
         unsigned int sourceCost;
-        std::pair<ComboPair, unsigned int> out(pCombos[0], std::numeric_limits<int>::max());
+        std::pair<ComboPair, unsigned int> out(pCombos[0].first, std::numeric_limits<int>::max());
         Economic_Dispatch dispatch;
             sourceCost = source.getEconomicDispatch();
             for (int i = 0; i < pCombos.size(); i++) {
-                if (pCombos[i].getMaxPowerOut() >= load && pCombos[i].getMinPowerOut() <= load){
-                    edge = getEdgeCost(pCombos[i].getCombo(), source.getCombo());
+                if (pCombos[i].first.getMaxPowerOut() >= load && pCombos[i].first.getMinPowerOut() <= load){
+                    edge = getEdgeCost(pCombos[i].first.getCombo(), source.getCombo());
                     if (sourceCost + edge < out.second) {
                         out.second = edge + sourceCost;
-                        out.first = pCombos[i];
+                        out.first = pCombos[i].first;
                     }
                 }
             }
@@ -111,10 +111,10 @@ public:
     }
 
     //Output a vector of pairs that consists of the generator combo path and the overall cost.
-    std::vector<std::pair<ComboPair,unsigned int>> cheapestRoutes(std::vector<ComboPair> source, std::vector<ComboPair> next,double load){
+    std::vector<std::pair<ComboPair,unsigned int>> cheapestRoutes(std::vector<std::pair<ComboPair, unsigned int>> source, std::vector<std::pair<ComboPair, unsigned int>> next,double load){
         std::vector<std::pair<ComboPair,unsigned int>> out;
         for(int i =0; i < source.size(); i++){
-            out.push_back(cheapestForNode(next,source[i],load));
+            out.push_back(cheapestForNode(next,source[i].first,load));
         }
         return out;
     }
@@ -123,13 +123,13 @@ public:
      * adds cheapest source + edge to every current state based on previous cheapest
      *
      * @param combinations: the vector of pairs of current state's combinations and their costs
-     * @param cheapestSE: the cost of the cheapest previous source + edge
+     * @param source: the cheapest viable source
      * @return: a new vector containing the combinations and their updated costs
      */
-    std::vector<std::pair <ComboPair,unsigned int>> addCheapestSE(std::vector<std::pair<ComboPair, unsigned int>> combinations, unsigned int cheapestSE) {
+    std::vector<std::pair <ComboPair,unsigned int>> addCheapestSE(std::vector<std::pair<ComboPair, unsigned int>> combinations, std::pair<ComboPair, unsigned int> source) {
         std::vector<std::pair<ComboPair,unsigned int>> newStates;
         for (std::pair<ComboPair, unsigned int> pair : combinations) {
-            pair.second += cheapestSE;
+            pair.second += source.second + getEdgeCost(source.first.getCombo(), pair.first.getCombo());
             newStates.push_back(pair);
         }
         return newStates;

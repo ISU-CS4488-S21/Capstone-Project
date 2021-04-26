@@ -103,11 +103,9 @@ int main() {
     // initialize solution vector
     std::vector<std::pair<ComboPair, unsigned int>> solution;
 
-    // initialize the first cheapest viable combo to start loop
+    // initialize the first cheapest viable combo to start loop (assuming that generators are already running at load 0)
     std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(combinations, predictedLoad.at(0));
     solution.push_back(source_combo);
-
-
 
     for(int i = 1; i < predictedLoad.size(); i++) {
 
@@ -116,6 +114,22 @@ int main() {
             pair.first.setEconomicDispatch(currentCost);
             // Do something here to get next cheapest cost?
         }
+
+        std::vector<std::pair<ComboPair, unsigned int>> combinations = dp.addCheapestSE(combinations, source_combo);
+
+        std::pair <ComboPair,unsigned int> source_combo = dp.cheapestForNode(combinations, source_combo.first, predictedLoad.at(i));
+
+        solution.push_back(source_combo);
+    }
+
+    int timeStep = 1;
+    for(std::pair<ComboPair, unsigned int> pair : solution) {
+        std::cout << "Solution for Time Step " << timeStep << ":\n";
+        for(Generator generator : pair.first.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
+        }
+        std::cout << "Cost up to this timestep: " << pair.second;
+        timeStep += 1;
     }
 
     // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state

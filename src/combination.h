@@ -10,14 +10,16 @@ private:
     double maxPowerOut;
     double minPowerOut;
 public:
-    ComboPair(std::vector<Generator> list, double cost) : combo(std::move(list)), economicDispatch(cost) {
+    ComboPair(std::vector<Generator> list, double cost) {
+        setEconomicDispatch(cost);
+        combo = list;
+
+        minPowerOut = 0;
+        maxPowerOut = 0;
         for (Generator gen: list) {
             minPowerOut += gen.getMinPowerOut();
-        }
-        for (Generator gen: list) {
             maxPowerOut += gen.getMaxPowerOut();
         }
-
     }
     std::vector<Generator> & getCombo() { return combo; }
     double getEconomicDispatch() const { return economicDispatch; }
