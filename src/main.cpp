@@ -115,22 +115,22 @@ int main() {
             // Do something here to get next cheapest cost?
         }
 
-        std::vector<std::pair<ComboPair, unsigned int>> combinations = dp.addCheapestSE(combinations, source_combo);
+        combinations = dp.addCheapestSE(combinations, source_combo);
 
-        std::pair <ComboPair,unsigned int> source_combo = dp.cheapestForNode(combinations, source_combo.first, predictedLoad.at(i));
+        source_combo = dp.cheapestForNode(combinations, source_combo.first, predictedLoad.at(i));
 
         solution.push_back(source_combo);
-    }
 
-    int timeStep = 1;
-    for(std::pair<ComboPair, unsigned int> pair : solution) {
-        std::cout << "Solution for Time Step " << timeStep << ":\n";
-        for(Generator generator : pair.first.getCombo()) {
+        std::cout << "Solution for Time Step " << i << " at load " << predictedLoad.at(i) << "MW:\n";
+        for(Generator generator : source_combo.first.getCombo()) {
             std::cout << generator.getIsOn() << " ";
         }
-        std::cout << "Cost up to this timestep: " << pair.second;
-        timeStep += 1;
+        std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
+
     }
+    return 0;
+}
+
 
     // adds some arbitrary S+E cost (5000) to all of the source combinations from the initial state
     // this arbitrary S+E cost should be the cheapest one from the previous time step
@@ -162,5 +162,3 @@ int main() {
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
     */
 
-    return 0;
-}
