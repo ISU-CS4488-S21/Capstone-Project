@@ -1,5 +1,7 @@
 # ide 
 .idea
+/cmake-build-debug
+/cmake-build-release
 /src/make-build-debug
 
 # Prerequisites
