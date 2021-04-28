@@ -27,7 +27,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 10;
+    const int size = 4;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -107,6 +107,12 @@ int main() {
     std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(combinations, predictedLoad.at(0));
     solution.push_back(source_combo);
 
+    std::cout << "Solution for Time Step " << 0 << " at load " << predictedLoad.at(0) << "MW:\n";
+    for(Generator generator : source_combo.first.getCombo()) {
+        std::cout << generator.getIsOn() << " ";
+    }
+    std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
+
     for(int i = 1; i < predictedLoad.size(); i++) {
 
         // calculate the economic dispatch for every combination for current load
@@ -119,7 +125,7 @@ int main() {
         combinations = dp.addCheapestSE(combinations, source_combo);
 
         // find the next source combo
-        source_combo = dp.cheapestForNode(combinations, source_combo, predictedLoad.at(i));
+        source_combo = dp.cheapestForNode(combinations, predictedLoad.at(i));
 
         // add this source combo to the solution vector
         solution.push_back(source_combo);
