@@ -109,16 +109,19 @@ int main() {
 
     for(int i = 1; i < predictedLoad.size(); i++) {
 
+        // calculate the economic dispatch for every combination for current load
         for(auto pair : combinations) {
             unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.first.getCombo());
             pair.first.setEconomicDispatch(currentCost);
-            // Do something here to get next cheapest cost?
         }
 
+        // add the cheapest source + edge cost to every combination's running cost
         combinations = dp.addCheapestSE(combinations, source_combo);
 
+        // find the next source combo
         source_combo = dp.cheapestForNode(combinations, source_combo, predictedLoad.at(i));
 
+        // add this source combo to the solution vector
         solution.push_back(source_combo);
 
         std::cout << "Solution for Time Step " << i << " at load " << predictedLoad.at(i) << "MW:\n";
