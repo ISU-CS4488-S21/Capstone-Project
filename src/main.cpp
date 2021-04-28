@@ -116,7 +116,7 @@ int main() {
             pair.first.setEconomicDispatch(currentCost);
         }
         auto time2 = std::chrono::high_resolution_clock::now();
-        std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.001 << " seconds" << std::endl;
+        std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.000001 << " seconds" << std::endl;
 
         // add the cheapest source + edge cost to every combination's running cost
         combinations = dp.addCheapestSE(combinations, source_combo);
