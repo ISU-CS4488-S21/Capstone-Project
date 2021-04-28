@@ -110,10 +110,13 @@ int main() {
     for(int i = 1; i < predictedLoad.size(); i++) {
 
         // calculate the economic dispatch for every combination for current load
+        auto time1 = std::chrono::high_resolution_clock::now();
         for(auto pair : combinations) {
             unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.first.getCombo());
             pair.first.setEconomicDispatch(currentCost);
         }
+        auto time2 = std::chrono::high_resolution_clock::now();
+        std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.001 << " seconds" << std::endl;
 
         // add the cheapest source + edge cost to every combination's running cost
         combinations = dp.addCheapestSE(combinations, source_combo);
