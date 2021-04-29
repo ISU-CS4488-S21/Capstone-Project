@@ -28,7 +28,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 10;
+    const int size = 8;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -128,9 +128,15 @@ int main() {
 
         // calculate the economic dispatch for every combination for current load
         auto time1 = std::chrono::high_resolution_clock::now();
-        for(auto pair : combinations) {
-            auto currentCost = static_cast<unsigned int>(Economic_Dispatch::calculate(pair.first.getCombo(), predictedLoad.at(i), static_cast<int>(pair.first.getCombo().size())));
-            pair.first.setEconomicDispatch(currentCost);
+        std::vector<std::future<double>> currentResults;
+        {
+            ThreadPool pool(4);
+            for(auto& pair : combinations) {
+                currentResults.emplace_back(pool.enqueue(Economic_Dispatch::calculate,pair.first.getCombo(), predictedLoad.at(i), pair.first.getCombo().size()));
+            }
+        }
+        for(int j = 0; j < currentResults.size(); j++) {
+            combinations.at(j).first.setEconomicDispatch(currentResults.at(j).get());
         }
         auto time2 = std::chrono::high_resolution_clock::now();
         std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.000001 << " seconds" << std::endl;
