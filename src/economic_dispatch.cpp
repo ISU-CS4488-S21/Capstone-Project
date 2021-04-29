@@ -120,7 +120,7 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
     if(index == 1){
         return gen[0].first*load + gen[0].second*pow(load,2);
     }
-    if(index < 1){
+    if(index < 1) {
         //The final branch of the generator tree to return optimized cost.
         while(load > 0){
             g1 = gen[0].first*load + gen[0].second*pow(load,2);
@@ -154,4 +154,49 @@ int Economic_Dispatch::getSkipCounter() const {
 }
 int Economic_Dispatch::getTestedCounter() const {
     return testedLoads;
+}
+
+double Economic_Dispatch::calculate(std::vector<Generator> &generators, double load, int index) {
+    std::vector<std::pair<double, double>> gen;
+    gen.reserve(generators.size());
+    for(auto elem : generators) {
+        if(elem.getIsOn()) {
+            gen.push_back(std::make_pair<double, double>(elem.getB(), elem.getC()));
+        }
+    }
+    double maxLoad = load;
+    double temp;
+    double min = std::numeric_limits<int>::max();
+    double g1;
+    double g2;
+    if(index == 0) {
+        //The final branch of the generator tree to return optimized cost.
+        while(load > 0) {
+            g1 = gen[0].first * load + gen[0].second * load * load;
+            g2 = gen[1].first * load + gen[1].second * (maxLoad - load) * (maxLoad - load);
+            temp = g1 + g2;
+            if(min > temp) {
+                min = g1 + g2;
+            }
+            load -= 1;
+        }
+    }
+    if(index == 1) {
+        return gen[0].first * load + gen[0].second * load * load;
+    }
+    else{
+        // Determine the cost at every possible load value.
+        // Recursively cal the function to branch off every cost possibility
+        // at a specific load comparison.
+        while(load > 0) {
+            g1 = gen[index - 1].first * load + gen[index - 1].second * load * load;
+            g2 = calculate(generators, maxLoad - load, index - 2);
+            temp = g1 + g2;
+            if(min > temp){
+                min = g1 + g2;
+            }
+            load -= 50;
+        }
+    }
+    return min;
 }

@@ -21,6 +21,7 @@ public:
     double merge(double load, std::vector<Generator>& g1,std::vector<Generator>& g2);
     bool checkBound(double load, std::vector<Generator>& g1);
     std::vector<std::vector<Generator>>& onGenerators(std::vector<std::vector<Generator>>& generators);
+    static double calculate(std::vector<Generator>& generators, double load, int index);
 };
 
 #endif //UNIT_COMMITMENT_ECONOMIC_DISPATCH_H
