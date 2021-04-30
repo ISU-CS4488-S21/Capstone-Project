@@ -27,7 +27,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 2;
+    const int size = 4;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -104,13 +104,19 @@ int main() {
 
     // initialize the first cheapest viable combo to start loop (assuming that generators are already running at load 0)
     std::pair<ComboPair, unsigned int> source_combo = dp.getCheapestViableSource(combinations, predictedLoad.at(0));
-    solution.push_back(source_combo);
 
-    std::cout << "Solution for Time Step " << 0 << " at load " << predictedLoad.at(0) << "MW:\n";
-    for(Generator generator : source_combo.first.getCombo()) {
-        std::cout << generator.getIsOn() << " ";
+    if (source_combo.first.getMaxPowerOut() < predictedLoad.at(0)) {
+        // let the user know if no viable combo exists with given generators
+        std::cout << "No combination of generators can satisfy a load of  " << predictedLoad.at(0) << "MW:\n\n";
+    } else {
+        // add this source combo to the solution vector
+        solution.push_back(source_combo);
+        std::cout << "Solution for Time Step " << 0 << " at load " << predictedLoad.at(0) << "MW:\n";
+        for (Generator generator : source_combo.first.getCombo()) {
+            std::cout << generator.getIsOn() << " ";
+        }
+        std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
     }
-    std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
 
     for(int i = 1; i < predictedLoad.size(); i++) {
 
@@ -124,14 +130,16 @@ int main() {
         std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.000001 << " seconds" << std::endl;
 
         // add the cheapest source + edge cost to every combination's running cost
-        combinations = dp.addCheapestSE(combinations, source_combo);
+        if (source_combo.first.getMaxPowerOut() < predictedLoad.at(i)) {
+            combinations = dp.addCheapestSE(combinations, source_combo);
+        }
 
         // find the next source combo
         source_combo = dp.cheapestForNode(combinations, predictedLoad.at(i));
 
         if (source_combo.first.getMaxPowerOut() < predictedLoad.at(i)) {
             // let the user know if no viable combo exists with given generators
-            std::cout << "No combination of generators can satisfy a load of  " << predictedLoad.at(i) << "MW:\n";
+            std::cout << "No combination of generators can satisfy a load of  " << predictedLoad.at(i) << "MW:\n\n";
         } else {
             // add this source combo to the solution vector
             solution.push_back(source_combo);
