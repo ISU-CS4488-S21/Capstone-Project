@@ -27,7 +27,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 10;
+    const int size = 2;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -77,14 +77,13 @@ int main() {
                 combo.push_back(onList.at(j));
             }
         }
-        if(minSumMW > minMW) {
-            unsigned int currentCost = dispatch.divide(predictedLoad.at(0), combo);
-            ComboPair comboPair = ComboPair(combo, currentCost);
-            combinations.push_back(std::make_pair(comboPair, currentCost));
-            if(currentCost < cheapestCost) {
-                cheapestCost = currentCost;
-                cheapestIndex = i;
-            }
+        unsigned int currentCost = dispatch.divide(predictedLoad.at(0), combo);
+        ComboPair comboPair = ComboPair(combo, currentCost);
+        combinations.push_back(std::make_pair(comboPair, currentCost));
+        if(currentCost < cheapestCost) {
+            cheapestCost = currentCost;
+            cheapestIndex = i;
+
         }
     }
     auto t3 = std::chrono::high_resolution_clock::now();
@@ -130,14 +129,20 @@ int main() {
         // find the next source combo
         source_combo = dp.cheapestForNode(combinations, predictedLoad.at(i));
 
-        // add this source combo to the solution vector
-        solution.push_back(source_combo);
-
-        std::cout << "Solution for Time Step " << i << " at load " << predictedLoad.at(i) << "MW:\n";
-        for(Generator generator : source_combo.first.getCombo()) {
-            std::cout << generator.getIsOn() << " ";
+        if (source_combo.first.getMaxPowerOut() < predictedLoad.at(i)) {
+            // let the user know if no viable combo exists with given generators
+            std::cout << "No combination of generators can satisfy a load of  " << predictedLoad.at(i) << "MW:\n";
+        } else {
+            // add this source combo to the solution vector
+            solution.push_back(source_combo);
+            std::cout << "Solution for Time Step " << i << " at load " << predictedLoad.at(i) << "MW:\n";
+            for(Generator generator : source_combo.first.getCombo()) {
+                std::cout << generator.getIsOn() << " ";
+            }
+            std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
         }
-        std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
+
+
 
     }
     return 0;
