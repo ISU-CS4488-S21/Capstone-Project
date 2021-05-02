@@ -2,7 +2,7 @@
 // Created by Nate Shubert on 3/17/21.
 //
 #include "economic_dispatch.h"
-#include <generator.h>
+#include "generator.h"
 #include <limits>
 #include <utility>
 #include <vector>

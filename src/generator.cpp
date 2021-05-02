@@ -6,15 +6,16 @@
 /**
  * @author Marcus Goeckner
  *
- * Generator class to represent different generator types and their respective costs
+ * Generator class to represent different fixtureGenerator types and their respective costs
  * power characteristics
  */
 
 /**
- * Creates a new instance of a generator
- * @param gt: the type of generator (see enum GeneratorType in generator.h)
- * @param powerState: indicate if generator should be on or off when created
+ * Creates a new instance of a fixtureGenerator
+ * @param gt: the type of fixtureGenerator (see enum GeneratorType in fixtureGenerator.h)
+ * @param powerState: indicate if fixtureGenerator should be on or off when created
  */
+ Generator::Generator(){};
 Generator::Generator(GeneratorType gt, bool powerState) {
     type = gt;
     isOn = powerState;
