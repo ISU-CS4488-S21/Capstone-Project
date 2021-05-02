@@ -27,7 +27,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 4;
+    const int size = 8;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -130,9 +130,8 @@ int main() {
         std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.000001 << " seconds" << std::endl;
 
         // add the cheapest source + edge cost to every combination's running cost
-        if (source_combo.first.getMaxPowerOut() < predictedLoad.at(i)) {
-            combinations = dp.addCheapestSE(combinations, source_combo);
-        }
+        combinations = dp.addCheapestSE(combinations, source_combo);
+
 
         // find the next source combo
         source_combo = dp.cheapestForNode(combinations, predictedLoad.at(i));
