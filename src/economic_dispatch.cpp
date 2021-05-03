@@ -169,11 +169,12 @@ double Economic_Dispatch::calculate(std::vector<Generator> &generators, double l
     double min = std::numeric_limits<int>::max();
     double g1;
     double g2;
+    double load_sq = pow(load, 2);
     if(index == 0) {
         //The final branch of the generator tree to return optimized cost.
         while(load > 0) {
-            g1 = gen[0].first * load + gen[0].second * load * load;
-            g2 = gen[1].first * load + gen[1].second * (maxLoad - load) * (maxLoad - load);
+            g1 = gen[0].first * load + gen[0].second * load_sq;
+            g2 = gen[1].first * load + gen[1].second * pow((maxLoad - load), 2);
             temp = g1 + g2;
             if(min > temp) {
                 min = g1 + g2;
@@ -182,14 +183,14 @@ double Economic_Dispatch::calculate(std::vector<Generator> &generators, double l
         }
     }
     if(index == 1) {
-        return gen[0].first * load + gen[0].second * load * load;
+        return gen[0].first * load + gen[0].second * load_sq;
     }
     else{
         // Determine the cost at every possible load value.
         // Recursively cal the function to branch off every cost possibility
         // at a specific load comparison.
         while(load > 0) {
-            g1 = gen[index - 1].first * load + gen[index - 1].second * load * load;
+            g1 = gen[index - 1].first * load + gen[index - 1].second * load_sq;
             g2 = calculate(generators, maxLoad - load, index - 2);
             temp = g1 + g2;
             if(min > temp){
