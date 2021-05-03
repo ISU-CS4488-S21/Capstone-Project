@@ -84,7 +84,7 @@ int main() {
     {
         ThreadPool pool(18);
         for(ComboPair& pair : combo_only) {
-            results.emplace_back(pool.enqueue(Economic_Dispatch::calculate,pair.getCombo(), predictedLoad.at(0), pair.getCombo().size()));
+            results.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(0),pair.getCombo()));
         }
     }
 
@@ -132,7 +132,7 @@ int main() {
         {
             ThreadPool pool(18);
             for(auto& pair : combinations) {
-                currentResults.emplace_back(pool.enqueue(Economic_Dispatch::calculate,pair.first.getCombo(), predictedLoad.at(i), pair.first.getCombo().size()));
+                currentResults.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(0), pair.first.getCombo()));
             }
         }
         for(int j = 0; j < currentResults.size(); j++) {

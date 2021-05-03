@@ -72,39 +72,20 @@ double Economic_Dispatch::merge(double load, std::vector<Generator> &g1, std::ve
     double mLoad = load;
     double out = std::numeric_limits<int>::max();
     while(load > 0){
-        if (checkBound(load, const_cast<std::vector<Generator> &>(g1)) && checkBound(load, const_cast<std::vector<Generator> &>(g2))){
-            double one = lambdaFunction(load,g1,g1.size());
-            double two = lambdaFunction(mLoad - load,g2,g2.size());
-            //double one = divide(load,firstHalf);
-            //double two = divide(mLoad - load,secondHalf);
-            double split =  one + two;
-            if (split < out){
-                out = split;
-            }
+        double one = lambdaFunction(load,g1,g1.size());
+        double two = lambdaFunction(mLoad - load,g2,g2.size());
+        //double one = divide(load,firstHalf);
+        //double two = divide(mLoad - load,secondHalf);
+        double split =  one + two;
+        if (split < out){
+            out = split;
         }
         load -= 20;
     }
     return out;
 }
 
-// This function was created to limit the load values used in the while loops.
-// It checks to make sure that the load is within the max and min capacity of the generators.
-bool Economic_Dispatch::checkBound(double load, std::vector<Generator> &g1) {
-    double totalMax = 0;
-    double totalMin = 0;
-    for(auto gen: g1){
-        totalMax += gen.getMaxPowerOut();
-        totalMin += gen.getMinPowerOut();
-    }
-    if(load > totalMax || load < totalMin){
-        skippedLoads += 1;
-        return false;
-    }
-    else{
-        testedLoads += 1;
-        return true;
-    }
-}
+
 // A function to find the minimized cost between a set of generators at
 // every possible load.
 double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generator>& generators, int index) {
