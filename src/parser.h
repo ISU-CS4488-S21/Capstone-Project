@@ -47,7 +47,9 @@ public:
                 std::stringstream convert(token);
                 T value;
                 convert >> value;
-                data.push_back(value);
+                if (i % 3 == 0) {
+                    data.push_back(value);
+                }
             }
         } else {
             // TODO: Fix Parser so that it can generate 2D vectors
