@@ -77,40 +77,20 @@ double Economic_Dispatch::merge(double load, std::vector<Generator> &g1, std::ve
     double out = std::numeric_limits<int>::max();
 // a while loop is used to check the cost at all available loads. The costs are compared and the cheapest is selected.
     while(load > 0){
-// use check bound to not calculate any loads out of range.
-        if (checkBound(load, const_cast<std::vector<Generator> &>(g1)) && checkBound(load, const_cast<std::vector<Generator> &>(g2))){
-            double one = lambdaFunction(load,g1,g1.size());
-            double two = lambdaFunction(mLoad - load,g2,g2.size());
-            //double one = divide(load,firstHalf);
-            //double two = divide(mLoad - load,secondHalf);
-            double split =  one + two;
-            if (split < out){
-                out = split;
-            }
+        double one = lambdaFunction(load,g1,g1.size());
+        double two = lambdaFunction(mLoad - load,g2,g2.size());
+        //double one = divide(load,firstHalf);
+        //double two = divide(mLoad - load,secondHalf);
+        double split =  one + two;
+        if (split < out){
+            out = split;
         }
         load -= 20;
     }
     return out;
 }
 
-// This function was created to limit the load values used in the while loops.
-// It checks to make sure that the load is within the max and min capacity of the generators.
-bool Economic_Dispatch::checkBound(double load, std::vector<Generator> &g1) {
-    double totalMax = 0;
-    double totalMin = 0;
-    for(auto gen: g1){
-        totalMax += gen.getMaxPowerOut();
-        totalMin += gen.getMinPowerOut();
-    }
-    if(load > totalMax || load < totalMin){
-        skippedLoads += 1;
-        return false;
-    }
-    else{
-        testedLoads += 1;
-        return true;
-    }
-}
+
 // A function to find the minimized cost between a set of generators at
 // every possible load.
 double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generator>& generators, int index) {
@@ -135,8 +115,7 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
         //return gen[0].first*load + gen[0].second*pow(load,2);
         return generators[0].getB()*load + generators[0].getC()+load_sq;
     }
-// compare two generators at varying loads to get cheapest option between them.
-    if(index < 1){
+    if(index < 1) {
         //The final branch of the generator tree to return optimized cost.
         while(load > 0){
             // g1 = gen[0].first*load + gen[0].second*pow(load,2);
@@ -175,4 +154,51 @@ int Economic_Dispatch::getSkipCounter() const {
 }
 int Economic_Dispatch::getTestedCounter() const {
     return testedLoads;
+}
+
+double Economic_Dispatch::calculate(std::vector<Generator> &generators, double load, int index) {
+    std::vector<std::pair<double, double>> gen;
+    gen.reserve(generators.size());
+    for(auto elem : generators) {
+        if(elem.getIsOn()) {
+            gen.push_back(std::make_pair<double, double>(elem.getB(), elem.getC()));
+        }
+    }
+    double maxLoad = load;
+    double temp;
+    double min = std::numeric_limits<int>::max();
+    double g1;
+    double g2;
+    double load_sq = pow(load, 2);
+    double max_sq = pow((maxLoad - load), 2);
+    if(index == 0) {
+        //The final branch of the generator tree to return optimized cost.
+        while(load > 0) {
+            g1 = gen[0].first * load + gen[0].second * load_sq;
+            g2 = gen[1].first * load + gen[1].second * max_sq;
+            temp = g1 + g2;
+            if(min > temp) {
+                min = g1 + g2;
+            }
+            load -= 1;
+        }
+    }
+    if(index == 1) {
+        return gen[0].first * load + gen[0].second * load_sq;
+    }
+    else{
+        // Determine the cost at every possible load value.
+        // Recursively cal the function to branch off every cost possibility
+        // at a specific load comparison.
+        while(load > 0) {
+            g1 = gen[index - 1].first * load + gen[index - 1].second * load_sq;
+            g2 = calculate(generators, maxLoad - load, index - 2);
+            temp = g1 + g2;
+            if(min > temp){
+                min = g1 + g2;
+            }
+            load -= 50;
+        }
+    }
+    return min;
 }

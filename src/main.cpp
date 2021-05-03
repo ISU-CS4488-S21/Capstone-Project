@@ -5,6 +5,7 @@
 #include "generator.h"
 #include "parser.h"
 #include "economic_dispatch.h"
+#include "ThreadPool.h"
 #include <chrono>
 #include <cmath>
 #include <iostream>
@@ -60,11 +61,8 @@ int main() {
 
     // Use the bitstrings to generate a vector of ComboPairs.
     auto t2 = std::chrono::high_resolution_clock::now();
-    Economic_Dispatch dispatch;
-    std::vector<std::pair<ComboPair, unsigned int>> combinations;
+    std::vector<ComboPair> combo_only;
     unsigned int minMW = *std::min_element(predictedLoad.begin(), predictedLoad.end());
-    int cheapestIndex = 0;
-    unsigned int cheapestCost = std::numeric_limits<unsigned int>::max();
     for(int i = 0; i < rows; i++) {
         std::vector<Generator> combo;
         combo.reserve(size);
@@ -73,19 +71,33 @@ int main() {
             if(bitCombos.at(i).at(j) == 0) {
                 combo.push_back(offList.at(j));
             } else {
-                minSumMW += onList.at(j).getMaxPowerOut();
+                minSumMW += static_cast<int>(onList.at(j).getMaxPowerOut());
                 combo.push_back(onList.at(j));
             }
         }
-        unsigned int currentCost = dispatch.divide(predictedLoad.at(0), combo);
-        ComboPair comboPair = ComboPair(combo, currentCost);
-        combinations.push_back(std::make_pair(comboPair, currentCost));
-        if(currentCost < cheapestCost) {
-            cheapestCost = currentCost;
-            cheapestIndex = i;
-
+        if(minSumMW > minMW) {
+            combo_only.emplace_back(combo, 0);
         }
     }
+
+    std::vector<std::future<double>> results;
+    {
+        ThreadPool pool(18);
+        for(ComboPair& pair : combo_only) {
+            results.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(0),pair.getCombo()));
+        }
+    }
+
+    unsigned int cheapestCost = std::numeric_limits<unsigned int>::max();
+    std::vector<std::pair<ComboPair, unsigned int>> combinations;
+    for(int i = 0; i < results.size(); i++) {
+        combo_only.at(i).setEconomicDispatch(results.at(i).get());
+        combinations.emplace_back(combo_only.at(i), combo_only.at(i).getEconomicDispatch());
+        if(combo_only.at(i).getEconomicDispatch() < cheapestCost) {
+            cheapestCost = combo_only.at(i).getEconomicDispatch();
+        }
+    }
+
     auto t3 = std::chrono::high_resolution_clock::now();
     std::cout << "Combinations generated in " << std::chrono::duration_cast<std::chrono::microseconds>(t3 - t2).count() << " microseconds" << std::endl;
 
@@ -122,9 +134,15 @@ int main() {
 
         // calculate the economic dispatch for every combination for current load
         auto time1 = std::chrono::high_resolution_clock::now();
-        for(auto pair : combinations) {
-            unsigned int currentCost = dispatch.divide(predictedLoad.at(i), pair.first.getCombo());
-            pair.first.setEconomicDispatch(currentCost);
+        std::vector<std::future<double>> currentResults;
+        {
+            ThreadPool pool(18);
+            for(auto& pair : combinations) {
+                currentResults.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(0), pair.first.getCombo()));
+            }
+        }
+        for(int j = 0; j < currentResults.size(); j++) {
+            combinations.at(j).first.setEconomicDispatch(currentResults.at(j).get());
         }
         auto time2 = std::chrono::high_resolution_clock::now();
         std::cout << "Dispatch Divide Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time2 - time1).count()*0.000001 << " seconds" << std::endl;
@@ -185,4 +203,3 @@ int main() {
 
     std::cout << "\nNow adding the \"cheapest\" source and its edge to each combinations running cost for each time step...\n\n\n";
     */
-
