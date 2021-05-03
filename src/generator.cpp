@@ -30,7 +30,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         startUpCost =  randNum(4, 9) * randNum(44, 84); //base: 64
         shutDownCost = randNum(2, 9) * randNum(20, 30); //base: 25
         maxPowerOut = randNum(550, 650); //base: 600
-        minPowerOut = randNum(100, 200); //base: 150
+        minPowerOut = randNum(300, 400); //base: 350
         A = 510;
         B = 7.2;
         C = 0.00142;
@@ -40,7 +40,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         startUpCost = randNum(2, 4) * randNum(41, 51); //base: 46;
         shutDownCost = randNum(1, 4) * randNum(10, 20); //base: 15
         maxPowerOut = randNum(350, 450); //base: 400;
-        minPowerOut = randNum(50, 150); //base: 100;
+        minPowerOut = randNum(200, 300); //base: 250;
         A = 310;
         B = 7.85;
         C = 0.00194;
@@ -50,7 +50,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         startUpCost = randNum(2, 6) * randNum(92, 132); //base: 112
         shutDownCost = randNum(1, 5) * randNum(1, 11); //base: 6
         maxPowerOut = randNum(50, 150);//base: 100
-        minPowerOut = randNum(15, 25); //base: 20
+        minPowerOut = randNum(25, 35); //base: 30
         A = 80;
         B = 8;
         C = 0.024;
@@ -60,7 +60,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         startUpCost = randNum(4, 9) * randNum(58, 98); //base: 78
         shutDownCost = randNum(2, 9) * randNum(5, 15); //base: 10
         maxPowerOut = randNum(300, 400); //base: 350
-        minPowerOut = randNum(40, 50); //base: 45
+        minPowerOut = randNum(150, 250); //base: 100
         A = 225;
         B = 8.4;
         C = 0.0025;
@@ -70,7 +70,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         startUpCost = randNum(2, 5) * randNum(43, 53); //base: 48
         shutDownCost = randNum(1, 4) * randNum(25, 35); //base: 20
         maxPowerOut = randNum(150, 250); //base: 200
-        minPowerOut = randNum(15, 25); //base: 20
+        minPowerOut = randNum(75, 125); //base: 100
         A = 400;
         B = 5;
         C = 0.01;
