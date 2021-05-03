@@ -27,8 +27,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
     // +- 20 for generating costs above 50, below 50 is +- 5
     if (gt == CoalFiredSteam) {
         fuelCost = 1;
-        startUpCost =  randNum(4, 9) * randNum(44, 84); //base: 64
-        shutDownCost = randNum(2, 9) * randNum(20, 30); //base: 25
+        startUpCost = 2 * randNum(44, 84); //base: 64
+        shutDownCost = 2 * randNum(20, 30); //base: 25
         maxPowerOut = randNum(550, 650); //base: 600
         minPowerOut = randNum(300, 400); //base: 350
         A = 510;
@@ -37,7 +37,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = A + B*maxPowerOut + C*pow(maxPowerOut, 2);
     } else if (gt == OilFiredSteam){
         fuelCost = 1;
-        startUpCost = randNum(2, 4) * randNum(41, 51); //base: 46;
+        startUpCost = 2 * randNum(41, 51); //base: 46;
         shutDownCost = randNum(1, 4) * randNum(10, 20); //base: 15
         maxPowerOut = randNum(350, 450); //base: 400;
         minPowerOut = randNum(200, 300); //base: 250;
@@ -47,8 +47,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = A + B*maxPowerOut + C*pow(maxPowerOut, 2);
     } else if (gt == SmallSub) {
         fuelCost = 1;
-        startUpCost = randNum(2, 6) * randNum(92, 132); //base: 112
-        shutDownCost = randNum(1, 5) * randNum(1, 11); //base: 6
+        startUpCost = 2 * randNum(92, 132); //base: 112
+        shutDownCost = 2 * randNum(1, 11); //base: 6
         maxPowerOut = randNum(50, 150);//base: 100
         minPowerOut = randNum(25, 35); //base: 30
         A = 80;
@@ -57,8 +57,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = 0;
     } else if (gt == LargeSub) {
         fuelCost = 1;
-        startUpCost = randNum(4, 9) * randNum(58, 98); //base: 78
-        shutDownCost = randNum(2, 9) * randNum(5, 15); //base: 10
+        startUpCost = 2 * randNum(58, 98); //base: 78
+        shutDownCost = 2 * randNum(5, 15); //base: 10
         maxPowerOut = randNum(300, 400); //base: 350
         minPowerOut = randNum(150, 250); //base: 100
         A = 225;
@@ -67,8 +67,8 @@ Generator::Generator(GeneratorType gt, bool powerState) {
         economicDispatchCost = A + B*maxPowerOut + C*pow(maxPowerOut, 2);
     } else if (gt == OtherSteam) {
         fuelCost = 1;
-        startUpCost = randNum(2, 5) * randNum(43, 53); //base: 48
-        shutDownCost = randNum(1, 4) * randNum(25, 35); //base: 20
+        startUpCost = 2 * randNum(43, 53); //base: 48
+        shutDownCost = 2 * randNum(25, 35); //base: 20
         maxPowerOut = randNum(150, 250); //base: 200
         minPowerOut = randNum(75, 125); //base: 100
         A = 400;

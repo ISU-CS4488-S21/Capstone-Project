@@ -105,10 +105,10 @@ public:
      * @return: the cheapest combo
      */
     std::pair<ComboPair, unsigned int> getCheapestViableSource(std::vector<std::pair<ComboPair, unsigned int>> pairs, unsigned int load) {
-        std::pair<ComboPair, unsigned int> cheapestPair = std::pair<ComboPair, unsigned int>(pairs.at(0).first, pairs.at(0).second);
+        std::pair<ComboPair, unsigned int> cheapestPair = std::pair<ComboPair, unsigned int>(pairs.at(pairs.size() - 1).first, pairs.at(pairs.size() - 1).second);
         bool viableFound = false;
         for (std::pair<ComboPair, unsigned int> pair : pairs) {
-            if ((pair.first.getMaxPowerOut() >= load && pair.first.getEconomicDispatch() < cheapestPair.first.getEconomicDispatch()) || cheapestPair.second == 0) {
+            if ((pair.first.getMaxPowerOut() >= load && pair.second < cheapestPair.second) || cheapestPair.second == 0) {
                 cheapestPair = pair;
                 viableFound = true;
             }
