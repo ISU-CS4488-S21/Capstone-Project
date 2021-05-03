@@ -75,16 +75,24 @@ public:
 
      // Gets the cheapest path to any generator combo from a given source node.
     std::pair <ComboPair,unsigned int> cheapestForNode(std::vector<std::pair<ComboPair, unsigned int>> pCombos, double load){
-        std::pair<ComboPair, unsigned int> out(pCombos[0].first, pCombos[0].second);
-
+        std::pair<ComboPair, unsigned int> out(pCombos[pCombos.size() - 1].first, pCombos[pCombos.size() - 1].second);
+         bool viableFound = false;
         for (int i = 0; i < pCombos.size(); i++) {
-            if (pCombos[i].first.getMaxPowerOut() >= load && pCombos[i].first.getMinPowerOut() <= load){
-                if (pCombos[i].second < out.second) {
+            if (pCombos[i].first.getMaxPowerOut() >= load && pCombos[i].first.getMinPowerOut() <= load || out.second == 0){
+                if (pCombos[i].second < out.second || out.second == 0) {
                     out.second = pCombos[i].second;
                     out.first = pCombos[i].first;
+                    viableFound = true;
                 }
             }
         }
+         if (!viableFound) {
+             for (std::pair<ComboPair, unsigned int> pair : pCombos) {
+                 if (pair.first.getEconomicDispatch() < out.first.getEconomicDispatch()) {
+                     out = pair;
+                 }
+             }
+         }
 
         return out;
     }
@@ -98,9 +106,18 @@ public:
      */
     std::pair<ComboPair, unsigned int> getCheapestViableSource(std::vector<std::pair<ComboPair, unsigned int>> pairs, unsigned int load) {
         std::pair<ComboPair, unsigned int> cheapestPair = std::pair<ComboPair, unsigned int>(pairs.at(0).first, pairs.at(0).second);
+        bool viableFound = false;
         for (std::pair<ComboPair, unsigned int> pair : pairs) {
-            if (pair.first.getMaxPowerOut() >= load && pair.first.getEconomicDispatch() < cheapestPair.first.getEconomicDispatch()) {
+            if ((pair.first.getMaxPowerOut() >= load && pair.first.getEconomicDispatch() < cheapestPair.first.getEconomicDispatch()) || cheapestPair.second == 0) {
                 cheapestPair = pair;
+                viableFound = true;
+            }
+        }
+        if (!viableFound) {
+            for (std::pair<ComboPair, unsigned int> pair : pairs) {
+                if (pair.first.getEconomicDispatch() < cheapestPair.first.getEconomicDispatch()) {
+                    cheapestPair = pair;
+                }
             }
         }
         return cheapestPair;
