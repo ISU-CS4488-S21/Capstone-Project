@@ -128,10 +128,12 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
     double temp;
     double min = std::numeric_limits<int>::max();
     double g2,g1;
+    double load_sq = pow(load, 2);
+    double max_sq = pow(maxLoad-load,2);
 // if an array of 1 generator then just return the ED of that gen
     if(index == 1){
         //return gen[0].first*load + gen[0].second*pow(load,2);
-        return generators[0].getB()*load + generators[0].getC()+pow(load,2);
+        return generators[0].getB()*load + generators[0].getC()+load_sq;
     }
 // compare two generators at varying loads to get cheapest option between them.
     if(index < 1){
@@ -139,8 +141,8 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
         while(load > 0){
             // g1 = gen[0].first*load + gen[0].second*pow(load,2);
             // g2 = gen[1].first*load + gen[1].second*pow((maxLoad-load),2);
-            g1 = generators[0].getB()*load + generators[0].getC()*pow(load,2);
-            g2 = generators[1].getB()*load + generators[1].getC()*pow(maxLoad-load,2);
+            g1 = generators[0].getB()*load + generators[0].getC()*load_sq;
+            g2 = generators[1].getB()*load + generators[1].getC()*max_sq;
             temp = (g1) + (g2);
             if(min > temp){
                 min = (g1) + (g2);
@@ -157,7 +159,7 @@ double Economic_Dispatch::lambdaFunction(double load, const std::vector<Generato
         while(load > 0){
             //g1 = gen[index-1].first*load + gen[index-1].second*pow(load,2);
             g2 = lambdaFunction(maxLoad - load,generators,index-2);
-            g1 = generators[index - 1].getB()*load + generators[index - 1].getC()*pow(load,2);
+            g1 = generators[index - 1].getB()*load + generators[index - 1].getC()*load_sq;
             temp = g1 + g2;
             if(min > temp){
                 min = g1 + g2;
