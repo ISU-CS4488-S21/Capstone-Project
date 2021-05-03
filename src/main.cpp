@@ -138,7 +138,7 @@ int main() {
         {
             ThreadPool pool(18);
             for(auto& pair : combinations) {
-                currentResults.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(0), pair.first.getCombo()));
+                currentResults.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(i), pair.first.getCombo()));
             }
         }
         for(int j = 0; j < currentResults.size(); j++) {
