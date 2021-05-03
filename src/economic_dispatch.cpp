@@ -170,11 +170,12 @@ double Economic_Dispatch::calculate(std::vector<Generator> &generators, double l
     double g1;
     double g2;
     double load_sq = pow(load, 2);
+    double max_sq = pow((maxLoad - load), 2);
     if(index == 0) {
         //The final branch of the generator tree to return optimized cost.
         while(load > 0) {
             g1 = gen[0].first * load + gen[0].second * load_sq;
-            g2 = gen[1].first * load + gen[1].second * pow((maxLoad - load), 2);
+            g2 = gen[1].first * load + gen[1].second * max_sq;
             temp = g1 + g2;
             if(min > temp) {
                 min = g1 + g2;

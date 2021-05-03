@@ -82,7 +82,7 @@ int main() {
 
     std::vector<std::future<double>> results;
     {
-        ThreadPool pool(4);
+        ThreadPool pool(18);
         for(ComboPair& pair : combo_only) {
             results.emplace_back(pool.enqueue(Economic_Dispatch::calculate,pair.getCombo(), predictedLoad.at(0), pair.getCombo().size()));
         }
@@ -130,7 +130,7 @@ int main() {
         auto time1 = std::chrono::high_resolution_clock::now();
         std::vector<std::future<double>> currentResults;
         {
-            ThreadPool pool(4);
+            ThreadPool pool(18);
             for(auto& pair : combinations) {
                 currentResults.emplace_back(pool.enqueue(Economic_Dispatch::calculate,pair.first.getCombo(), predictedLoad.at(i), pair.first.getCombo().size()));
             }
