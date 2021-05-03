@@ -28,7 +28,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 8;
+    const int size = 15;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
