@@ -119,7 +119,7 @@ void Generator::turnOff() {
     isOn = false;
 }
 
-GeneratorType Generator::getGeneratorType() {
+ Generator::GeneratorType Generator::getGeneratorType() {
     return type;
 }
 

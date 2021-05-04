@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Capstone-Project.dir/parser_test.cpp.o"
   "CMakeFiles/Capstone-Project.dir/testEconomic_Dispatch.cpp.o"
   "CMakeFiles/Capstone-Project.dir/testGenerator.cpp.o"
+  "CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o"
+  "CMakeFiles/Capstone-Project.dir/test_DP.cpp.o"
   "Capstone-Project"
   "Capstone-Project.pdb"
 )

@@ -21,7 +21,6 @@ public:
                 minPowerOut += gen.getMinPowerOut();
                 maxPowerOut += gen.getMaxPowerOut();
             }
-
         }
     }
     std::vector<Generator> & getCombo() { return combo; }

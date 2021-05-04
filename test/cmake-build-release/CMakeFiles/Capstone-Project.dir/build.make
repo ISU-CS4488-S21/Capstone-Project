@@ -142,13 +142,41 @@ CMakeFiles/Capstone-Project.dir/parser_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/parser_test.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/parser_test.cpp -o CMakeFiles/Capstone-Project.dir/parser_test.cpp.s
 
+CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o: ../test_Combination.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Combination.cpp
+
+CMakeFiles/Capstone-Project.dir/test_Combination.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_Combination.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Combination.cpp > CMakeFiles/Capstone-Project.dir/test_Combination.cpp.i
+
+CMakeFiles/Capstone-Project.dir/test_Combination.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_Combination.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Combination.cpp -o CMakeFiles/Capstone-Project.dir/test_Combination.cpp.s
+
+CMakeFiles/Capstone-Project.dir/test_DP.cpp.o: CMakeFiles/Capstone-Project.dir/flags.make
+CMakeFiles/Capstone-Project.dir/test_DP.cpp.o: ../test_DP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Capstone-Project.dir/test_DP.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Capstone-Project.dir/test_DP.cpp.o -c /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_DP.cpp
+
+CMakeFiles/Capstone-Project.dir/test_DP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Capstone-Project.dir/test_DP.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_DP.cpp > CMakeFiles/Capstone-Project.dir/test_DP.cpp.i
+
+CMakeFiles/Capstone-Project.dir/test_DP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Capstone-Project.dir/test_DP.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/deepsonkhadka/Desktop/Capstone-Project/test/test_DP.cpp -o CMakeFiles/Capstone-Project.dir/test_DP.cpp.s
+
 # Object files for target Capstone-Project
 Capstone__Project_OBJECTS = \
 "CMakeFiles/Capstone-Project.dir/testGenerator.cpp.o" \
 "CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp.o" \
 "CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o" \
 "CMakeFiles/Capstone-Project.dir/testEconomic_Dispatch.cpp.o" \
-"CMakeFiles/Capstone-Project.dir/parser_test.cpp.o"
+"CMakeFiles/Capstone-Project.dir/parser_test.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o" \
+"CMakeFiles/Capstone-Project.dir/test_DP.cpp.o"
 
 # External object files for target Capstone-Project
 Capstone__Project_EXTERNAL_OBJECTS =
@@ -158,12 +186,14 @@ Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Ca
 Capstone-Project: CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/testEconomic_Dispatch.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/parser_test.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o
+Capstone-Project: CMakeFiles/Capstone-Project.dir/test_DP.cpp.o
 Capstone-Project: CMakeFiles/Capstone-Project.dir/build.make
 Capstone-Project: lib/libgtest.a
 Capstone-Project: lib/libgtest_main.a
 Capstone-Project: lib/libgtest.a
 Capstone-Project: CMakeFiles/Capstone-Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Capstone-Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Capstone-Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Capstone-Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

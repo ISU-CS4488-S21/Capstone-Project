@@ -376,6 +376,60 @@ testGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/testGenerator.cpp.s
 .PHONY : testGenerator.cpp.s
 
+test_Combination.o: test_Combination.cpp.o
+
+.PHONY : test_Combination.o
+
+# target to build an object file
+test_Combination.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o
+.PHONY : test_Combination.cpp.o
+
+test_Combination.i: test_Combination.cpp.i
+
+.PHONY : test_Combination.i
+
+# target to preprocess a source file
+test_Combination.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combination.cpp.i
+.PHONY : test_Combination.cpp.i
+
+test_Combination.s: test_Combination.cpp.s
+
+.PHONY : test_Combination.s
+
+# target to generate assembly for a file
+test_Combination.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combination.cpp.s
+.PHONY : test_Combination.cpp.s
+
+test_DP.o: test_DP.cpp.o
+
+.PHONY : test_DP.o
+
+# target to build an object file
+test_DP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_DP.cpp.o
+.PHONY : test_DP.cpp.o
+
+test_DP.i: test_DP.cpp.i
+
+.PHONY : test_DP.i
+
+# target to preprocess a source file
+test_DP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_DP.cpp.i
+.PHONY : test_DP.cpp.i
+
+test_DP.s: test_DP.cpp.s
+
+.PHONY : test_DP.s
+
+# target to generate assembly for a file
+test_DP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_DP.cpp.s
+.PHONY : test_DP.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -408,6 +462,12 @@ help:
 	@echo "... testGenerator.o"
 	@echo "... testGenerator.i"
 	@echo "... testGenerator.s"
+	@echo "... test_Combination.o"
+	@echo "... test_Combination.i"
+	@echo "... test_Combination.s"
+	@echo "... test_DP.o"
+	@echo "... test_DP.i"
+	@echo "... test_DP.s"
 .PHONY : help
 
 

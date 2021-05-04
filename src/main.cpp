@@ -166,9 +166,6 @@ int main() {
             }
             std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
         }
-
-
-
     }
     return 0;
 }

@@ -352,6 +352,12 @@
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/testGenerator.cpp">
 			<Option target="Capstone-Project"/>
 		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Combination.cpp">
+			<Option target="Capstone-Project"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_DP.cpp">
+			<Option target="Capstone-Project"/>
+		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

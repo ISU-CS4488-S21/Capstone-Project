@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/deepsonkhadka/Desktop/Capstone-Project/test/parser_test.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles/Capstone-Project.dir/parser_test.cpp.o"
   "/Users/deepsonkhadka/Desktop/Capstone-Project/test/testEconomic_Dispatch.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles/Capstone-Project.dir/testEconomic_Dispatch.cpp.o"
   "/Users/deepsonkhadka/Desktop/Capstone-Project/test/testGenerator.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles/Capstone-Project.dir/testGenerator.cpp.o"
+  "/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_Combination.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o"
+  "/Users/deepsonkhadka/Desktop/Capstone-Project/test/test_DP.cpp" "/Users/deepsonkhadka/Desktop/Capstone-Project/test/cmake-build-release/CMakeFiles/Capstone-Project.dir/test_DP.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
