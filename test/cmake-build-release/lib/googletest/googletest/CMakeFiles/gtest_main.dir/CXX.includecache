@@ -73,10 +73,6 @@ gtest/internal/gtest-internal.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/gtest-internal.h
 gtest/internal/gtest-port.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/gtest-port.h
-typeindex
--
-typeinfo
--
 gtest/internal/custom/gtest-printers.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/custom/gtest-printers.h
 

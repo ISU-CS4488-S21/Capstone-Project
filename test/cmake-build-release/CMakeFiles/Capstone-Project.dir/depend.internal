@@ -8,7 +8,52 @@ CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src
 CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp.o
  /Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp
  /Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.h
+CMakeFiles/Capstone-Project.dir/parser_test.cpp.o
+ ../lib/googletest/googletest/include/gtest/gtest-death-test.h
+ ../lib/googletest/googletest/include/gtest/gtest-matchers.h
+ ../lib/googletest/googletest/include/gtest/gtest-message.h
+ ../lib/googletest/googletest/include/gtest/gtest-param-test.h
+ ../lib/googletest/googletest/include/gtest/gtest-printers.h
+ ../lib/googletest/googletest/include/gtest/gtest-test-part.h
+ ../lib/googletest/googletest/include/gtest/gtest-typed-test.h
+ ../lib/googletest/googletest/include/gtest/gtest.h
+ ../lib/googletest/googletest/include/gtest/gtest_pred_impl.h
+ ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ ../lib/googletest/googletest/include/gtest/internal/custom/gtest-port.h
+ ../lib/googletest/googletest/include/gtest/internal/custom/gtest-printers.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-filepath.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-internal.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-param-util.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-port-arch.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-port.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /Users/deepsonkhadka/Desktop/Capstone-Project/src/parser.h
+ /Users/deepsonkhadka/Desktop/Capstone-Project/test/parser_test.cpp
 CMakeFiles/Capstone-Project.dir/testEconomic_Dispatch.cpp.o
+ ../lib/googletest/googletest/include/gtest/gtest-death-test.h
+ ../lib/googletest/googletest/include/gtest/gtest-matchers.h
+ ../lib/googletest/googletest/include/gtest/gtest-message.h
+ ../lib/googletest/googletest/include/gtest/gtest-param-test.h
+ ../lib/googletest/googletest/include/gtest/gtest-printers.h
+ ../lib/googletest/googletest/include/gtest/gtest-test-part.h
+ ../lib/googletest/googletest/include/gtest/gtest-typed-test.h
+ ../lib/googletest/googletest/include/gtest/gtest.h
+ ../lib/googletest/googletest/include/gtest/gtest_pred_impl.h
+ ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ ../lib/googletest/googletest/include/gtest/internal/custom/gtest-port.h
+ ../lib/googletest/googletest/include/gtest/internal/custom/gtest-printers.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-filepath.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-internal.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-param-util.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-port-arch.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-port.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.h
+ /Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.h
  /Users/deepsonkhadka/Desktop/Capstone-Project/test/testEconomic_Dispatch.cpp
 CMakeFiles/Capstone-Project.dir/testGenerator.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest-death-test.h

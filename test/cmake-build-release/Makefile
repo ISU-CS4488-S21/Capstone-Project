@@ -295,6 +295,33 @@ Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp.s
 .PHONY : Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp.s
 
+parser_test.o: parser_test.cpp.o
+
+.PHONY : parser_test.o
+
+# target to build an object file
+parser_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/parser_test.cpp.o
+.PHONY : parser_test.cpp.o
+
+parser_test.i: parser_test.cpp.i
+
+.PHONY : parser_test.i
+
+# target to preprocess a source file
+parser_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/parser_test.cpp.i
+.PHONY : parser_test.cpp.i
+
+parser_test.s: parser_test.cpp.s
+
+.PHONY : parser_test.s
+
+# target to generate assembly for a file
+parser_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/parser_test.cpp.s
+.PHONY : parser_test.cpp.s
+
 testEconomic_Dispatch.o: testEconomic_Dispatch.cpp.o
 
 .PHONY : testEconomic_Dispatch.o
@@ -372,6 +399,9 @@ help:
 	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.o"
 	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.i"
 	@echo "... Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.s"
+	@echo "... parser_test.o"
+	@echo "... parser_test.i"
+	@echo "... parser_test.s"
 	@echo "... testEconomic_Dispatch.o"
 	@echo "... testEconomic_Dispatch.i"
 	@echo "... testEconomic_Dispatch.s"

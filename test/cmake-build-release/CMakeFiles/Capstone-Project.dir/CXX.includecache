@@ -73,10 +73,6 @@ gtest/internal/gtest-internal.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/gtest-internal.h
 gtest/internal/gtest-port.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/gtest-port.h
-typeindex
--
-typeinfo
--
 gtest/internal/custom/gtest-printers.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/custom/gtest-printers.h
 
@@ -336,11 +332,23 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.h
+/Users/deepsonkhadka/Desktop/Capstone-Project/src/parser.h
+algorithm
+-
+fstream
+-
+iterator
+-
+sstream
+-
+string
+-
+vector
+-
 
-/Users/deepsonkhadka/Desktop/Capstone-Project/test/testGenerator.cpp
+/Users/deepsonkhadka/Desktop/Capstone-Project/test/parser_test.cpp
 gtest/gtest.h
 -
-../src/generator.h
-/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.h
+../src/parser.h
+/Users/deepsonkhadka/Desktop/Capstone-Project/src/parser.h
 

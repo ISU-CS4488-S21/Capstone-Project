@@ -328,6 +328,9 @@
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.h">
 			<Option target="Capstone-Project"/>
 		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/src/parser.h">
+			<Option target="Capstone-Project"/>
+		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
@@ -339,6 +342,9 @@
 		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/parser_test.cpp">
+			<Option target="Capstone-Project"/>
 		</Unit>
 		<Unit filename="/Users/deepsonkhadka/Desktop/Capstone-Project/test/testEconomic_Dispatch.cpp">
 			<Option target="Capstone-Project"/>

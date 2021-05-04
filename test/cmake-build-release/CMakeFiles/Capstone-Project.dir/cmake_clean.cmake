@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/economic_dispatch.cpp.o"
   "CMakeFiles/Capstone-Project.dir/Users/deepsonkhadka/Desktop/Capstone-Project/src/generator.cpp.o"
+  "CMakeFiles/Capstone-Project.dir/parser_test.cpp.o"
   "CMakeFiles/Capstone-Project.dir/testEconomic_Dispatch.cpp.o"
   "CMakeFiles/Capstone-Project.dir/testGenerator.cpp.o"
   "Capstone-Project"
