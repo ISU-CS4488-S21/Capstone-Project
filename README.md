@@ -2,14 +2,22 @@
 ## Compiler info 
 <img width="537" src="https://github.com/ISU-CS4488-S21/Capstone-Project/blob/develop/documents/compiler.png">
 
+## If you have not installed CLion on your computer, please Download and install CLion using the link below :
+https://www.jetbrains.com/clion/download/#section=windows
+
+You may activate using .edu emal address or use 30-day free trial.
+
+# How to Run the main project
+## 1. Simply Load/Reload the CMake Project
+Right click on CMakeLiss.txt to open Load/Reload the CMake Project
+## 2. Open main.cpp file and Run
+<img width="1131" alt="Run the main" src="https://user-images.githubusercontent.com/31423979/117189192-e5b83680-adab-11eb-8652-f168805f8dcf.png">
+
+
 # Unit Testing a code on CLion using GoogleTest
-
-## Load CMakeLists
-Load the CMakeLists.txt that is inside the test folder
-
-<img width="1303" alt="Load CmakeLIsts" src="https://user-images.githubusercontent.com/31423979/107606116-61ae4280-6bf2-11eb-85fc-1537529774ef.png">
-
+## Simply Load/Reload the CMake Project
 ## Run the tests
 Click on the Run 'All in the test_classname.cpp' to run the tests
 
-<img width="1394" alt="testing a code" src="https://user-images.githubusercontent.com/31423979/107606294-e8631f80-6bf2-11eb-9ba8-48c26117d44d.png">
+<img width="1132" alt="Run the Test" src="https://user-images.githubusercontent.com/31423979/117190511-8529f900-adad-11eb-9fe1-3982953e9a0a.png">
+
