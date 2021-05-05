@@ -2,6 +2,12 @@
 ## Compiler info 
 <img width="537" src="https://github.com/ISU-CS4488-S21/Capstone-Project/blob/develop/documents/compiler.png">
 
+# Open CMakeLists.txt file 
+## Find CMakeLists.txt file is inside Capstone-Project folder
+
+<img width="924" alt="Step1- Open CMakeLists txt with Clion" src="https://user-images.githubusercontent.com/31423979/117192101-57de4a80-adaf-11eb-80f6-7a7cbe63d168.png">
+
+
 ## If you have not installed CLion on your computer, please Download and install CLion using the link below :
 https://www.jetbrains.com/clion/download/#section=windows
 
