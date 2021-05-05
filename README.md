@@ -8,15 +8,15 @@
 <img width="924" alt="Step1- Open CMakeLists txt with Clion" src="https://user-images.githubusercontent.com/31423979/117192101-57de4a80-adaf-11eb-80f6-7a7cbe63d168.png">
 
 
-## If you have not installed CLion on your computer, please Download and install CLion using the link below :
+## If you have not installed CLion on your computer, please download and install CLion using the link below :
 https://www.jetbrains.com/clion/download/#section=windows
 
-You may activate using .edu emal address or use 30-day free trial.
+You may activate using .edu email address or use 30-day free trial.
 
 # How to Run the main project
-## 1. Simply Load/Reload the CMake Project
+## 1. Simply load/reload the CMake project
 Right click on CMakeLiss.txt to open Load/Reload the CMake Project
-## 2. Open main.cpp file and Run
+## 2. Open main.cpp file and run (click the green play arrow in the top right corner of CLion)
 <img width="1131" alt="Run the main" src="https://user-images.githubusercontent.com/31423979/117189192-e5b83680-adab-11eb-8652-f168805f8dcf.png">
 
 
