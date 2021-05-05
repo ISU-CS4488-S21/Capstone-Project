@@ -5,16 +5,15 @@
 /**
  * @author Marcus Goeckner
  */
-
+enum GeneratorType {
+    CoalFiredSteam,
+    OilFiredSteam,
+    SmallSub,
+    LargeSub,
+    OtherSteam,
+};
 
 class Generator {
-    enum GeneratorType {
-        CoalFiredSteam,
-        OilFiredSteam,
-        SmallSub,
-        LargeSub,
-        OtherSteam,
-    };
 private:
     double fuelCost, startUpCost, shutDownCost, economicDispatchCost, A, B, C;
     double maxPowerOut, minPowerOut;
@@ -22,7 +21,6 @@ private:
     GeneratorType type;
 
 public:
-
     Generator(GeneratorType gt, bool powerState);
     Generator();
     double sum(int x, int y);

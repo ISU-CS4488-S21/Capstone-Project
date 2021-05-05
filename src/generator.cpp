@@ -15,7 +15,7 @@
  * @param gt: the type of fixtureGenerator (see enum GeneratorType in fixtureGenerator.h)
  * @param powerState: indicate if fixtureGenerator should be on or off when created
  */
- Generator::Generator(){};
+Generator::Generator(){};
 Generator::Generator(GeneratorType gt, bool powerState) {
     type = gt;
     isOn = powerState;
@@ -119,7 +119,7 @@ void Generator::turnOff() {
     isOn = false;
 }
 
- Generator::GeneratorType Generator::getGeneratorType() {
+GeneratorType Generator::getGeneratorType() {
     return type;
 }
 
