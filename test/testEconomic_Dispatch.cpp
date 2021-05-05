@@ -1,34 +1,18 @@
+// Author Deepson Khadka
+//UnitTests economic dispatch class's functions
+
 #include <gtest/gtest.h>
 #include "../src/economic_dispatch.h"
 
-// Created by Deepson Khadka on 5/1/21.
-//
+Economic_Dispatch fixture;
 
+///Tests SkippedCounter value equal to initialized
 TEST(EcoDispatchTest,  getSkipCounterTest){
-
+EXPECT_EQ(0, fixture.getSkipCounter());
 }
+
+///Tests TestedCounter value
 TEST(EcoDispatchTest, getTestedCounterTest){
-
-}
-TEST(EcoDispatchTest, lambdaFunctionTest){
-
-}
-TEST(EcoDispatchTest, divideTest){
-
-}
-TEST(EcoDispatchTest, mergeTest){
-
-}
-TEST(EcoDispatchTest, checkBoundTest){
-
-}
-TEST(EcoDispatchTest, getStartUpCostTest){
-
-}
-TEST(EcoDispatchTest, onGeneratorsTest){
-
-}
-TEST(EcoDispatchTest, calculateTest){
-
+    EXPECT_EQ(0, fixture.getTestedCounter());
 }
 

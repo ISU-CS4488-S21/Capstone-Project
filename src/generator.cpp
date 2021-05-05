@@ -79,7 +79,7 @@ Generator::Generator(GeneratorType gt, bool powerState) {
 
 }
 
-// getters and setters
+/// getters and setters
 double Generator::getFuelCost() const {
     return fuelCost;
 }

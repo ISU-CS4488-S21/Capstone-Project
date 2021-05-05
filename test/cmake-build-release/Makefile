@@ -376,32 +376,32 @@ testGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/testGenerator.cpp.s
 .PHONY : testGenerator.cpp.s
 
-test_Combination.o: test_Combination.cpp.o
+test_Combinations.o: test_Combinations.cpp.o
 
-.PHONY : test_Combination.o
+.PHONY : test_Combinations.o
 
 # target to build an object file
-test_Combination.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combination.cpp.o
-.PHONY : test_Combination.cpp.o
+test_Combinations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combinations.cpp.o
+.PHONY : test_Combinations.cpp.o
 
-test_Combination.i: test_Combination.cpp.i
+test_Combinations.i: test_Combinations.cpp.i
 
-.PHONY : test_Combination.i
+.PHONY : test_Combinations.i
 
 # target to preprocess a source file
-test_Combination.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combination.cpp.i
-.PHONY : test_Combination.cpp.i
+test_Combinations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combinations.cpp.i
+.PHONY : test_Combinations.cpp.i
 
-test_Combination.s: test_Combination.cpp.s
+test_Combinations.s: test_Combinations.cpp.s
 
-.PHONY : test_Combination.s
+.PHONY : test_Combinations.s
 
 # target to generate assembly for a file
-test_Combination.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combination.cpp.s
-.PHONY : test_Combination.cpp.s
+test_Combinations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Capstone-Project.dir/build.make CMakeFiles/Capstone-Project.dir/test_Combinations.cpp.s
+.PHONY : test_Combinations.cpp.s
 
 test_DP.o: test_DP.cpp.o
 
@@ -462,9 +462,9 @@ help:
 	@echo "... testGenerator.o"
 	@echo "... testGenerator.i"
 	@echo "... testGenerator.s"
-	@echo "... test_Combination.o"
-	@echo "... test_Combination.i"
-	@echo "... test_Combination.s"
+	@echo "... test_Combinations.o"
+	@echo "... test_Combinations.i"
+	@echo "... test_Combinations.s"
 	@echo "... test_DP.o"
 	@echo "... test_DP.i"
 	@echo "... test_DP.s"

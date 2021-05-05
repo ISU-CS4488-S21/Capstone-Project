@@ -1,5 +1,9 @@
+// Author Deepson Khadka
+//UnitTests Generator class main functions
+
 #include <gtest/gtest.h>
 #include "../src/generator.h"
+
 
 ///Test passes if fuelCost is greater than 0
 TEST(GeneratorTest, getFuelCostTest){
@@ -13,6 +17,11 @@ TEST(GeneratorTest, getFuelCostTest){
     Generator fixtureGenerator;
 
     EXPECT_FALSE(fixtureGenerator.getFuelCost()<0);
+}
+
+///Tests if developer has error handling exception
+TEST(GeneratorTest, allOffTest){
+    EXPECT_ANY_THROW("All Generators are Off");
 }
 
 ///Test fails if startup cost is less than 0
