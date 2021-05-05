@@ -28,7 +28,7 @@ int main() {
                                          GeneratorType::OtherSteam};
 
     // Number of generators we want to use
-    const int size = 15;
+    const int size = 9;
     const int rows = static_cast<int>(std::pow(2, size));
 
     // Create two identical vectors of generators, one with off generators and one with on generators
@@ -82,7 +82,7 @@ int main() {
 
     std::vector<std::future<double>> results;
     {
-        ThreadPool pool(18);
+        ThreadPool pool(6);
         for(ComboPair& pair : combo_only) {
             results.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(0),pair.getCombo()));
         }
@@ -109,6 +109,7 @@ int main() {
     }
     */
 
+    auto t4 = std::chrono::high_resolution_clock::now();
     DynamicProgrammingAlgo dp;
 
     // initialize solution vector
@@ -136,7 +137,7 @@ int main() {
         auto time1 = std::chrono::high_resolution_clock::now();
         std::vector<std::future<double>> currentResults;
         {
-            ThreadPool pool(18);
+            ThreadPool pool(6);
             for(auto& pair : combinations) {
                 currentResults.emplace_back(pool.enqueue(Economic_Dispatch::divide,predictedLoad.at(i), pair.first.getCombo()));
             }
@@ -167,6 +168,9 @@ int main() {
             std::cout << "\nCost up to this timestep: " << source_combo.second << "\n\n";
         }
     }
+    auto t5 = std::chrono::high_resolution_clock::now();
+    std::cout << "Unit Commitment calculated in " << std::chrono::duration_cast<std::chrono::seconds>(t5 - t4).count() << " seconds" << std::endl;
+
     return 0;
 }
 
